@@ -1,0 +1,77 @@
+    <main id="page">	     
+	    <section class="content">
+    	    <div class="wrap">
+        	    <div>
+                    {% if search.performed %}
+                    {% paginate search.results by 12 %}
+                        {% if search.results_count == 0 %}  
+                        <div class="centered">
+                            <h3 style="letter-spacing: normal;">We could not find any products matching <strong>{{ search.terms | escape }}</strong>.</h3>  
+                            <h4>but you can try again below</h4>
+                            <div id="search-form" style="margin: 5%;">
+                    	        <form action="/search" class="clearfix">
+                                    <input type="text" name="q" placeholder="find products" value="{{ search.terms }}">
+                                    <input type="submit" value="Go" style="border-radius: 0;">
+                                    <input type="hidden" name="type" value="product">
+                                </form>
+                            </div>
+                          <h3 style="letter-spacing: normal;font-weight: lighter;" id="searchlike">you may also like</h3>
+                          {% for product in collections.all.products %}
+                          {% unless product.title == "Select" or product.title == "Women's Closet Pack"%}
+                          {% if product.collections.first.title == "Women"%} 
+                          <div class="third-grid-item">
+                            <a href="{{ product.url | within: collection }}">
+                              {% for image in product.images limit: 1%}
+                              <img src="{{ image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" class="product-grid">
+                              {% endfor %}
+                              {% if product.title =="Ballet Flats" %}
+                              <h4>ballet<br>flats</h4>
+                              {% elsif product.title =="Loafers & Slip-Ons" %}
+                              <h4>loafers &<br> slip-ons</h4>
+                              {% elsif product.title =="Sneakers & Lace-Ups" %}
+                              <h4>sneakers &<br> lace-ups</h4>
+                              {% endif %}
+                            </a>
+                          </div>
+                          {% endif %}
+                          {% endunless %}
+                          {% endfor %}
+                          <div id="more-questions">
+                            <h3>Not searching for a product?</h3>
+                            <h5>You can find more information on our <a href="/pages/faq" style="color: #33ffcc;">Frequently Asked Questions</a> page</h5>
+                            <h5>Or reach out to one of <a href="/pages/contact-us" style="color: #33ffcc;">our customer service agents</a></h5>
+                          </div>
+                        </div>
+                        {% else %}  
+                        <p>Search results for <strong>"{{ search.terms | escape }}"</strong>:</p>
+                        <div id="product-grid" class="clearfix">
+                            {% for product in search.results %}
+                                {% unless product.tags contains "wholesale" %}{% include 'search-grid-item' %}{% endunless %}
+                            {% endfor %}
+                        </div>
+                       <div id="more-questions">
+                            <h3>Still searching?</h3>
+                         <h5>You can find more information on our <a href="/pages/faq" style="color: #33ffcc;">Frequently Asked Questions</a> page</h5>
+                         <h5>Or reach out to one of <a href="/pages/contact-us" style="color: #33ffcc;">our customer service agents</a></h5>
+                          </div>
+                        {% endif %}
+                        {% if paginate.pages > 1 %}
+                            {% include 'pagination' %}    
+                        {% endif %}
+                    {% endpaginate %}
+                    {% else %}
+                    <div class="centered">
+                        <p>Search our products below.</p>  
+                        <div id="search-form">
+                	        <form action="/search" class="clearfix">
+                                <input type="text" name="q" placeholder="Find products" value="{{ search.terms }}">
+                                <input type="submit" value="Go">
+                                <input type="hidden" name="type" value="product">
+                            </form>
+                        </div>
+                    </div>
+                    {% endif %}
+        	    </div>
+    	    </div>
+	    </section>
+    </main>

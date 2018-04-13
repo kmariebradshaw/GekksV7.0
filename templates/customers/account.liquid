@@ -1,0 +1,39 @@
+    <main id="account">	     
+	    <section>
+    	    <div class="wrap clearfix">
+        	    <div class="twothirds">
+            	    <header>
+            	        <h1>Order History</h1>
+            	    </header>
+                    {% if customer.orders.size != 0 %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="order-number">Order</th>
+                                <th class="date">Date</th>
+                                <th class="payment-status">Paid?</th>
+                                <th class="fulfillment-status">Fulfilled?</th>
+                                <th class="total">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for order in customer.orders %}
+                            <tr{% if order.cancelled %} class="cancelled" title="Canceled Order"{% endif %}>
+                                <td class="order-number">{{ order.name | link_to: order.customer_url }}</td>
+                                <td class="date"><span class="note">{{ order.created_at | date: "%b %d, %Y" }}</span></td>
+                                <td class="payment-status"><span class="status_{{ order.financial_status }}">{{ order.financial_status }}</span></td>
+                                <td class="fulfillment-status"><span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status }}</span></td>
+                                <td class="total"><strong class="total money">{{ order.total_price | money }}</strong></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p>You haven't placed any orders yet.</p>
+                    {% endif %}
+        	    </div>
+        	    {% include 'account-menu' %}
+    	    </div>
+	    </section>
+    </main>
+<div id="talkable-dashboard"></div>

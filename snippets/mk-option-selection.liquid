@@ -1,0 +1,7 @@
+                        {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+                        {% if template contains 'index' or template contains 'store' %}
+                        <ul id="sex-selector">
+                            <li><span data-target="form-men" data-collection="{{ settings.men_collection }}" class="active">Men</span></li>
+                            <li><span data-target="form-women" data-collection="{{ settings.women_collection }}">Women</span></li>
+                        </ul>
+                        {% endif %}

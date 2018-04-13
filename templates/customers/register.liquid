@@ -1,0 +1,32 @@
+    <main id="page" class="customer">	     
+	    <section class="content">
+    	    <div class="wrap register spaced-bottom">
+        	    <header>
+        	        <h1>Create Account</h1>
+        	        <p>Already have an account? <a href="/account/login">Sign in here</a>.</p>
+        	    </header>
+        	    <div class="page">
+        	        {% form 'create_customer' %}
+        	            {{ form.errors | default_errors }}
+        	            <p>
+            	            <label for="first_name">First Name</label>
+                            <input type="text" value="{{ form.first_name }}" name="customer[first_name]" id="first_name" size="30" placeholder="Your first name">
+        	            </p>
+                        <p>
+            	            <label for="last_name">Last Name</label>
+                            <input type="text" value="{{ form.last_name }}" name="customer[last_name]" id="last_name"{% if form.errors contains 'last_name' %} class="error"{% endif %} size="30" placeholder="Your last name">
+        	            </p>
+        	            <p>
+            	            <label for="email">Email Address</label>
+                            <input type="email" value="{{ form.email }}" name="customer[email]" id="email"{% if form.errors contains 'email' %} class="error"{% endif %} size="30" placeholder="Your email address">
+        	            </p>
+        	            <p>
+            	            <label for="password">Password</label>
+                            <input type="password" value="" name="customer[password]" id="password"{% if form.errors contains 'password' %} class="error"{% endif %} size="30" placeholder="Your password">
+        	            </p>
+                        <input type="submit" value="Create">
+        	        {% endform %}
+        	    </div>
+    	    </div>
+	    </section>
+    </main>

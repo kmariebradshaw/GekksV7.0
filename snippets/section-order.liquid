@@ -1,0 +1,113 @@
+        <section id="quick-order" class="split content">
+          <div class="wrap">
+              <header>
+                  <h1>{% if settings.store_title != empty %}{{ settings.store_title }}{% else %}Quick Order{% endif %}</h1>
+              </header>
+              <div class="clearfix flex">
+                  <div class="half">
+                        <div id="product-preview"></div>
+                        <script>
+                          $(window).load(function(){
+                            $('.slick-track img').addClass('product-image-img');
+                          });
+                        </script>
+                        <div class="thumbs"></div>
+                        {% if settings.display_reviews_or_quotes == "reviews" %}
+                        <div class="product-reviews">
+                          <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="10000" data-cycle-slides="> blockquote" data-cycle-pager=".reviews-04">
+                            {% if settings.review-1-text != empty %}
+                            <blockquote>
+                                <figure>{{ 'review-1.jpg' | asset_url | img_tag }}</figure>
+                                <p>{{ settings.review-1-text }}</p>
+                                {% if settings.review-1-author != empty %}<footer>{{ settings.review-1-author }}</footer>{% endif %}
+                            </blockquote>
+                            {% endif %}
+                            {% if settings.review-2-text != empty %}
+                            <blockquote>
+                                <figure>{{ 'review-2.jpg' | asset_url | img_tag }}</figure>
+                                <p>{{ settings.review-2-text }}</p>
+                                {% if settings.review-2-author != empty %}<footer>{{ settings.review-2-author }}</footer>{% endif %}
+                            </blockquote>
+                            {% endif %}
+                            {% if settings.review-3-text != empty %}
+                            <blockquote>
+                                <figure>{{ 'review-3.jpg' | asset_url | img_tag }}</figure>
+                                <p>{{ settings.review-3-text }}</p>
+                                {% if settings.review-3-author != empty %}<footer>{{ settings.review-3-author }}</footer>{% endif %}
+                            </blockquote>
+                            {% endif %}
+                            {% if settings.review-4-text != empty %}
+                            <blockquote>
+                                <figure>{{ 'review-4.jpg' | asset_url | img_tag }}</figure>
+                                <p>{{ settings.review-4-text }}</p>
+                                {% if settings.review-4-author != empty %}<footer>{{ settings.review-4-author }}</footer>{% endif %}
+                            </blockquote>
+                            {% endif %}
+                            {% if settings.review-5-text != empty %}
+                            <blockquote>
+                                <figure>{{ 'review-5.jpg' | asset_url | img_tag }}</figure>
+                                <p>{{ settings.review-5-text }}</p>
+                                {% if settings.review-5-author != empty %}<footer>{{ settings.review-5-author }}</footer>{% endif %}
+                            </blockquote>
+                            {% endif %}
+                            {% if settings.review-6-text != empty %}
+                            <blockquote>
+                                <figure>{{ 'review-6.jpg' | asset_url | img_tag }}</figure>
+                                <p>{{ settings.review-6-text }}</p>
+                                {% if settings.review-6-author != empty %}<footer>{{ settings.review-6-author }}</footer>{% endif %}
+                            </blockquote>
+                            {% endif %}
+                          </div>
+                          <div class="dots reviews-04"></div>
+                          {% if settings.display_review_button and settings.review_page != empty %}<a href="{{ pages[settings.review_page].url }}" class="button button-xs white-blue">See More</a>{% endif %}
+                        </div>
+                        {% else %}
+                        <div class="magazines product-reviews">
+                          <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="10000" data-cycle-slides="> blockquote" data-cycle-pager=".reviews-01" data-delay="1000">
+                              {% if settings.press-1-text != empty %}
+                              <blockquote>
+                                  <figure>{{ 'press-1.jpg' | asset_url | img_tag }}</figure>
+                                  <p>{{ settings.press-1-text }}</p>
+                                  {% if settings.press-1-author != empty %}<footer>{{ settings.press-1-author }}</footer>{% endif %}
+                              </blockquote>
+                              {% endif %}
+                              {% if settings.press-2-text != empty %}
+                              <blockquote>
+                                  <figure>{{ 'press-2.jpg' | asset_url | img_tag }}</figure>
+                                  <p>{{ settings.press-2-text }}</p>
+                                  {% if settings.press-2-author != empty %}<footer>{{ settings.press-2-author }}</footer>{% endif %}
+                              </blockquote>
+                              {% endif %}
+                              {% if settings.press-3-text != empty %}
+                              <blockquote>
+                                  <figure>{{ 'press-3.jpg' | asset_url | img_tag }}</figure>
+                                  <p>{{ settings.press-3-text }}</p>
+                                  {% if settings.press-3-author != empty %}<footer>{{ settings.press-3-author }}</footer>{% endif %}
+                              </blockquote>
+                              {% endif %}
+                              {% if settings.press-4-text != empty %}
+                              <blockquote>
+                                  <figure>{{ 'press-4.jpg' | asset_url | img_tag }}</figure>
+                                  <p>{{ settings.press-4-text }}</p>
+                                  {% if settings.press-4-author != empty %}<footer>{{ settings.press-4-author }}</footer>{% endif %}
+                              </blockquote>
+                              {% endif %}
+                              {% if settings.press-5-text != empty %}
+                              <blockquote>
+                                  <figure>{{ 'press-5.jpg' | asset_url | img_tag }}</figure>
+                                  <p>{{ settings.press-5-text }}</p>
+                                  {% if settings.press-5-author != empty %}<footer>{{ settings.press-5-author }}</footer>{% endif %}
+                              </blockquote>
+                              {% endif %}
+                          </div>
+                        </div>
+                        <div class="dots reviews-01"></div>
+                        {% if settings.display_press_button and settings.press_page != empty %}<a href="{{ pages[settings.press_page].url }}" class="button button-xs white-blue">See More</a>{% endif %}
+                        {% endif %}
+                    </div>
+                  <div class="half">
+                      {% include 'quick-order' %}
+                  </div>
+              </div>
+          </div>
+      </section>

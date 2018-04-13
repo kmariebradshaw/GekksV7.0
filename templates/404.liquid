@@ -1,0 +1,19 @@
+    <main id="page">	     
+	    <section class="content">
+    	    <div class="wrap">
+        	    <header>
+        	        <h1>Page Not Found</h1>
+        	    </header>
+        	    <div>
+        	        <p>We're sorry, but the page you are looking for could not be found.</p>
+        	        <p><a href="javascript:void(0)" onclick="window.history.back();return false;">Go back</a>, or search the website below.</p>
+        	        <div id="search-form">
+            	        <form action="/search" class="clearfix">
+                            <input type="text" name="q" placeholder="Find products" value="{{ search.terms }}">
+                            <input type="submit" value="Go">
+                        </form>
+                    </div>
+        	    </div>
+    	    </div>
+	    </section>
+    </main>

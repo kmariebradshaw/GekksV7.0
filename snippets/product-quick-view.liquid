@@ -1,0 +1,30 @@
+<div class="table-cell">
+  <div class="product">
+    <div class="table">
+      <div class="table-cell img top">
+        <div class="img-outer">
+          <img src="{{ product.featured_image | product_img_url: 'large' }}" class="product-image-img product-photo" alt="{{ product.featured_image.alt | escape }}" onload="imgLoaded(this)"/>
+        </div>
+      </div>
+      <div class="table-cell top">
+        <article class="product-information">
+          {% include 'product-add-to-cart' %}
+          <aside>
+              <h4 class="theme">Description</h4>
+          </aside>
+          <div class="desc">
+              {{ product.description | strip_html | truncatewords: 30, '...' }}
+          </div>
+          <div class="hr"></div>
+          <p>
+              <a href="{{ product.url }}" class="more">View Full Details &rarr;</a>
+          </p>
+        </article>
+      </div>
+    </div>
+    
+    <a class="prev close" data-modal="Product{% unless forloop.index0 == 0 %}{{ forloop.index0 | minus: 1 }}{% else %}{{ collection.products.size | minus: 1 }}{% endunless %}" href="javascript:void(0)">&lt;</a>
+    <a class="next close" data-modal="Product{% unless forloop.index == collection.products.size %}{{ forloop.index }}{% else %}0{% endunless %}" href="javascript:void(0)">&gt;</a>
+    <span class="close"></span>
+  </div>
+</div>

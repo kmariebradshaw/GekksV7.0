@@ -1,0 +1,804 @@
+<style>
+
+#tongue-fasten, #moisture-wick, #no-show { box-shadow: 5px 5px 5px lightgrey; }
+
+#heel-fasten, #odor-killing {    box-shadow: 5px 0px 5px lightgrey; }
+#int-wrapper, #int-wrapper-do {
+  margin: 0 auto;
+  text-align: center;
+  background: url("{{'sneaker-neon.png' | asset_url}}");
+      background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.text-solution {
+   position: relative;
+    text-align: center;
+    padding: 10px 5px;
+    display: inline-block;
+    height: auto;
+    line-height: normal;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+#int-wrapper div p  {
+    display: inline-block;
+}
+
+#int-wrapper .text-solution p {
+  line-height: normal;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width:589px) {
+.label-vis:after, .up-label-vis:after {
+    left: calc(50% - 10px);
+    top: 70px;
+}
+#int-wrapper-do { display: none; }
+
+#no-show {
+  margin-top: 55px;
+}
+
+#tongue-fasten {
+  left: -64px;
+    top: 79px;
+   }
+
+   #moisture-wick {
+    right: -30px;
+    top: 79px;
+   }
+
+   #odor-killing {
+/*    top: -230px;
+*/    left: -85px;
+/*    margin-top: -267px;
+*/
+bottom: 102px;}
+  #heel-fasten {
+    left: 10px;
+    bottom: 101px;
+}
+
+.slb:before { margin-top: 20px; }
+
+.info-label {width: 300px;}
+
+body .text-solution-below:before { margin-top: -55px; }
+
+body .card-photo {
+    height: 75px;
+    width: 75px;
+  }
+
+ .text-solution:before {
+    top: 25px;
+    width: 20px;
+    height:20px;
+    line-height: 20px;
+    font-size: 16pt;
+}
+
+body .up-label-vis:after {
+  top: -56px;
+}
+
+  .text-solution {
+    font-size: 8pt;
+    width: 66px;
+}
+#int-wrapper {
+    width: 320px;
+    height: 285px;
+    margin-top: 50px;
+}
+
+  #int-wrapper .plus-more p {
+    line-height: 20px;
+    font-size: 29px;
+}
+
+#tb-one {
+    top: 40px;
+    left: -18px;
+}
+
+#tb-two {
+    top: 30px;
+    right: 21px;
+}
+ 
+ #tb-five {
+    top: 144px;
+    right: 25px;
+}
+
+ #tb-three {
+    top: 87px;
+    left: 60px;
+}
+
+ #tb-four {
+    top: 195px;
+    right: 230px;
+}
+ #atf-word{
+  font-size: 20pt;
+ }
+ }
+
+ #atf-word{
+  text-align: center;
+ }
+ .text-solution:before {
+  margin-top: 20px;
+    background-color: #33ffcc;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: white;
+    content: "+";
+    display: block;
+    font-weight: 300;
+    left: calc(50% - 10px);
+    position: absolute;
+    cursor: pointer;
+        transition: -webkit-transform .1s;
+    transition: transform .1s;
+    transition: transform .1s,-webkit-transform .1s;
+}
+
+.label-vis:before, .up-label-vis:before {
+      transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    -ms-transform: translateY(45deg);
+-webkit-transform: translateY(45deg);
+-moz-transform: translateY(45deg);
+-o-transform: translateY(45deg);
+transform: translateY(45deg);
+}
+
+.info-label {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: white;
+    padding: 20px;
+    text-align: left;
+}
+ 
+b { font-weight: 700; }
+
+.label-vis:after, .up-label-vis:after {
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    z-index: 5;
+}
+
+body .up-label-vis:after {
+  transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+    -ms-transform: translateY(180deg);
+-webkit-transform: translateY(180deg);
+-moz-transform: translateY(180deg);
+-o-transform: translateY(180deg);
+transform: translateY(180deg);
+}
+
+.card-photo {
+    border-radius: 50%;
+    border: 2px solid #33ffcc;
+/*    max-height: 50%;
+*/    max-width: 50%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+.card-text {
+    margin-top: 5px;
+    max-width: 63%;
+    display: inline-block;
+    margin-left: 5%;
+    float: right;
+    font-weight: lighter;
+}
+
+
+@media only screen and (min-width: 589px) and (max-width: 799px) {
+#tongue-fasten {
+    left: -80px;
+    top: 139px;
+}
+
+#no-show {
+    top: 139px;
+    left: 55px;
+}
+
+#moisture-wick {
+    right: -30px;
+    top: 139px;
+}
+
+#odor-killing {
+    left: -165px;
+    bottom: 157px;
+}
+
+#heel-fasten {
+    left: 10px;
+    bottom: 156px;
+}
+
+.slb:before { margin-top: 45px; }
+
+.card-photo {
+    height: 130px;
+    width: 130px;
+  }
+
+  #int-wrapper {
+    width: 590px;
+    height: 450px;
+}
+
+.text-solution {
+    font-size: 16pt;
+    width: 160px;
+}
+
+  #int-wrapper .plus-more p {
+    line-height: 20px;
+    font-size: 29px;
+}
+
+#tb-one {
+    top: 70px;
+    left: -70px;
+}
+
+#tb-two {
+    top: 15px;
+    right: 85px;
+}
+
+#tb-five {
+    top: 250px;
+    right: 120px;
+}
+ #tb-three  {
+    top: 130px;
+    left: -10px;
+}
+
+#tb-four {
+    top: 255px;
+    right: 140px;
+}
+ #atf-word{ 
+  font-size: 30pt;
+  margin-top: 5%;
+ }
+ .text-solution:before {
+    top: 50px;
+        width: 30px;
+    height:30px;
+    line-height: 30px;
+    font-size: 30pt;
+}
+
+body .text-solution-below:before { margin-top: -115px; }
+
+.info-label {width: 500px;}
+
+.label-vis:after, .up-label-vis:after {
+    left: calc(50% - 5px);
+    top: 130px;
+}
+
+body .up-label-vis:after {
+  top: -85px;
+}
+
+#int-wrapper-do { display: none; }
+
+}
+
+@media only screen and (min-width: 800px) {
+  #int-wrapper { display: none; }
+  #int-wrapper-do .do-text{ 
+    display: inline-block;
+    border-left: 2px solid lightgray;
+      max-width: 25%;
+      text-align: left;
+      padding-left: 15px;
+      position: relative;
+  }
+
+  body #int-wrapper-do .do-text-below { border-left: none; }
+
+  body #int-wrapper-do .do-text-below .b-title, body #int-wrapper-do .do-text-below .do-explain { border-left: 2px solid lightgray; padding-left: 10px; }
+
+  body .do-text-below .do-benefit { padding-left: 10px;     margin-top: 0;}
+  #int-wrapper-do { height: 800px; width: 800px; margin-top: 3%; margin-bottom: 10%;}
+
+  .do-explain, .do-benefit { 
+    font-weight: lighter;
+    margin-top: 10px;
+    line-height: normal;
+    font-size: 11pt;
+} 
+  .b-title { font-size: 14pt; line-height: normal; }
+  .do-benefit b { font-weight: normal; }
+
+  .border-left { border-left: 2px solid lightgray;}
+  #do-no-show {
+    left: -5px;
+    top: 56px;
+    height: 275px;
+}
+
+  #do-tongue-fasten {
+    left: 30px;
+    height: 250px;
+    top: 41px;
+}
+
+  #do-moisture-wick {
+    right: -75px;
+    height: 250px;
+    top: 117px;
+}
+
+.invis {     visibility: hidden;
+ }
+
+  #do-odor-killing {
+    top: 184px;
+    right: 33px;
+}
+
+body .do-text-below .do-benefit-hide  {
+    padding-left: 10px;
+    background: transparent;
+    border-left: 2px solid lightgray;
+    border-radius: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.do-text div, .do-plus {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #33ffcc;
+    font-size: 17pt;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+}  
+
+body .do-plus { margin-top: 0; }
+#do-odor-killing .b-title { padding-top: 100px; }
+  
+  #do-heel-fasten {
+    left: -125px;
+    top: 158px;
+}
+
+#do-moisture-wick {
+    right: -69px;
+    height: 250px;
+    top: 117px;
+}
+
+#do-odor-killing {
+    top: 188px;
+    right: 33px;
+}
+
+.rotate { 
+   transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: translateY(45deg);
+-webkit-transform: translateY(45deg);
+-moz-transform: translateY(45deg);
+-o-transform: translateY(45deg);
+transform: translateY(45deg);
+ }
+
+#do-heel-fasten .b-title { padding-top: 100px; }
+
+#do-heel-fasten .do-explain, #do-odor-killing .do-explain { margin-top: 0; padding-top: 10px; }
+
+}
+
+@media only screen and (min-width: 1000px){
+  #do-heel-fasten .b-title {
+    border-top: 2px solid lightgray;
+    width: 90px;
+    white-space: nowrap;
+  }
+
+  #do-tongue-fasten {
+    left: 30px;
+    height: 250px;
+    top: 24px;
+}
+
+#do-heel-fasten {
+    left: -243px;
+    top: 137px;
+}
+
+#do-no-show {
+    left: -202px;
+    top: 63px;
+    height: 275px;
+    border-bottom: 2px solid lightgray;
+}
+#atf-word {
+    font-size: 54pt;
+    margin-top: 3%;
+}
+
+#do-moisture-wick {
+    border-left: none !important;
+    border-right: 2px solid lightgray;
+    padding-right: 10px;
+    border-bottom: 2px solid lightgray;
+}
+
+.b-title { white-space: nowrap; }
+}
+
+td, th { vertical-align: middle; text-align: center;}
+
+.table-title { font-weight: bolder; }
+td { font-weight: lighter;  }
+@media only screen and (min-width: 1081px) {
+  table td, table th{ font-size: 20pt !important; }
+}
+
+@media only screen and (max-width: 1080px) and (min-width: 925px) {
+  body table tbody td, body table tbody th{ padding: 15px 10px !important; font-size: 16pt !important; }
+}
+@media only screen and (min-width: 589px) and (max-width: 924px) {
+  body table tbody td, body table tbody th{ padding: 5px !important; font-size: 11pt !important; }
+}
+@media only screen and (max-width: 588px) {
+  body table tbody td, body table tbody th{ padding: 5px !important; font-size: 10pt !important; }
+}
+
+.lg { background-color: #f2f2f2 !important; }
+.dg, .table-title { background-color: #d8d8d8; }
+
+th { padding: 20px 10px !important; border: 1px solid white !important;}
+
+table tbody td {
+    border: 1px solid white !important;
+}
+
+.hiw-bullets li:nth-of-type(1):before{ content: "1"; }
+.hiw-bullets li:nth-of-type(2):before{ content: "2"; }
+.hiw-bullets li:nth-of-type(3):before{ content: "3"; }
+.hiw-bullets li:nth-of-type(4):before{ content: "4"; }
+
+.hiw-bullets li:before{
+  vertical-align: top;
+  line-height: inherit;
+  float: left;
+  color: #33ffcc;
+  font-weight: 700;
+}
+
+.hiw-bullets {
+    color: white;
+    font-weight: lighter;
+    letter-spacing: normal;
+    line-height: 1;
+    display: inline-block;
+}
+
+.hiw-bullets li {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 588px) {
+ .hiw-bullets li {
+    width: 67%;
+    max-width: 200px;
+    margin: 10px 23%;
+}
+  .hiw-bullets li:before {
+    font-size: 55pt;
+    margin-top: -18px;
+    margin-right: 25px;
+  }
+  .hiw-bullets {
+    font-size: 9pt;
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (min-width: 589px) and (max-width: 1080px) {
+  .hiw-bullets {
+    font-size: 11pt;
+    margin: 50px auto;
+  }
+  .hiw-bullets li {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+  .hiw-bullets li:before {
+    font-size: 50pt;
+    margin-top: -14px;
+    margin-right: 10px;
+  }
+}
+@media only screen and (min-width: 1081px) {
+  .hiw-bullets li:before{
+    font-size: 93pt;
+    margin-top: -23px;
+    margin-right: 25px;
+  }
+  .hiw-bullets {
+    font-size: 20pt;
+    margin: 50px auto;
+  }
+  .hiw-bullets li {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+}
+</style>
+
+<main>
+<!--  Video  -->
+  <h1 id="hiw-title"> Gekks, explained. </h1> 
+  {% if settings.homepage_video_embedded %}
+  <div class='embed-container' style="width: 80%; margin: 0 auto;">
+    <iframe src='https://www.youtube.com/embed/8X0_PWUFKRQ?color=5acbff&title=0&byline=0&portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen'></iframe>
+  </div>
+  {% endif %}
+   
+  <div id="gekks-in-action">
+    <div class="gifslide"><span class="gif-hiw" onClick="ga('send', 'event', 'Expand', 'Click', 'Gif-Banner Shown');">Expand to See Gekks in Action</span>
+
+    </div>
+    <div class="gif-content">
+      <img src="{{ 'Timelinefinal1.gif' | asset_url }}", id="gif-banner" class="tw"/>
+    </div>
+  </div>
+ 
+ <div class="gifslide" style="display: none;text-align:center;"><span class="gif-hiw">Minimize Video</span></div>
+ <div class="text-half-wrapper">
+  <div class="text-half" style="margin-right: 5%;">
+    <h3>Socks are no bueno.</h3>
+    <p>Socks pose all sorts of problems. You're constantly adjusting no show socks from sliding down your heel, 
+       and they still show. Unless your sock drawer is perfectly organized (and if you say it is, you're lying) it's almost impossible 
+      to find two of a kind. With Gekks, you'll never need to look for no show socks again.</p>
+  </div>
+  <div class="text-half" style="margin-left: 5%;">
+    <h3>No socks are no bueno.</h3>
+    <p>Not only do your feet smell, but your shoes smell too, not to mention the blisters you get without socks. If this wasn’t enough, walking boldly into the world without socks jeopardizes the freshness and life of your shoe. Luckily for you, a pair of Gekks can solve all these problems. </p>
+  </div>
+ </div>
+  
+  <div id="banner-attn">
+    <h1>we solved your sock issues.</h1>
+    <h4>it's pretty simple...</h4>
+  </div>
+  <div id="int-wrapper-do">
+  <div class="do-text" id="do-no-show">
+    <p class="b-title"><b>No-show, really</b></p>
+    <p class="do-explain">Gekks line the interior heel, sole, and tongue of your shoe providing a complete no-show solution.</p>
+    <div onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div>
+    <p class="do-benefit invis"><b>Benefit:</b> Don’t embarrass yourself with no-shows that…show.</p>
+  </div>
+  <div class="do-text" id="do-tongue-fasten">
+    <p class="b-title"><b>Patented fastening system</b></p>
+    <p class="do-explain">Micro-thin fastener connects the sock to the inside of your shoe.</p>
+    <div onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div>
+    <p class="do-benefit invis"><b>Benefit:</b> Installation to your shoe allows you to slip in and out barefoot on the go.</p>
+  </div>
+  <div class="do-text" id="do-moisture-wick">
+    <p class="b-title"><b>Moisture wicking</b></p>
+    <p class="do-explain">Our moisture wicking fibers work to pull the moisture out of your foot for a dry feel.</p>
+    <div onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div>
+    <p class="do-benefit invis""><b>Benefit:</b> Stay cool and fresh all day.</p>
+  </div>
+  <div class="do-text do-text-below" id="do-heel-fasten">
+    <p class="b-title"><b>Patented fastening system</b></p>
+    <p class="do-explain">Micro-thin fastener connects the sock to the inside of your shoe.</p>
+    <section class="do-benefit-hide"><div class="do-plus" onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div></section>
+    <p class="do-benefit invis" ><b>Benefit:</b> Stop using regular no-shows that slide down your ankle, bunch up, and don’t protect against blisters.</p>
+  </div>
+  <div class="do-text do-text-below" id="do-odor-killing">
+    <p class="b-title"><b>Odor killing yarn</b></p>
+    <p class="do-explain">Gekks are knit with high-tech silver anti-microbial yarn used by NASA to eliminate odor as you sweat.</p>
+    <section class="do-benefit-hide"><div class="do-plus" onClick="ga('send', 'event', 'Above the Fold', 'Desktop', 'Benefit');">+</div></section>
+    <p class="do-benefit invis"><b>Benefit:</b> Leave Gekks inside your shoes for weeks without washing, without them getting dirty.</p>
+  </div>
+</div>
+<div id="int-wrapper">
+  <div class="text-solution" id="tb-one" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
+    <div><p>no-show</p></div>
+    <div class="info-label" id="no-show">
+      <img src="{{'no-show.png' | asset_url}}" class="card-photo" />
+      <div class="card-text">Gekks line the interior heel, sole, and tongue of your shoe providing a no-show solution.<br><br><b>benefit:</b> go sockless with confidence and style.  don’t embarrass yourself with no-shows that... show.</div>
+    </div>
+  </div>
+  <div class="text-solution slb" id="tb-two" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
+    <div><p>fastening<br>system</p></div>
+   <div class="info-label" id="tongue-fasten">
+      <img src="{{'front-tongue2.png' | asset_url}}" class="card-photo" />
+      <div class="card-text">micro-thin fastener connects the sock to the inside of your shoe.<br><br>
+      <b>benefit:</b> installed into your shoes vs. placed on your foot, providing the convenience of slipping in and out barefoot on the go.</div>
+    </div>
+   </div>
+  <div class="text-solution slb" id="tb-three" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
+    <div><p>moisture <br>wicking</p></div>
+    <div class="info-label" id="moisture-wick">
+      <img src="{{'moisture-wicking.png' | asset_url}}" class="card-photo" />
+      <div class="card-text">knit with highly technical moisture wicking yarn.<br><br>
+      <b>benefit:</b> stay cool, comfortable and fresh on a long day.</div>
+      </div>  
+   </div>
+  <div class="text-solution text-solution-below slb" id="tb-four" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
+    <div><p>fastening<br>system</p></div>
+    <div class="info-label" id="heel-fasten">
+      <img src="{{'backheel3.png' | asset_url}}" class="card-photo" />
+      <div class="card-text">micro-thin fastener connects the sock to the inside of your shoe.<br><br>
+      <b>benefit:</b> stop using regular no-shows that slide down your ankle, bunch up and don’t protect against blisters.</div> 
+    </div>  
+   </div>
+  <div class="text-solution text-solution-below slb" id="tb-five" onClick="ga('send', 'event', 'Above the Fold', 'Mobile', 'Plus');">
+    <div><p>odor <br>killing</p></div>
+    <div class="info-label" id="odor-killing">
+      <img src="{{'odor-killing.png' | asset_url}}" class="card-photo" />
+      <div class="card-text">Gekks are knit with high-tech silver anti-microbial yarn used by NASA and the military to eliminate odor as you sweat.<br><br>
+      <b>benefit:</b> leave Gekks inside your shoes for weeks without washing. they’re cleaner than wearing socks or going barefoot!</div>
+      </div>  
+   </div>
+</div>
+<script>
+$('.text-solution').click(function(){
+  var $this = $(this)
+  $this.siblings().removeClass('up-label-vis').removeClass('label-vis').children('.info-label').hide();
+  if ($this.hasClass('text-solution-below')) {
+    $this.toggleClass('up-label-vis');
+  } 
+  else {
+   $this.toggleClass('label-vis');
+  }
+  $this.children('.info-label').toggle(); 
+});
+
+$('.do-text div').click(function(){
+  if ($(this).parent().parent().hasClass('do-text-below')) {
+    $(this).parent().siblings('.do-benefit').toggleClass('border-left');
+      $(this).toggleClass('rotate');
+       $(this).parent().siblings('.do-benefit').toggleClass('invis');
+
+
+  } 
+  else {
+    $(this).toggleClass('rotate');
+    $(this).siblings('.do-benefit').toggleClass('invis');
+  }
+});
+
+$(document).ready(function() {
+  if (window.width < 800) {
+$('body').on('click touchend', function(e) {
+    var target = $(e.target);
+    if(!target.is('.text-solution') ){
+       if ( $('.info-label').is(':visible') ) {
+        $('.info-label').hide(); 
+        $('.text-solution').removeClass('label-vis');
+        $('.text-solution-below').removeClass('up-label-vis');
+    }
+  }
+});
+}
+  });
+</script>
+ <div id="infographic-hiw" class="darkgray">
+   <h1>here's how it works...</h1>
+   <ul class="hiw-bullets">
+    <li>Peel backing of Gekks in numbered sequence to expose adhesive.</li>
+    <li>Place Gekks in shoe. Apply pressure for 5 - 10 seconds while massaging adhesive into shoe.</li>
+    <li>Refresh your Gekks by washing them, or rubbing hand sanitizer on the adhesive surface.</li>
+    <li>If your adhesive's nine lives are over, peel tabs back for a fresh layer!</li>
+   </ul>
+  </div>
+ 
+  <div id="size-order">
+    <div id="order"> 
+      <h1>Ready to Order?</h1>	
+      <a href="/collections/men/products/mens-closet-pack" class="button double">Shop Men</a><br>
+      <a href="/collections/women/products/womens-closet-pack" class="button double">Shop Women</a><br>
+    </div>
+  
+
+<div id="size">
+  <table>
+    <tr>
+      <th colspan="2" class="blank-row"></th>
+      <th class="t-size table-title">small</th>
+      <th class="t-size table-title">medium</th>
+      <th class="t-size table-title">large</th>
+    </tr>
+    <tr class="lg">
+      <td rowspan="2" class="table-title">mens</td>
+      <td class="table-title lg">US</td>
+      <td>6.5 - 8</td>
+      <td>8.5 - 11</td>
+      <td>11.5+</td>
+    </tr>
+    <tr class="dg">
+      <td class="table-title">UK</td>
+      <td>39 - 41</td>
+      <td>42 - 44</td>
+      <td> 44+ </td>
+    </tr>
+    <tr class="lg">
+      <td rowspan="2" class="table-title">womens</td>
+      <td class="table-title lg">US</td>
+      <td>5 - 6.5</td>
+      <td>7 - 8.5</td>
+      <td>9 - 11.5</td>
+    </tr>
+    <tr class="dg">
+      <td class="table-title">UK</td>
+      <td>35 - 37</td>
+      <td>38 - 39</td>
+      <td>40 - 42</td>
+    </tr>
+  </table>
+</div>
+
+  </div>
+</main>
+
+  <script>
+$(function() {
+    var $gifSlide = $('.gifslide'),
+        $loadGif = $('.embed-container'),
+        $gifContent = $('.gif-content');
+
+    $gifSlide.off('click').on('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $('.gifslide').toggle();
+
+        $loadGif.slideToggle(500);
+        $gifContent.slideToggle(500);
+    });
+});
+  </script>

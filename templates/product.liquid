@@ -1,0 +1,373 @@
+{% assign current_id = product.id %}
+
+<style>
+    #thumbs::-webkit-scrollbar { 
+    display: none !important;
+  }
+</style>
+
+<main id="product" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
+  <div style="position:absolute;left:-9999px;" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+    <span itemprop="itemReviewed">{{ product.title | escape }}</span>
+    has a rating of <span itemprop="ratingValue">{{ product.metafields.orankl.rating }}</span> stars
+    based on <span itemprop="ratingCount">{{ product.metafields.orankl.review_count }}</span> reviews.
+  </div>
+  <section id="quick-order" class="split content">
+       {% unless product.title == "Gift Cards" or product.title == "Select" %}
+        <ul style="height: 30px; background: #33ffcc;min-width:310px; margin-top: -7px;" class="sub-nav">
+          <center>
+            {% capture product_collection_url %}{{ product.url | within: collection }}{% endcapture %}
+            {% for collection in product.collections %}
+              {% if collection.title == "Women"%}
+                {% for link in linklists.product-sub-nav1.links %}
+                  {% unless link.url == product_collection_url %}
+                    <li style="display: inline;"><a href="{{ link.url }}" id="sub-nav" onclick="ga('send', 'event', 'Product', 'Click', 'Green Sub Nav');">{{ link.title | escape }}</a></li> 
+                  {% endunless %}
+                {% endfor %}
+              {% elsif collection.title == "Men" %}
+                {% for link in linklists.product-sub-nav1-men.links %}
+                  {% unless link.url == product_collection_url%}
+                    <li style="display: inline;"><a href="{{ link.url }}" id="sub-nav" onclick="ga('send', 'event', 'Product', 'Click', 'Green Sub Nav');">{{ link.title | escape }}</a></li>
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </center>
+        </ul>
+        {% endunless %}
+        <div class="wrap">
+      <div class="clearfix">       
+        <div class="mo">
+          {% unless product.title == "Select" or product.title =="Gift Cards"%}
+         	{% if product.type == "Closet Pack" %} 
+          			<h2 class="product-title small-title">
+          		Closet Pack</h2>
+                {% if  product.collections.first.title == "Men" %}
+                  <h2 class="pair-count-title">(2 pairs)</h2>
+                {% elsif  product.collections.first.title == "Women" %}
+                  <h2 class="pair-count-title">(3 pairs)</h2>
+                {% endif %}
+          	{% else %}
+          		<h2 class="product-title small-title">{{ product.title }}</h2>
+          	{% endif %}
+          {% endunless %}
+          {%if product.title =="Gift Cards" %}
+          <h2 class="product-title small-title">{{product.title}}</h2>
+          {% endif %}
+
+
+
+          {% unless product.title == "Select" or product.title == "Gift Cards" %} 
+       <div style="display:block;text-align:left;">
+                      <div class="prodrating">
+          {% if product.title == "Ballet Flats" or product.type == "Closet Pack"%}
+            <span class="pf">
+          {% else %}
+          	<span>
+              {% endif%}
+              ☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+              </div>
+
+                        <div id="orankl-summary-thumbnail" style="display:inline-block">
+                          <div class="orankl-summary" data-product-key="{{ product.id }}" style="text-align:left;padding-bottom:0px">
+                            <style scoped>
+                              #orankl-summary-thumbnail .orankl-summary span { display: inline-block; text-transform: lowercase !important; font-weight: 300 !important;font-size:9pt;margin-left:0 !important;cursor:auto!important; }
+                              #orankl-summary-thumbnail .orankl-summary .icon-orankl-star { display: none !important; font-size: 22px !important; width: 26px !important; }
+                            </style>
+                          </div>
+                        </div>
+                 
+                    
+         	</div>
+
+         {% endunless %}
+         {% unless product.title == "Gift Cards" %}
+          {% if product.type == "Closet Pack" %} 
+          <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}" style="font-size:10pt; margin-top: -80px !important;">
+         {% else %}
+          <div class="price{% if product.price < product.compare_at_price_max %} sale{% endif %}" itemprop="price" content="{{ product.compare_at_price | money_without_currency }}" style="font-size:10pt;">
+        {% endif %}
+           <span id="product-price-{{ product.id }}">{{ product.price | money }}</span>
+           {% if product.price < product.compare_at_price_max and product.type == "Closet Pack" %}<span id="compare-price-{{ product.id }}" style="font-size:10pt;">{{ product.compare_at_price | money }}</span>{% endif %}
+         </div> 
+         {% endunless %} 
+          {% if product.description and product.type == "Closet Pack" %}
+                 {% if product.collections.first.title == "Men" %} 
+                      	<p class="mo" style="line-height: normal; height: 20px;">
+                       {% else %}
+                         <p class="mo" style="line-height:normal; height: 20px;">
+                        {% endif %}
+                  {{product.description }}</p>
+                  {% endif %}  
+		</div>
+        {% if product.title == "Select" %} 
+        <div class="half selectpp" style="width:60%">
+        {% else %}
+        <div class="half" style="width: 60%;">
+        {% endif %}   
+          <div id="gallery">
+            <div id="panel">
+              <img class="product-image-img largeImage" src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.title }}" style="margin-top: 20px;" />
+            </div> 
+            {% if product.title == "Gift Cards" %}
+            <div style="width: 100%; height: 20px;"></div>
+            {% else %}
+            <div id="thumb-container">
+              <img src="{{'arrow.png' | asset_url }}" id="left" class="scroll left" style="float: left; max-width: 20px; z-index: 999;"/>
+              <div id="thumbs" style="overflow: auto; white-space: nowrap;">
+                {% if product.title == "Ballet Flats" %} 
+                 {% for image in product.images limit:6 %}
+                <img src="{{ image | product_img_url: 'compact' }}" id="thumb-content"/>
+                {% endfor %}
+                {% elsif product.title == "Women's Closet Pack" %} 
+                  {% for image in product.images limit:10 %}
+                  	<img src="{{ image | product_img_url: 'compact' }}" id="thumb-content"/>
+                  {% endfor %}
+                  {% for image in product.images limit:3 offset:13 %}
+                  	<img src="{{ image | product_img_url: 'compact' }}" id="thumb-content"/>
+                  {% endfor %}
+                {% else %} 
+                {% for image in product.images limit:8 %}
+                <img src="{{ image | product_img_url: 'compact' }}" id="thumb-content"/>
+                {% endfor %}
+                {% endif %} 
+              </div>
+              <img src="{{'arrow.png' | asset_url }}" id="right" class="scroll right" style="-webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);-o-transform: rotate(180deg);-ms-transform: rotate(180deg);transform: rotate(180deg); float: right; max-width: 20px; z-index: 999;"/>
+            </div>
+            {% endif %}
+          </div>
+          <script type = "text/javascript"> 
+            $("#thumbs img").on("click mouseover", function() {
+              $(".largeImage").attr("src", $(this).attr("src").replace("compact", "large"))
+            });
+            
+            
+            $('.scroll').on("click", function() { 
+              var wrapper = $('#thumbs') 
+              if ($(this).hasClass('right')) { 
+                $(wrapper).animate( { scrollLeft: '+=200' });
+              }
+              else {
+                $(wrapper).animate({scrollLeft: '-=200'});  
+              }
+            }); 
+          </script>
+          
+          
+
+
+          {% unless product.title == "Gift Cards" or product.title == "Select"%}
+          <div id="also-shop">
+            <center>
+              <h4 id="also">also shop</h4>
+              <div style="width: 100%; margin: 0 auto;">
+                {% for collection in product.collections %}
+                {% for product in collection.products %}
+                {% unless product.title == "Select" or product.title == "Gift Cards"%}
+                {% if product.title == "Women's Closet Pack" %}
+                {% if product.id !=  current_id %}
+                <div class="fake-buttons closet-pack">
+                  <a href="{{ product.url | within: collection }}" title='{{product}}'> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'large' }}" class="select-icons-cp" />
+                    {% endfor%}
+                    <h4>{{ product.title }}</h4>
+                  </a>
+                </div><br>
+                {% endif %}
+
+                {% elsif product.title == "Men's Closet Pack" %}
+                {% if product.id !=  current_id %}
+                <div class="fake-buttons closet-pack-men">
+                  <a href="{{ product.url | within: collection }}"> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'large' }}" class="select-icons-cp-m"/>
+                    {% endfor%}
+                    <h4>{{ product.title }} - $4 off</h4>
+                  </a>
+                </div><br>
+                {% endif %}  
+                {% endif %}
+                {% endunless %}
+                {% endfor %}
+                {% endfor %}
+                 {% for collection in product.collections %}
+                {% for product in collection.products %}
+                {% unless product.title == "Select" or product.title == "Gift Cards" or product.type == "Closet Pack" or product.title == "Extra Gripper Sets" %}
+
+                {% if product.id != current_id %}
+                <div class="fake-buttons">
+                  <a href="{{ product.url | within: collection }}"> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'compact' }}" class="select-icons" />
+                    {% endfor%}
+                    {% if product.title == "Loafers & Slip-Ons" %}
+                      <h4>Loafers & <br>Slip-Ons</h4>
+                    {% else %}
+                      <h4>{{ product.title }}</h4>
+                      {% endif %}
+                  </a>
+                </div>
+                {% endif %}
+                {% endunless %}
+                {% endfor %}
+                {% endfor %}
+              </div>
+            </center>
+          </div>
+          {% endunless %}
+       
+        </div>
+        <div class="half" style="width:30%;">
+          {% if product.title == "Select" %}
+          <center>
+           <div id="select-shop">
+          <h2 class="product-title small-title" style="margin: 0;padding:0;">Select Your</h2>
+          <h1 class="product-title" style="margin: 0;padding:0;">Gekks</h1>
+          <div>
+              <div style="width: 100%; margin: 0 auto; margin-top: 20px;max-width: 290px;">
+                {% for collection in product.collections %}
+                {% for product in collection.products %}
+                {% unless product.title == "Select" or product.title == "Gift Cards"%}
+                {% if product.title == "Women's Closet Pack" %}
+                {% if product.id !=  current_id %}
+                <div class="fake-buttons closet-pack">
+                  <a href="{{ product.url | within: collection }}" title='{{product}}'> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'large' }}" class="select-icons-cp" />
+                    {% endfor%}
+                    <h4>{{ product.title }}</h4>
+                  </a>
+                </div><br>
+                {% endif %}
+
+                {% elsif product.title == "Men's Closet Pack" %}
+                {% if product.id !=  current_id %}
+                <div class="fake-buttons closet-pack-men">
+                  <a href="{{ product.url | within: collection }}"> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'large' }}" class="select-icons-cp-m"/>
+                    {% endfor%}
+                    <h4>{{ product.title }} - $4 off</h4>
+                  </a>
+                </div><br>
+                {% endif %}  
+
+                {% elsif product.id != current_id %}
+                <div class="fake-buttons">
+                  <a href="{{ product.url | within: collection }}"> 
+                    {% for image in product.images offset:10 limit: 1%}
+                    <img src="{{ image | product_img_url: 'compact' }}" class="select-icons" />
+                    {% endfor%}
+                    <h4>{{ product.title }}</h4>
+                  </a>
+                </div>
+                {% endif %}
+                {% endunless %}
+                {% endfor %}
+                {% endfor %}
+              </div>
+          </div>
+            </div>
+          </center>
+          {% endif %}
+          <div class="do">
+          {% unless product.title == "Select" or product.title =="Gift Cards"%}
+          {% if product.collections.first.title == "Women" %}
+          <h2 class="product-title small-title">Women's</h2>
+          {% else %}
+          <h2 class="product-title small-title">Men's</h2>
+          {% endif %}
+          {% if product.type == "Closet Pack"%}
+          <h1 class="product-title">Closet Pack</h1>
+          {% else %}
+          <h1 class="product-title">{{ product.title }}</h1>
+          {% endif %}
+          {% endunless %}
+          {%if product.title =="Gift Cards" %}
+          <h1 class="product-title">{{product.title}}</h1>
+          {% endif %}
+        	{% if product.title == "Women's Closet Pack" %} 
+            <h5 class="pair-count">(3 Pairs)</h5>
+          {% elsif product.title == "Men's Closet Pack" %}
+            <h5 class="pair-count">(2 Pairs)</h5>
+          {% endif %}
+         {% unless product.title == "Select" %} 
+          {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+         {% endunless %}
+          {% unless product.title == "Select" or product.title == "Gift Cards" %} 
+        <div class="prodrating">
+          {% if product.title == "Ballet Flats" or product.type == "Closet Pack" or product.title == "Heels & Wedges" %}
+            <span class="pf">
+          {% else %}
+          	<span>
+           {% endif%}
+          	☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+
+			<div id="orankl-summary-thumbnail" style="display:inline-block">
+              <div class="orankl-summary" data-product-key="{{ product.id }}" style="text-align:left;padding-bottom:0px">
+                <style scoped>
+                  #orankl-summary-thumbnail .orankl-summary span { display: inline-block; text-transform: lowercase !important; font-weight: 300 !important;font-size:9pt;margin-left:0 !important;cursor:auto!important; }
+                  #orankl-summary-thumbnail .orankl-summary .icon-orankl-star { display: none !important; font-size: 22px !important; width: 26px !important; }
+                </style>
+              </div>
+            </div>
+          
+          {% endunless %}
+        </div>
+
+          {% include 'product-add-to-cart' %}
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  $(document).ready(function() {  
+    if ( $(window).width() < 588) {  
+      $('#also-shop').insertAfter('#newsletter').show();
+    }
+  });
+  $(document).ready(function() {
+    $('.price').append("<p style='display:inline-block;font-size:10pt;'>USD</p>");
+//     {% if product.title == "Women's Closet Pack" %}
+//     	$('.price').text('$15.00 / Pair'); 
+//         $('.price').append("<br><p class='closet-pack-sub-price' style='font-size:10pt;'>4 Pairs - Total $60 USD</p>");
+//     {% endif %}
+  });
+</script>
+<script text="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>

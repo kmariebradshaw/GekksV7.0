@@ -1,0 +1,89 @@
+    <main id="page" class="customer">	     
+	    <section class="content">
+    	    {% if customer %}
+    	    <p class="center">Redirecting...</p>
+            <script type="text/javascript">
+            window.location = '/account/'; 
+            </script>
+    	    {% else %}
+    	    <div class="wrap login">
+        	    <header>
+        	        <h1>Customer Login</h1>
+        	        <p>Don't have an account? <a href="/account/register">Sign up here</a>.</p>
+        	    </header>
+        	    <div class="page">
+        	        {% form 'customer_login' %}
+        	            {{ form.errors | default_errors }}
+        	            <p>
+            	            <label for="customer_email">Email Address</label>
+                            <input type="email" value="" name="customer[email]" placeholder="Enter your email">
+        	            </p>
+                        {% if form.password_needed %}
+                        <p>
+                            <label for="customer_password">Password</label>
+                            <input type="password" value="" name="customer[password]" size="16" placeholder="Enter your password">
+                        </p>
+                        <p class="forgot-password">
+                            <a href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a>
+                        </p>
+                        {% endif %}
+                        <input type="submit" value="Sign In">
+                        <div class="foot">
+                            Return to our store by clicking <a href="{{ shop.url }}">here</a>.
+                        </div>
+        	        {% endform %}
+                    {% if shop.checkout.guest_login %}
+                    <div id="guest">
+                        <h2>Guest Login</h2>
+                        <p>Continue checkout as a guest.</p>
+                        {% form 'guest_login' %}
+                            <input type="submit" value="Continue as Guest">
+                        {% endform %}
+                    </div>
+                    {% endif %}
+        	    </div>
+    	    </div>
+    	    
+    	    <div class="wrap recover-password">
+        	    <header>
+        	        <h1>Reset Password</h1>
+        	        <p>We will send you an email to reset your password.</p>
+        	    </header>
+        	    <div class="page">
+        	        {% form 'recover_customer_password' %}
+                        {{ form.errors | default_errors }}
+        	            <p>
+            	            <label for="email">Email</label>
+                            <input type="email" value="" size="30" name="email" placeholder="Enter your email">
+        	            </p>
+                        <input type="submit" value="Submit">
+                        <div class="foot">
+                            Go back to login form by clicking <a href="javascript:void(0)" onclick="hideRecoverPasswordForm()">here</a>.
+                        </div>
+        	        {% endform %}
+        	    </div>
+    	    </div>
+    	    
+    	    <script type="text/javascript">
+              if (window.location.hash == '#recover') { 
+                  showRecoverPasswordForm();
+              } else {
+                  hideRecoverPasswordForm();
+              }
+              function showRecoverPasswordForm() {
+                  $('.recover-password').show();
+                  $('.login').hide();
+                  window.location.hash = '#recover';
+                  return false;
+              }
+              function hideRecoverPasswordForm() {
+                  $('.recover-password').hide();
+                  $('.login').show();
+                  window.location.hash = '';
+                  return false;
+              }
+            </script>
+    	    {% endif%}
+    	    
+	    </section>
+    </main>

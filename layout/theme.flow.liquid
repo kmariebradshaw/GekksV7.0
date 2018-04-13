@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head> 
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="description" content="{{ page_description | escape }}">
+    <meta name="keywords" content="">
+    <meta name="google-site-verification" content="oWg2J4dY3iWAFEik74Rdzx-fCF_-Yde7dCNroVYIIGU">
+    <title>Gekks™ | The Innovative No Show Sock for Flats, Loafers, & Sneakers</title>
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="icon" type="image/png" href="{{ 'Gekks-Favicon.png' | asset_url }}">
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+    <script src="{{'custflow.jquery.js | asset_url}}"></script>
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{  'api.jquery.js' | shopify_asset_url }}" async></script>
+    <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
+    <script type="text/javascript">
+      var global_money_format = '{{ shop.money_format }}';
+    </script>
+    {{ content_for_header }}
+    <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
+  </head>
+  <body>
+  <header class="do-plus">
+      <div class="wrap cbb-ignored-image" style="text-align: center;">
+       <a href="/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
+           <h4 style="margin-top: 10px; letter-spacing: normal;">$5 off & Free Shipping on Women's Closet Packs</h4></a>
+         </span>
+       
+        <a href="/?sh=d">
+          <img src="{{'blogo-q.png' | asset_url}}" alt="Gekks" class="blogo"/>
+        </a>
+        
+        <span class="nav-display desktop"><span>Show Menu</span></span>
+        <div class="{% if settings.mobile_landing_page == 'true' %}desktop{% endif %}" id="top-nav">
+          <nav>
+            <ul>
+              {% for link in linklists.main-menu-uu.links %}
+              {% if link.title == "women" %}
+              <li class="collection"><a href="{{ link.url }}" onClick="ga('send', 'event', 'Nav', 'Click', 'Women');">{{ link.title | escape }}</a></li>
+              <ul class="mobile-nav" style="display: none;">
+                {% for link in linklists.product-sub-nav1.links %}                           
+                <li><a href="{{ link.url }}" onClick="ga('send', 'event', 'SubNav', 'Touch', 'Women-Product');">{{ link.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+              {% elsif link.title == "men" %}
+              <li class="collection-m"><a href="{{ link.url }}" onClick="ga('send', 'event', 'Nav', 'Click', 'Men');">{{ link.title | escape }}</a></li>
+              <ul class="mobile-nav" style="display: none;">
+                {% for link in linklists.product-sub-nav1-men.links %}                           
+                <li><a href="{{ link.url }}" onClick="ga('send', 'event', 'SubNav', 'Touch', 'Men-Product');">{{ link.title | escape }}</a></li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endif%}
+              {% endfor %}  
+              <li id="nav-hiw"><a href="#">how it works</a></li>
+
+              {% if shop.customer_accounts_enabled %}
+              {% if customer %}
+              <li class="mobile"><a href="/account">Your Account</a></li>
+              <li class="mobile">{{ 'Logout' | customer_logout_link }}</li>
+              {% else %}
+              <li class="mobile">{{ 'Login' | customer_login_link }}</li>
+              <li class="mobile">{{ 'Register' | customer_register_link }}</li>
+              {% endif %}
+              {% endif %}
+            </ul>
+          </nav>
+          <div>
+            <div class="search">
+              <span class="search-toggle" role="link">Search</span>
+              <form action="/search" method="get">
+                <input type="submit" value="Search" style="background-color: transparent !important;">
+                <input type="hidden" value="product" name="type">
+                <input type="text" placeholder="search products..." value="{% if search.performed %}{{ search.terms | escape | downcase }}{% endif %}" name="q" id="search-product"> 
+                <span class="close">Close</span>
+              </form>
+            </div>
+            <div class="user-info">
+              {% if shop.customer_accounts_enabled %}
+              <div class="sign-in">
+                <ul>
+                  {% if customer %}
+                  <li><a href="/account/">Your Account</a></li>
+                  <li><a href="/account/addresses/">Addresses</a></li>
+                  <li>{{ 'Logout' | customer_logout_link }}</li>
+                  {% else %}
+                  <li>{{ 'Login' | customer_login_link }}</li>
+                  <li>{{ 'Register' | customer_register_link }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              {% endif %}
+              <a href="/cart/" class="cart"><span>{{ cart.item_count }}</span> <image class="cart-icon" src="{{'new-cart.png' | asset_url}}" style="margin-bottom: -12px;"/></a>
+            </div>
+          </div>
+          <ul class="icon-nav collection"> <li><a href="/products/womens-closet-pack"> <img src="{{'womensclosetpack.png' | asset_url}}" class="select-icons-cp"/> <h4>Women's Closet Pack</h4> </a> </li><li><a href="/products/flats-version"> <img src="{{'balletflaticon.png' | asset_url}}" class="select-icons"/> <h4>Ballet Flats</h4> </a> </li><li><a href="/products/womens-loafer-version"> <img src="{{'womenloafericon.png' | asset_url}}" class="select-icons"/> <h4>Loafers & Slip-Ons</h4> </a> </li><li><a href="/products/womens-sneaker-version"> <img src="{{'womensneakericon.png' | asset_url}}" class="select-icons"/> <h4>Sneakers & Lace-Ups</h4> </a> </li></ul> <ul class="icon-nav-m collection-m"> <li> <a href="/products/mens-closet-pack"> <img src="{{'mensclosetpackicon.png' | asset_url}}" class="select-icons-cp-m"/> <h4>Men's Closet Pack</h4> </a> </li><li> <a href="/products/sneaker-version"> <img src="{{'mensneakericon.png' | asset_url}}" class="select-icons"/> <h4>Sneakers & Lace-Ups</h4> </a> </li><li> <a href="/products/loafer-version"> <img src="{{'mensloafericon.png' | asset_url}}" class="select-icons"/> <h4>Loafers & Slip-Ons</h4> </a> </li></ul> </div>
+        {% if settings.mobile_landing_page == 'true' %} <a href="/pages/store" class="button blue-white mobile">go to store</a> {% endif %}
+      </div>
+    </header>
+
+    {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
+        <footer class="do-plus">
+      <div class="wrap">
+        <div class="clearfix">
+          <div class="half">
+            <img src="{{'blogo-white.png' | asset_url}}" alt="GEKKS" id="flogo" />
+            <nav>
+              <ul>
+                {% for link in linklists.footer-1.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
+            </nav>
+          </div>
+          <div class="half">
+            <a href="/pages/reviews" id="referafriend" onclick="ga('send', 'event', 'Reviews', 'Footer', 'Click');">see our reviews!</a>
+            <div id="psocial">
+              <h3 id="fsocial">follow us on social!</h3>
+              <ul class="social">
+                {% if settings.facebook_link != '' %}<li class="soc-fb"><a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" target="_blank">Facebook</a></li>{% endif %}
+                {% if settings.pinterest_link != '' %}<li class="soc-pi"><a href="{{ settings.pinterest_link }}" title="{{ shop.name }} on Pinterest" target="_blank">Pinterest</a></li>{% endif %}
+                {% if settings.instagram_link != '' %}<li class="soc-ig"><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" target="_blank">Instagram</a></li>{% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p>© {{ shop.name }} {{ 'now' | date: '%Y' }}</p>
+      </div>
+    </footer>
+    <!-- Google Code for Remarketing Tag -->
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 973442114;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+<script>
+   function createCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  $(document).ready(function(){
+    createCookie("gekksVisit", "remarketing", 7)
+    createCookie("flowFinish", "learnMore", 14)
+  })
+</script>
+      <div style="display:none;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/973442114/?value=0&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>    
+    <!-- END Google Code for Remarketing Tag --> 
+  </body>
+
+</html>

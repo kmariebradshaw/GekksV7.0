@@ -1,0 +1,104 @@
+<main id="cart">         
+  <section class="content">
+    <div class="wrap">
+      <header>
+        <h1>Shopping Cart</h1>
+        {% if cart.item_count == 0 %}
+        <p><strong>Your cart is empty.</strong></p>
+        <p>Continue shopping by <a href="/collections/women/products/womens-closet-pack">clicking here &raquo;</a></p>
+        {% endif %}
+      </header>
+      {% if cart.item_count > 0 %}
+      <div class="page">
+        {% if settings.show_multiple_currencies %}
+        <p><em>Prices are currently displayed in <span class="selected-currency"></span>. You will checkout using {{ shop.currency }} at the most current exchange rate.</em></p>
+        {% endif %}
+
+        <form action="/cart" method="post" class="clearfix">
+        <input class="js-form-discount" type="hidden" name="discount" value="" >
+          <div class="twothirds">
+            <table>
+              <thead>
+                <tr>
+                  <th class="img" style="width: 22%;">Item</th>
+                  <th>&nbsp;</th>
+                  <th class="price center">Price</th>
+                  <th class="quantity center" style="width: 25%;">Quantity</th>
+                  <th class="total center">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in cart.items %}
+                <tr>
+                  <td class="img center" rowspan="2">
+                    <a href="{{ item.url}}">
+                      <img src="{{ item.product.featured_image | product_img_url: 'large' }}"  alt="{{ item.product.title }}">
+                      <a href="{{ item.url}}" title="{{ item.title }}"><p id="prod-title">{{ item.product.title }}</p><p id="prod-desc">{{ item.variant.title}}</p></a>  
+                    </a>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td class="price center">{{ item.price | money }}</td>
+                  <td class="quantity center"> <input type="text" size="4" id="updates_{{ item.id }}" name="updates[{{ item.id }}]" value="{{ item.quantity }}"></td>
+                  <td class="total center">{{ item.line_price | money }}</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td class="price center">&nbsp;</td>
+                  <td class="center"><input type="submit" name="update" value="update" class="button-xxs"></td>
+                  <td class="center"><a href="/cart/change?id={{ item.id }}&quantity=0"><p id="rm-tab">remove</p></a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2"><a href="/products/womens-closet-pack">Continue Shopping</a></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="third">
+            <div id="order-sum">
+              <h5>order summary</h5>
+              <table>
+                <tr>
+                  <td>items</td>
+                  <td>{{cart.item_count}}</td>
+                </tr>
+              </table>
+              <span>Subtotal:</span>
+              <h3>{{ cart.total_price | money_with_currency }}</h3>
+            </div>
+
+            {% if additional_checkout_buttons %}
+            <center style="width: 100%; margin: auto;">
+              <p>
+                {{ content_for_additional_checkout_buttons }}
+              </p>
+              {% endif %}
+              <p> 
+                <input type="submit" id="checkout" name="checkout" value="Checkout" style="margin-top: -10px; width: 100%;">
+              </p>
+            </center>
+
+            {% if settings.allow_note == 'yes' %}
+            <div class="note">
+              <p><a class="show-note" href="#">{{ settings.note_label }}</a></p>
+              <div class="note-for-seller hidden">
+                <textarea id="note" name="note" placeholder="Write your note">{{ cart.note }}</textarea>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </form> 
+
+        {% comment %} {% include 'gsx'%}{% endcomment%}
+
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</main>

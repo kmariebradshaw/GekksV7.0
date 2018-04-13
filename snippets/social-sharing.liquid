@@ -1,0 +1,40 @@
+{% if settings.share_prod_on_twitter or settings.share_prod_on_facebook or settings.share_prod_on_googleplus or settings.share_prod_on_pinterest %}
+<div class="sharing">
+	<ul>
+        {% if settings.share_prod_on_facebook %}
+        <li style="width:100px;"><div class="fb-share-button" data-href="{{ shop.url }}{{ product.url }}" data-width="60" data-height="60" data-type="button_count"></div></li>{% endif %}
+		{% if settings.like_prod_on_facebook %}
+		<li style="width:90px"><div class="fb-like" data-href="{{ shop.url }}{{ product.url }}"  data-width="60" data-height="60" data-send="false" data-layout="button_count" data-show-faces="false" ></div></li>{% endif %}
+		{% if settings.share_prod_on_twitter %}
+		<li style="width:80px"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="{{ shop.url }}{{ product.url }}">Tweet</a></li>
+		{% endif %}
+		{% if settings.share_prod_on_pinterest %}
+		<li style="margin-left:10px; width:50px"><a href="http://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&description={{ product.title | strip_html | escape | replace: ' ', '%20' }}&media={{ product.featured_image | product_img_url: 'original' }}" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a><script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script></li>
+		{% endif %}
+		{% if settings.share_prod_on_googleplus %}<li style="margin-left:5px;"><g:plusone size="medium" href="{{ shop.url }}{{ product.url }}"></g:plusone></li>{% endif %}
+	</ul>
+</div>
+<style>
+.fb_iframe_widget iframe { z-index: 4000 }
+</style>
+
+{% if settings.share_prod_on_facebook or settings.like_prod_on_facebook %}
+<!-- fb like button -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=148445102000096";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endif %}
+{% if settings.share_prod_on_googleplus %}
+<!-- +1 button -->
+   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+{% endif %}
+{% if settings.share_prod_on_twitter %}
+<!-- tweet btn -->
+<script defer type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+{% endif %}
+{% endif %}

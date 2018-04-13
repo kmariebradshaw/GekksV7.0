@@ -1,0 +1,281 @@
+<main id="page">
+  <section class="content" style="padding-top: 0;">
+    <div class="page">
+      <div id="intro">
+        <h1>why should<br>
+          you buy<br>
+          Gekks<br>
+          instead of...? </h1>
+      </div>
+      <div id="static-learn">
+        <a href="#" data-id="#barefoot" id="barefootl">barefoot</a> |
+        <a href="#" data-id="#no-shows"id="nosockl">no-shows</a> |
+        <a href="#" data-id="#socks" id="sockl">regular socks</a> | 
+        <a href="#" data-id="#powder"id="powderl">foot powder</a>
+      </div>
+      <section id="barefoot">
+        <div>
+          <img src="{{'gekks1a.jpg' | asset_url }}" alt="Barefoot" />
+          <div class="vs">vs.</div>
+          <img src="{{'barefoot.jpg' | asset_url }}" alt="Gekks" />
+          <p>
+            Love the sockless look, but hate the consequences? We get it. Our antimicrobial yarn (worn by NASA and The Marines) eliminates odor causing bacteria as you sweat, stopping that room clearing sockless stench. Additionally, Gekks extend the life of your shoes so they always feel like new when wear them.
+          </p>
+          <span class="lmore"style="display: none;">read more</span>
+        </div>
+      </section>
+
+      <section id="no-shows">
+        <div>
+          <img src="{{'gekks4.jpg' | asset_url }}" alt="No-Shows" />
+          <div class="vs">vs.</div>
+          <img src="{{'c-noshow.jpg' | asset_url }}" alt="Gekks" />
+          <p>
+            Attention guys! We call this the ballerina look. Good luck finding these in your sock drawer. Gekks semi-permanently grip inside your shoe, so they are  always there for you to conveniently slip inside your shoes.
+          </p>
+        </div>
+      </section>
+      <section id="luxury-socks">
+        <div>
+          <img src="{{'gekks3.jpg' | asset_url }}" alt="luxury socks" />
+          <div class="vs">vs.</div>
+          <img src="{{'l-noshow.jpg' | asset_url }}" alt="Gekks" />
+          <p>
+            These are expensive and the “non-slip” patch on the heel ends up slipping down anyway. Why pay more for basically the same thing as a cheaper no show sock? Gekks don’t slip down your ankle and protect your heels from those awful blisters.
+          </p>
+        </div>
+      </section>
+      <section id="socks">
+        <div>
+          <img src="{{'gekks1a.jpg' | asset_url }}" alt="Socks" />
+          <div class="vs">vs.</div>
+          <img src="{{'reg-socks1.png' | asset_url }}" alt="Gekks" />
+          <p>
+            The 90s called, they want their look back. Join us in the 21st century and be comfortable in a 100% no-show solution. ‘Nuff said.
+          </p>
+        </div>
+      </section>
+      <section id="powder" style="margin-bottom: 6%;">
+        <div>
+          <img src="{{'gekks4.jpg' | asset_url }}" alt="Powder" />
+          <div class="vs">vs.</div>
+          <img src="{{'foot-powder.jpg' | asset_url }}" alt="Gekks" />
+          <p>
+            Really? You’re going to put powder in your shoes? Mushy cake powder ruins the inside of your shoes, not to mention the mess it causes. Just trust us.
+          </p>
+        </div>
+      </section>
+      <div id="size-order">
+        <div id="order" style="margin-right: 0;">
+          <h1 id="lmcta">Ready to Order?</h1>	
+          <a href="/collections/men/products/mens-closet-pack" class="button double">Shop Men</a><br>
+          <a href="/collections/women/products/womens-closet-pack" class="button double">Shop Women</a><br>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  section img { 
+    display: inline-block; 
+    width: 35%; 
+    margin: .5%; 
+    position: relative; 
+    vertical-align: middle; 
+  }
+
+  .vs { 
+    width: 20%; 
+    display: inline-block; 
+    margin: .5%; 
+    position: relative; 
+    vertical-align: middle;
+    font-size: 42pt; 
+    font-weight: bolder; 
+    text-transform: lowercase; 
+  } 
+
+  section p {
+    text-align: center;
+    padding-top: 5%;
+  }
+
+  .morecontent span {
+    display: none;
+  }
+
+  #lmcta {
+    font-size: 48pt;
+    margin-bottom: 5%;
+    color: black;
+    margin-top: 5%;
+  }
+  #static-learn {
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+    background-color: white; 
+    max-width: 1366px;
+    height: 50px; 
+    line-height: 50px; 
+  }
+
+  #static-learn a {
+    display: inline-block;
+    width: 23%;
+    background: white;
+    font-weight: normal;
+  }
+
+  #static-learn:not(a){
+    font-weight: bolder; 
+    color: #d3d3d3; 
+  }
+
+  section:not(.content) { 
+    /*     min-height: 80vh;  */
+    display: flex; 
+    align-items: center; 
+    text-align: center;
+    width: 80%;
+
+    margin: 15% auto;
+    border-bottom: 2px solid #d3d3d3; 
+  }
+
+  section div { 
+    text-align: center; 
+    width: 100%; 
+  } 
+
+
+  #intro {
+    background-color: #33ffcc;
+    display: block;
+    color: white;
+    /*     min-height: 55vh; */
+  }
+
+  h1 {
+    font-weight: bolder;
+    position: relative;
+    padding-top: 6%;
+    padding-bottom: 6%; 
+    padding-left: 5%;
+    color: white;
+    text-transform: none !important;
+    text-align: left;
+    line-height: 1;
+  }
+
+  .green { color: #33ffcc !important; } 
+
+  .green:hover { color: #33ffcc; } 
+  @media only screen and (min-width: 1060px) {
+    h1 { font-size: 70pt;}
+    #static-learn a { font-size: 13pt; } 
+
+  }
+
+  @media only screen and (max-width: 1060px) and (min-width: 801px) {
+    #static-learn a { font-size: 12pt; } 
+  } 
+
+  @media only screen and (max-width: 800px) and (min-width: 581px) {
+    #static-learn a { font-size: 10pt; }
+  }
+
+  @media only screen and (max-width: 580px) {
+    #static-learn { font-size: 8pt; }
+
+    body section img { width: 100%; }
+
+    .vs {
+      width: 100%; 
+    }
+
+    body #lmcta   {
+      text-align: center;
+      padding-left: 0;
+    }
+
+    body section p {
+      z-index: 800;
+      position: relative;
+      padding-top: 0;
+      width: 100%; 
+      margin: 10% auto; 
+
+    }
+    body h1 {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      font-size: 25pt; 
+    }
+
+    body #static-learn a {
+      width: 22%;
+      font-size: 7pt;
+    }
+
+    body section:not(.content) { margin: 20px auto; }
+    body .vs { font-size: 25pt;}
+  }
+
+  .morelink { 
+    display: block; 
+    font-weight: bold; 
+  } 
+</style>
+
+<script> 
+  $(document).ready(function() {
+    $('#static-learn a').on("click", function() {
+      event.preventDefault(); 
+      $(this).addClass('green').siblings().removeClass('green'); 
+
+      var scroll = $(this).attr("data-id"); 
+      $("html, body").animate({ scrollTop: $(scroll).offset().top - ($('header').height() + 30 ) }, 1000);    });
+
+  });
+
+  $(document).ready(function() {
+    if ($(window).width() < 600) { 
+      var showChar = 100;
+      var ellipsestext = "...";
+      var moretext = "read more";
+      var lesstext = "see less";
+      $('div section p').each(function() {
+        var content = $(this).html();
+
+        if(content.length > showChar) {
+
+          var c = content.substr(0, showChar);
+          var h = content.substr(showChar, content.length - showChar);
+
+          var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+          $(this).html(html);
+        }
+
+      });
+
+      $(".morelink").click(function(){
+        if($(this).hasClass("less")) {
+          $(this).removeClass("less");
+          $(this).html(moretext);
+        } else {
+          $(this).addClass("less");
+          $(this).html(lesstext);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+        return false;
+      });
+    }
+  });
+
+
+
+</script>

@@ -1,0 +1,162 @@
+<style>
+h2 { text-align: center; font-weight: bolder; letter-spacing: normal; margin-top: 20px;}
+h5 { text-align: center; font-weight: lighter; letter-spacing: normal; line-height: normal;margin-top:10px;}
+.discount-cta h2 { font-weight: normal; }
+.discount-cta h2:hover { color: #33ffcc; }
+#form-half, #preview {
+    display: inline-block;
+}
+
+#form-half { text-align: center; }
+
+form input, textarea {
+    border: 2px solid #d3d3d3 !important;
+    width: 90% !important;
+    height: 50px !important;
+    margin: 10px auto;
+    margin-bottom: 0px !important;
+}
+
+#wishlist-note { padding: 7px 9px; font-size: 14px;}
+.email-preview { width: 90%; margin: 20px auto; overflow: hidden; }
+
+body #page form .klaviyo_form_actions button{
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    font-size: 18pt;
+    margin-top: 20px;
+}
+
+#note-wish {
+    max-width: 90%;
+    text-align: center;
+    padding-bottom: 0px;
+    margin: 5px auto;
+}
+
+textarea {
+    font-family: MontserratB !important;
+}
+:placeholder-shown {
+    font-family: MontserratB !important;
+}
+
+#page { max-width: 1100px; margin: 0 auto; }
+
+#to-wish, #from-wish { display: inline-block; }
+.email-preview img { max-width: 100%; }
+
+@media only screen and (min-width: 589px) {
+    #form-half, #preview {
+        width: 49%;
+        vertical-align: middle;
+    }
+    form { margin: 50px; margin-bottom: 50px !important;}
+
+}
+
+@media only screen and (max-width: 588px) {
+     #form-half, #preview {
+        width: 100%;
+        vertical-align: middle;
+    }
+    form { margin: 10px; margin-bottom: 10px !important; }
+}
+
+@media only screen and (max-width: 450px) {
+    #page h5 {font-size: 8pt;}
+}
+
+#page .error_message { font-weight: bolder; color: maroon; margin-top: -10px; }
+#page .error_message, .success_message { text-align: center; }
+</style>    
+
+<main id="page">	     
+    <h2>Get the Socks <br>
+     You Actually Want</h2>
+    <h5>Email your friends & family to let them know you want <br> Gekks this year by entering your information below.<br><p style="margin-top: 7px;"> You press send, we will send the email!</p></h5>
+    <form style="max-width: none !important;" id="wishlist_signup" class="klaviyo_styling klaviyo_standard_embed_NHr8RS" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+        <input type="hidden" name="g" value="NHr8RS">
+        <input type="hidden" name="$fields" value="friendsName, note"/>
+        <div id="form-half">      
+            <input type="text" value="" name="friendsName" id="your_name" placeholder="Your Name"><br>
+            <input type="email" value="" name="email" id="friends_email" placeholder="Recipient Email" /><br>
+            <textarea id="wishlist-note" value="" name="note" placeholder="Let them know what size and style you want!"></textarea>
+            <div class="klaviyo_messages">
+            <div class="success_message do" style="display:none;"></div>
+    </div>
+    <div class="klaviyo_form_actions do">
+        <button type="submit" class="klaviyo_submit_button">Send!</button>
+    </div>
+        </div>
+        <div id="preview">
+            <div class="email-preview">
+                To: <div id="to-wish"> </div> 
+                <img src="{{'email-preview-header.png' | asset_url}}" />
+                <p id="note-wish" style="display: none;"></p>
+                <img src="{{'preview-email-footer.png' | asset_url}}" /> 
+                From: <div id="from-wish"></div>
+            </div>
+        </div> 
+     <div class="success_message mo" style="display:none;"></div>
+    <div class="klaviyo_form_actions mo">
+        <button type="submit" class="klaviyo_submit_button">Send!</button>
+    </div>
+    </form> 
+ <div class="error_message" style="display:none;"></div>
+<div class="mo"> 
+ <h2 style="margin-top: 50px;">Prefer to Text?</h2>
+ <h5>Enter your message below and press to send!<br> You will be able to enter the recipient information after</h5>
+ <textarea id="text-wishlist-input" style="display: block;margin: 0 auto;min-height:0; height: 100px !important;"></textarea>
+ <div class="button" id="textwishlist" style="width: 90%; display: block; margin: 20px auto;color:white">send!</div>
+</div>
+<script type="text/javascript">
+  KlaviyoSubscribe.attachToForms('#wishlist_signup', {
+    success_message: "Your message has been sent!"
+  });
+
+  $("#friends_email").keyup(function() {
+    $('#to-wish').text(this.value);  
+  }); 
+  $("#friends_email").blur(function() {
+    $('#to-wish').text(this.value);  
+  }); 
+  $("#your_name").keyup(function() {
+    $('#from-wish').text(this.value); 
+  }); 
+   $("#your_name").blur(function() {
+    $('#from-wish').text(this.value); 
+  }); 
+  $("#wishlist-note").keyup(function() {
+    $('#note-wish').show(); 
+    $('#note-wish').text(this.value); 
+  }); 
+    $("#wishlist-note").blur(function() {
+    $('#note-wish').show(); 
+    $('#note-wish').text(this.value); 
+  }); 
+
+    $('#textwishlist').click(function(){
+        var customNote = $('#text-wishlist-input').val(); 
+        var gekksNote = "Check these out, I'd love them for the holidays. wwww.mygekks.com" + " "+ customNote
+        var noteToText = gekksNote
+        if ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ){
+            window.location = "sms:&body=" + noteToText
+                return false;
+
+        } 
+        else {
+        window.location = "sms:?body=" + noteToText
+            return false;
+
+        }
+    }); 
+</script>  
+    <h2>Or Treat Yourself</h2>
+    <div class="discount-cta">
+    <a href="/products/womens-closet-pack" class="d-button double"><h2>shop women</h2></a> 
+    <a href="/products/mens-closet-pack" class="d-button double"><h2>shop men</h2></a>
+    </div>
+</main>

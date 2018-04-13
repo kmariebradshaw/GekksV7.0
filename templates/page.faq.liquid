@@ -1,0 +1,55 @@
+    <main id="faq">	     
+	    <section class="content">
+    	    <div class="wrap">
+        	    <header>
+                  <h1>Frequently Asked Questions</h1>
+        	    </header>
+        	    <div class="faq">
+                  
+                   <h1 class="b"><div class="ar-down" style="display: none;">&#9660</div><div class="ar-down">&#9658</div>What type of shoes can Gekks be used with?</h1>
+                  <div class="faq-content">
+                    <p class="faq-info" style="margin-bottom: 0px;">Gekks are available for 3 types of shoes.</p>
+                    <img src="{{'faq-shoe.png' | asset_url}}" alt="Flats, Sneakers, Loafers" style="max-width: 100%;" />
+                    <p class="faq-info">If you ever have questions about whether or not your shoes will work with Gekks please visit our contact us page or shoot us an email at <b>gosockless@mygekks.com</b>.</p>
+                  </div>
+                  
+                  <h1 class="b"> <div class="ar-down" style="display:none;">&#9660</div><div class="ar-down">&#9658</div>How do Gekks stay in my shoe?</h1>
+                  <div class="faq-content">
+                    <p class="faq-info">Unlike any other no show sock, Gekks have a patented fastening system that grip Gekks to the inside of your shoes. One half of the fastening system is permanently fused to the outside of the sock. The other half, the Gekks Grippers, are easily stuck inside your shoes (they can be removed if necessary and are not permanent). When inserting Gekks, simply apply pressure to the fastening system and Gekks are locked in place. You can then conveniently slip in and out barefoot, but get the comfort of a thin liner sock while walking around. <br><br>
+                      As you slip into your shoes, the thin, breathable toe section will stretch and snugly fit to your toes. The combined thickness of the fastening system is less than 1 millimeter thick, such that it does not alter the way your shoes fit. To remove Gekks from your shoes, simply peel the liner away from the Gekks Grippers. The Gekks Grippers are thin enough that they do not alter the way your shoes feel if you desire to wear the shoes with regular high cut socks.</p>
+                  </div>
+                  
+                  <h1 class="b"> <div class="ar-down" style="display:none;">&#9660</div><div class="ar-down">&#9658</div>How do you Control the Sockless Stench?</h1>
+                  <div class="faq-content">
+                    <p class="faq-info">We have built Gekks using 99.9% pure silver yarns, made by permanently bonding naturally antimicrobial silver metal to the surface of nylon fiber. This technology, also used by United States Special Forces and NASA to keep the skin clean and odor free on long missions, is permanently knitted into Gekks. It will not wash off or wear off like other antimicrobial coatings on the market. As the foot sweats, odor causing bacteria travels in the moisture of the sweat and eventually gases out that terrible sockless stench. However, with Gekks installed, when that bacterial filled moisture travels through the liner it is eliminated when it hits the silver yarn! So go sockless with confidence, Gekks will be working hard eliminating that bacteria as you're walking around!</p>
+                  </div>
+
+                  <h1 class="b"> <div class="ar-down" style="display:none;">&#9660</div><div class="ar-down">&#9658</div>Are Gekks Machine Washable?</h1>
+                  <div class="faq-content">
+                    <h2>Yes!</h2>
+                    <p class="faq-info">Gekks are machine washable and can be dried as well. Do not iron or bleach. While Gekks are machine washable you will not have to wash them often, if at all, because they are made with antimicrobial silver yarn to combat odor.</p>
+                  </div>
+
+                  <h1 class="b"> <div class="ar-down" style="display:none;">&#9660</div><div class="ar-down">&#9658</div>Interested in a wholesale purchase?</h1>
+                  <div class="faq-content">
+                    <p class="faq-info">Please email us at <b>gosockless@mygekks.com</b> and one of our sales representatives will contact you.</p>
+                  </div>
+                  
+               </div>
+    	    </div>
+	    </section>
+    </main>
+
+  <script>
+$(function() {
+    var $toggle = $('.faq-content'),
+        $trigger = $('.b')
+
+$($toggle).slideUp();
+$($trigger).click(function(){
+    $(this).next($toggle).slideToggle("slow");
+    $(this).children().toggle();
+  });
+
+});
+  </script>

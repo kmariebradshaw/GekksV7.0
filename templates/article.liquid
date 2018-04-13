@@ -1,0 +1,144 @@
+<section class="page blog">
+  <h2 class="theme"><a href="{{ blog.url }}">{{ blog.title }}</a></h2>
+    {% assign blog_pagination = 6 %}
+    <article>
+      	<h3>{{ article.title }}</h3>
+      
+      	<p class="meta-top">
+            {% if article.author %}by {{ article.author }} <span class="separator">|</span> {% endif %}
+            {{ article.published_at | date: "%B %d, %Y" }}
+            {% if article.comments_enabled? %}
+            <span class="separator">|</span> <a href="{{ article.url }}#comments" title="{{ article.title | escape }} Comments" class="comment_count">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }} </a>
+            {% endif %}
+        </p>
+      
+        {{ article.content }} 
+      
+        {% include 'social-sharing' %}
+      
+      	<p class="meta">
+            {% for tag in article.tags %}
+            {% if forloop.index0 == 0 %}
+          	<span class="label">Tagged: </span>
+            {% endif %}
+            <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        </p>
+      
+      	<div class="hr"></div>
+      
+      {% if blog.next_article or blog.previous_article %}
+      	<aside class="clearfix">    
+            {% if blog.next_article %}
+            <small class="right">
+                {% for post in blog.articles %}
+                    {% if post.url == blog.next_article %}
+                        <a href="{{ post.url }}" title="{{ post.title | escape }}">{{ post.title }} &rarr;</a>
+                    {% endif %}
+                {% endfor %}
+            </small>
+            {% endif %}
+            
+            {% if blog.previous_article %}
+            <small class="left">
+                {% for post in blog.articles %}
+                    {% if post.url == blog.previous_article %}
+                        <a href="{{ post.url }}" title="{{ post.title | escape }}">&larr; {{ post.title }}</a>
+                    {% endif %}
+                {% endfor %}
+            </small>
+            {% endif %}
+        </aside>
+      
+        <div class="hr"></div>
+      {% endif %}
+        
+        {% if blog.comments_enabled? %}
+          {% paginate article.comments by 5 %} 
+            {% if article.comments_count > 0 %}
+              <div class="comments">
+                <h3 class="center">Comments</h3><br/>
+                <!-- a "just published" comment -->
+                {% if comment and comment.created_at %}
+                    <div id="comment-{{ comment.id }}" class="comment">
+                        <img src="//1.gravatar.com/avatar/{{ comment.email | md5 }}?s=80&r=G&d={{ "avatar.png" | asset_url }}" alt="{{ comment.author }}" class="gravatar" />
+                        <div class="comment-body">
+                            <span class="label">{{ comment.created_at | date: "%B %d, %Y" }}</span>
+                            <h4>{{ comment.author }}</h4>
+                            {{ comment.content }}
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- previous comments -->
+                {% for comment in article.comments %}
+                    <div id="comment-{{ comment.id }}" class="comment">
+                            <img src="//1.gravatar.com/avatar/{{ comment.email | md5 }}?s=80&r=G&d={{ "avatar.png" | asset_url }}" alt="{{ comment.author }}" class="gravatar" />
+                        <div class="comment-body">
+                            <span class="label">{{ comment.created_at | date: "%B %d, %Y" }}</span>
+                            <h4>{{ comment.author }}</h4>
+                            {{ comment.content }}
+                        </div>
+                    </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+      
+      		{% if paginate.pages > 1 %}
+                <div class="paginate center">
+                    {% if paginate.previous %}
+                        <span class="left">{{ '&larr;' | link_to: paginate.previous.url }}</span>
+                    {% endif %}
+                    {% for part in paginate.parts %}
+                        {% if part.is_link %}
+                            <span class="num">{{ part.title | link_to: part.url }}</span>
+                        {% else %}
+                            <span class="num current">{{ part.title }}</span>
+                        {% endif %}        
+                    {% endfor %}      
+                    {% if paginate.next %}
+                        <span class="right">{{ '&rarr;' | link_to: paginate.next.url }}</span>
+                    {% endif %}
+                </div>
+                <div class="hr"></div>
+            {% endif %}
+          
+            <div class="comments-form">
+                <h3 class="center">Add a Comment</h3>
+                {% form article %}
+                  {% if form.posted_successfully? %}
+                      {% if blog.moderated? %}
+                          <p class="flash"><em>Successfully posted your comment. It will have to be approved by the blog owner before showing up.</em></p>
+                      {% else %}
+                          <p class="flash"><em>Successfully posted your comment.</em></p>
+                      {% endif %}
+                  {% endif %}
+                  {% if form.errors %}
+                      <p class="center error">Not all fields have been filled out correctly.</p>
+                  {% endif %}
+                  <div class="form-field">
+                      <label for="comment_author">Name <span class="red">*</span></label>
+                      <input type="text" id="comment_author" name="comment[author]" value="{{ form.author }}" />
+                  </div>
+                  <div class="form-field">
+                      <label for="comment_email">Email <span class="red">*</span></label>      
+                      <input type="text" id="comment_email" name="comment[email]" value="{{ form.email }}" />
+                  </div>
+                  <div class="form-field">
+                      <label for="comment_email">Comment</label>      
+                      <textarea id="comment_body" name="comment[body]" rows="5">{{ form.body }}</textarea>
+                  </div>
+              
+                  <div class="form-field">
+                    {% if blog.moderated? %}
+                      <p><em>Comments have to be approved before showing up.</em></p>
+                    {% endif %}
+                
+                    <input type="submit" value="Leave Comment" id="comment-submit" class="btn" />  
+                  </div>
+  
+                {% endform %}
+            </div>
+      	{% endpaginate %}
+      {% endif %}
+    </article>
+</section>

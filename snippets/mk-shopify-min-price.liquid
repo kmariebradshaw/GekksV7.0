@@ -1,0 +1,9 @@
+{% assign mk-shopify-min = mk-shopify-min-price.price_max %}
+{% for variant in mk-shopify-min-price.variants %}
+    {% if variant.metafields.mk-shopify_qb.qb_hide == "1" %}{% else %}
+        {% if variant.price < mk-shopify-min %}
+            {% assign mk-shopify-min = variant.price %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+{{ mk-shopify-min | money }}

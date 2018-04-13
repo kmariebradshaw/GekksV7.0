@@ -1,0 +1,628 @@
+{% layout 'theme.flow' %} 
+<style>
+
+section {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+section div {
+    width: 100%;
+}
+
+#someone-purchased {
+    display: none !important;
+}
+
+section div h1 {
+    font-size: 14pt;
+    margin-left: 3%;
+    margin-right: 3%;
+    line-height: normal;
+    text-transform: none !important;
+    margin-top: 5vh;
+}
+
+section div h3 {
+    font-size: 11pt;
+    line-height: normal;
+    font-weight: lighter;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-transform: none !important;
+    letter-spacing: normal;
+}
+
+.fbutton, .fin {
+    display: inline-block;
+    background: #33ffcc;
+    color: white;
+    width: 75%;
+    padding: 15px 0px;
+    font-size: 14pt;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+    box-shadow: 5px 6px 20px lightgrey;
+    border-radius: 10px;
+}
+
+.fbutton:active {
+    box-shadow: none;
+}
+
+#dw {
+    height: 5vh;
+    font-size: 8pt;
+    line-height: normal;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#step-one img {
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+}
+
+ul {
+    margin-top: 5vh;
+    text-align: left;
+}
+
+ul li {
+    padding: 10px;
+    border: 2px solid whitesmoke;
+    margin: 10px 5px;
+    font-size: 8pt;
+    cursor: pointer;
+    line-height: normal;
+    font-weight: lighter;
+    min-height: 44px;
+}
+
+.highlight {
+    border: 2px solid #33ffcc;
+}
+
+ul li div {
+    font-size: 11pt;
+    font-weight: normal;
+    line-height: normal;
+}
+
+ul li img {
+    float: left;
+    position: relative;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+
+
+p {
+    font-size: 12pt;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: normal;
+    font-weight: lighter;
+    margin-top: 5vh;
+}
+header {
+    width: 100%;
+    height: 2vh;
+}
+
+#progress-bar {
+    width: 33.333%;
+    background-color: #33ffcc;
+    height: 13px;
+}
+
+.green {
+    color: #33ffcc;
+    background-color: white;
+    display: inline;
+}
+
+#intro-title {
+    font-size: 45pt !important;
+    line-height: initial !important;
+    text-transform: lowercase !important;
+}
+
+.clicked {
+    background-color: lightgray !important;
+}
+
+#close {
+    position: absolute;
+    color: lightgray;
+    font-size: 11pt;
+    right: 4vh;
+    top: 4vh;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.fbutton:hover {
+    color: white;
+}
+
+.sgblogo {
+    max-width: 80px;
+    margin-top: 5vh;
+}
+
+#problem-info {
+    margin-top: 2vh;
+    border: none;
+    margin: 0 5px;
+    font-size: 10pt;
+    cursor: inherit;
+    line-height: normal;
+    font-weight: lighter;
+    min-height: 70px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#problem-info li {
+    padding: 10px;
+    border: none;
+    margin: 0 5px;
+    font-size: 12pt;
+    cursor: inherit;
+    line-height: normal;
+    font-weight: lighter;
+    min-height: 70px;
+}
+
+#problem-info li div {
+    font-size: 10pt;
+    font-weight: lighter;
+    display: inline-block !important;
+    width: 70%;
+    font-size: 8pt !important;
+}
+
+#sub-til {
+    margin-bottom: 3vh;
+    font-size: 22pt;
+}
+
+.sbutton img {
+    max-width: 51px;
+}
+
+.prog-bar-ticks {
+    border-right: 2px solid lightgray;
+    height: 13.33px;
+    width: 33.33333333%;
+    position: absolute;
+    top: 0;
+}
+
+.prog-bar-ticks:nth-of-type(2) {
+    margin-left: 33.33333%;
+}
+
+#problem-info li:nth-of-type(1):before {
+    content: "1";
+    font-size: 55pt;
+    vertical-align: top;
+    line-height: inherit;
+    float: left;
+    color: #33ffcc;
+    margin-top: -10px;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+#problem-info li:nth-of-type(2):before {
+    content: "2";
+    font-size: 55pt;
+    vertical-align: top;
+    line-height: inherit;
+    float: left;
+    color: #33ffcc;
+    margin-top: -10px;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+#problem-info li:nth-of-type(3):before {
+    content: "3";
+    font-size: 55pt;
+    vertical-align: top;
+    line-height: inherit;
+    float: left;
+    color: #33ffcc;
+    margin-top: -10px;
+    margin-right: 20px;
+    font-weight: 700;
+}
+ 
+b { font-weight: 600; }
+
+section section { margin-top: 50px; }
+
+body { margin-top: -22px; }
+
+
+#sub-til { margin-top: 3vh; font-size: 18pt; }
+#problem-info li:before {padding-bottom: 17px;}
+
+@media only screen and (min-width: 801px) {
+    footer ul li  {
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        min-height: 0px;
+        background: transparent;
+        font-weight: normal;
+        font-size: 12pt;
+        padding: 5px;
+    }
+
+    body #page-flow-wrap:after, .clearfix:after {
+       content: " " !important;
+       visibility: hidden !important;
+       display: block !important;
+       height: 0 !important;
+       clear: both !important;
+    }
+
+    body>footer .social {
+        margin-top: 0px;
+        text-align: center;
+        column-count: 1;
+    }
+
+    footer ul { column-count: 2; }
+
+    #step-two h1 { margin-bottom: 20px !important; }
+
+    #step-one #intro-title { margin-top: 0px; }
+
+    #step-one #intro-title:after { content: url("{{'Gekks-Icons.png' | asset_url}}"); margin-right: -25px;}
+
+    #prog-head {
+        position: relative;
+        top: 143px;
+        max-width: 1366px;
+        margin: 20px auto;
+    }
+
+
+
+    #page-flow-wrap {
+        margin-top: 115px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    #flow-back { 
+        margin-top: 118px;
+        background: url("{{'interactive-background.jpg' | asset_url}}");
+    } 
+    .sgblogo { display: none; }
+
+    #step-one { 
+        margin-left: -7%;
+     }
+
+    body #problem-info li {
+        font-size: 14pt;
+    }
+
+    #step-one h1 { 
+        text-align: left;
+        font-size: 18pt;
+     }
+
+     #step-two ul { 
+        margin-bottom: 3vh;
+      }
+
+      #step-two ul li {
+        display: inline-block;
+        width: 42%;
+        float: left;
+        margin-left: 2.5%;
+        min-height: 46px;
+        }
+
+     #more-than-one-prob-sel .fbutton { width: 45%;}
+
+    #problem-info { width: 54%; }
+
+    #problem-info li:before{ padding-bottom: 0px !important; }
+
+    #step-two .fbutton {
+        
+        margin-top: 40px;
+        width: 45%;
+
+    }
+
+    header ul li { border: none; }
+
+    nav ul li { border: 0px solid transparent !important; }
+
+    section div h1 { font-size: 18pt; }
+
+    section div h3 { font-size: 12pt; }
+    nav ul { margin-top: 0; }
+
+    #close { display: none; }
+    section {
+        text-align: center;
+        max-width: 650px;
+        min-height: 0;
+        display: block;
+    }
+    #step-one img {
+        position: relative;
+        left: 3%;
+        bottom: 60px;
+    }
+
+    ul li { background: white; }
+
+    body section #intro-title {
+        float: left;
+        text-align: right;
+        width: 45%;
+        font-size: 66pt !important;
+        margin-right: 7%;
+        line-height: 1;
+    }
+
+    #step-one h3 {
+        text-align: left;
+        width: 45%;
+        float: right;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 11pt;
+    }
+
+    #step-one .fbutton {
+        width: 46%;
+        float: right;
+    }
+    .mo-plus { display: none; }
+    .flip-container { display: inline-block; }
+    body section ul .flip-b { width: 300px !important; }
+    .flip-container, .front, .back-card {
+        width: 310px;
+        height: 78px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+  .do-plus { display: none; }
+  .scrollp {margin-top: 20px !important;}
+  header {
+    width: 100%;
+    height: 2vh;
+    position: absolute;
+    top: 22px;
+  }
+}
+.flip-container {
+  perspective: 1000;
+}
+.flipped {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  transform:rotateY(180deg);
+}
+.flipper {
+transition: 0.6s;
+transform-style: preserve-3d;
+position: relative;
+}
+.front, .back-card {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front {
+  z-index: 2;
+}
+.flip-container, .flipper, ul li { 
+  backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+}
+body section .flip-b {
+  box-sizing: border-box;
+  margin: 10px 5px;
+  height: 68px;
+}
+.back-card { transform: rotateY(180deg);}
+.back-card li div { margin-top: 5px; }
+
+.back-card .sbutton {
+    border: 2px solid #33ffcc;
+    text-align: center;
+}
+@media only screen and (max-width: 374px) {
+    body section {
+        width: 320px;
+    }
+    body section .flip-b { width: 310px !important;}
+    .flip-container, .front, .back-card {
+        width: 310px;
+        height: 78px;
+        margin: 0 auto;
+    }
+    .s_w_b { display: inline !important; }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 413px) {
+    body section {width: 375px;}
+    .flip-container, .front, .back-card {
+        width: 365px;
+        height: 78px;
+        margin: 0 auto;
+    }
+    body section .flip-b { width: 365px; } 
+    body section ul li { font-size: 8.5pt; }
+    body section ul li div { font-size: 12pt; }
+    body section div h1 {font-size: 15pt !important;}
+    body section div .sgblogo { max-width: 110px !important;}
+    body section #problem-info li { font-size: 14pt !important; }
+    body section div #sub-til { font-size: 20pt !important; }
+}
+
+@media only screen and (min-width: 414px) and (max-width: 800px) {
+    body section { width: 414px; }
+    body section .flib-b { width: 404px !important;}
+    body section ul li {font-size: 9pt !important;}
+    body section ul li div {font-size: 12pt !important;}
+    body section div h1{font-size: 17pt;}
+    body section div .sgblogo { max-width: 130px;}
+    body section div #problem-info li { font-size: 16pt !important; }
+    body section div #sub-til { font-size: 24pt !important; }
+    .flip-container, .front, .back-card {
+        width: 404px;
+        height: 78px;
+        margin: 0 auto;
+    }
+}
+</style>
+  
+  <div>
+    <header id="prog-head">
+        <div id="progress-bar"> </div>
+        <div class="prog-bar-ticks"></div>
+        <div class="prog-bar-ticks"></div>
+        <div class="prog-bar-ticks"></div>
+    </header> 
+    <a href="/?sh=d" id="close" onClick="ga('send', 'event', 'Mini-Education', 'Progress', 'Closed');">X</a>
+    <div id="flow-back"> 
+      <section id="page-flow-wrap">
+        <div>
+          <section class="continue" id="step-one">
+            <div>  
+              <h1 id="intro-title">Why <div class="green"> Gekks?</div></h1>
+                <h1>wish you could #gosockless without your feet smelling like rotten eggs? or your no-show socks sliding down all day?</h1>
+                <div style="height: 2vh;"></div>
+                <h3>yeah, we did too, so we invented Gekks. the ultimate no-show sock.</h3>
+                <div style="height: 10vh"></div> 
+                <div class="fbutton">show me more</div><img class="mo-plus" src="{{'Gekks-Icons.png' | asset_url}}" /> </div>
+          </section>
+          <section id="step-two" class="prob-select-first continue" style="display:none;">
+            <div> 
+              <img class="sgblogo" src="{{'blogo.png' | asset_url}}" alt="Gekks" />
+              <h1 style="margin: 0 2%;">tap these sockless <br class="s_w_b" style="display: none;">style problems</h1>
+              <h3 style="margin: 0 9%;">to see how Gekks can solve them</h3>
+              <ul>
+                <div class="flip-container"> 
+                  <div class="flipper">
+                    <div class="front">
+                      <li class="sbutton smell flip-b" onClick="ga('send', 'event', 'Mini-Education', 'Problem', 'Smell');"><img src="{{'Icon-smell.png' | asset_url}}" /><div>your feet smelling like... yeah</div>got stench not even your <br>mother could love?</li>
+                    </div>
+                    <div class="back-card">
+                      <li class="sbutton flip-b"><div>Gekks are knit with odor killing yarn</div>(the same yarn used by the military and NASA)</li>
+                    </div> 
+                  </div>
+                </div>
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                      <li class="sbutton slip flip-b" onClick="ga('send', 'event', 'Mini-Education', 'Problem', 'Slip');"><img src="{{'Icon-sock-adjust.png' | asset_url}}" />
+                      <div>constant sock adjustment</div>
+                      your "no slip" no-shows slip
+                      <br>down your heel.</li>
+                    </div>
+                    <div class="back-card">
+                      <li class="sbutton flip-b">
+                      <div>unlike all other no-shows</div>Gekks lock and stay <b>INSIDE</b> your shoes</li> 
+                      </div>
+                    </div> 
+                </div>
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                    <li class="sbutton lost flip-b" onClick="ga('send', 'event', 'Mini-Education', 'Problem', 'Search');"><img src="{{'Icon-sock-drawer.png' | asset_url}}" />
+                        <div>searching your sock drawer</div>your socks aren't organized, don't lie.</li>
+                    </div>
+                    <div class="back-card">
+                      <li class="sbutton flip-b">
+                      <div style="margin-top: -3px;">you don't put them on, <br>
+                      they stay in your shoes
+                      </div>never search for socks again</li></div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                  <div class="flipper">
+                    <div class="front">
+                    <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Mini-Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
+                        <div>heel blisters</div>your heels look like you got attacked
+                        <br>by a 3-inch tall bear.</li>
+                        </div>
+                    <div class="back-card">
+                      <li class="sbutton flip-b">
+                      <div>sock comfort in the front</div>heel blister protection in the back</li></div>
+                    </div>
+                    </div>
+                    </ul>
+                    <div class="errors-s" style="height: 5vh; margin-top: 20px;"></div>
+                    <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Mini-Education', 'Progress', 'Problems');">got it!</div>
+                </div>
+            </section>
+              <section class="continue" style="display: none;" id="more-than-one-prob-sel">
+             <div>
+                <div id="mult-prob">
+                 <h1 id="sub-til">how will Gekks<br> solve my problems?</h1>
+               </div>
+                <img src="{{'updated-be.gif' | asset_url }}" alt="Slip in and Out Barefoot" class="tw"/>
+              <ul id="problem-info"> 
+                 <li>unlike all other no-shows, Gekks lock and stay <b>INSIDE</b> your shoes</li>
+                 <li>knit with the same odor eliminating yarn used by the military and NASA </li>
+                 <li>sock comfort in the front, heel blister protection in the back</li>
+               </ul>
+               <div style="height: 3vh;"></div>
+               <a href="/products/womens-closet-pack" class="spec-prob-fb fin" onClick="ga('send', 'event', 'Mini-Education', 'Progress', 'Fin');">show me the Gekks!</a>
+               </div>
+             </section>
+        </div>
+    </section>
+</div>
+</div>
+
+<script>
+function nextSlide(e) {
+    $(window).scrollTop(0), e.parent().parent().hide().next().fadeIn("slow"), contCount += 33.33333333333, $("#progress-bar").css("width", contCount + "%")
+}
+var contCount = 33.333333333;
+$(document).on("ready", function() {
+    $(".fbutton").on("click", function() {
+      if ($(this).parent().parent().hasClass("continue")) {
+        nextSlide($(this)); 
+      }
+    }); 
+    $('.flip-b').click(function() {
+      $(this).addClass('highlight');
+    })
+}); 
+$('.flipper').click(function(){
+    if ( $(this).children().children().first().hasClass('highlight')) {
+    $(this).toggleClass('flipped');  
+  } 
+});
+</script>
+

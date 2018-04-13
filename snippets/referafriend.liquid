@@ -1,0 +1,252 @@
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+  
+<script type="text/javascript">
+    KlaviyoSubscribe.attachToForms('#email_signup', {
+      hide_form_on_success: true, 
+       success_message: "your discount code is on its way!"
+  });
+  KlaviyoSubscribe.attachToForms('#email_signup-desktop', {
+      hide_form_on_success: true, 
+      success_message: "<div class='success_feedback' style='margin-top: -360px;'><div class='klaviyo_header'><b>Thank you!</b></div><div class='klaviyo_subheader'>Your friend will receive their<br>code shortly. In the <br>meantime, here is yours!</div><div class='klaviyo_header'>GKK82030</div></div>",       
+      success: function ($form) {
+         $form.find('.hide_on_submit').hide();
+      },
+  });
+</script>
+
+<div class="klaviyo_modal" id="k_id_modal" style="display:none;">
+    <div class="klaviyo_inner">
+      <a href="#" class="klaviyo_close_modal klaviyo_header_close">×</a>
+      <form id="email_signup" class="klaviyo_bare_embed_MfRBWZ" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+        <input type="hidden" name="g" value="MfRBWZ">
+        <div class="klaviyo_fieldset" style="text-align: center;">
+          <p style="margin-bottom: 15px;text-align:center;">refer a friend</p>
+          <h1 id="ref-deal">Give $5, Get $5</h1>
+          <p id="ref-exp">give a friend $5 off their first order, and you'll get $5 off your next order directly to your inbox.</p>
+
+          <a href="sms:?body=5%20dollars%20off%20at%20Gekks%20Use%20Coupon%20Code%20GKK82057%20at%20www.mygekks.com" id="textfriend" onclick="ga('send', 'event', 'Refer', 'Mobile', 'Text');">
+            <div id="text-friend"><img src="{{'telephone.png' | asset_url }}" alt="Click to Text" style="width: 40px; margin: 0 auto; display: inline-block;" /><h3>text a friend</h3></div>
+          </a>
+          <div class="klaviyo_field_group">
+            <input type="email" value="" name="email" id="k_id_email" placeholder="your email" />
+          </div>
+        </div>
+
+        <div class="klaviyo_form_actions">
+          <button type="submit" class="klaviyo_submit_button" id="submit-refer" style="background-image: none;background-color: gray !important;" onclick="ga('send', 'event', 'Refer', 'Mobile', 'Submit');">
+            <span style="background: gray;box-shadow: none;" id="submit-span">Submit</span>
+          </button>
+        </div>
+        <div class="klaviyo_below_submit"></div>
+      </form>
+      <div id="nophone" style="display: none;">please text a friend before submitting</div>
+      <div class="error_message" style="text-tranform:lowercase;"></div>
+      <div class="success_message" style="font-size: 14pt;" ></div>
+    </div>
+  </div>
+{% comment %}Desktop{% endcomment %}
+  <div class="klaviyo_modal" id="desktop_refer_k" style="display:none;">
+    <div class="klaviyo_inner">
+   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
+    
+     <form id="email_signup-desktop" class="klaviyo_styling klaviyo_standard_embed_Qs4S7M " action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+  <input type="hidden" name="g" value="Qs4S7M">
+        <div class="klaviyo_fieldset hide_on_submit" style="text-align: center;">
+          <p style="margin-bottom: 15px;text-align:center;">refer a friend</p>
+          <h1 id="ref-deal">Give $5, Get $5</h1>
+          <p id="ref-exp">give a friend $5 off their first order, and you'll get $5 off your next order! Enter <em>your friend's</em> email below. </p>
+          <div class="klaviyo_field_group hide_on_submit">
+            <input type="email" value="" name="email" id="k_id_email" placeholder="Email" />
+          </div>
+        </div>
+        <div class="klaviyo_form_actions hide_on_submit">
+          <button type="submit" class="klaviyo_submit_button" style="background-image: none;background-color: transparent !important;height: 55px;">
+            <span style="background: #33ffcc; color: black; box-shadow: none;" id="submit-span">Submit</span>
+          </button>
+        </div>
+        <div class="klaviyo_below_submit"></div>
+      </form>
+      <div class="error_message" style="text-tranform:lowercase;"></div>
+      <div class="success_message" ></div>
+    </div>
+  </div>
+
+
+<style>
+
+@media only screen and (min-width: 470px) {
+  #desktop_refer_k .success_message .klaviyo_header {
+    font-size: 34pt;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #222;
+}
+}
+
+@media only screen and (max-width: 469px) {
+    #desktop_refer_k .success_message .klaviyo_header {
+    font-size: 24pt;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #222;
+  }
+
+  #desktop_refer_k .success_message .klaviyo_subheader {font-size: 11pt;}
+}
+
+#desktop_refer_k .klaviyo_inner form { margin: 0 auto !important; }
+#desktop_refer_k .klaviyo_inner { width: auto !important; }
+@media only screen and (max-width: 400px) {
+  body #desktop_refer_k form #ref-deal { text-transform: none !important; font-size: 19pt !important; }
+}
+#desktop_refer_k form {
+  min-height: 360px !important;
+}
+
+#desktop_refer_k form #ref-deal { text-transform: none !important; font-size: 24pt !important; }
+
+#desktop_refer_k form #k_id_email {
+    max-width: 90%;
+    margin: 10px;
+    height: 40px !important;
+}
+#text-friend {
+    width: 90%;
+    margin: 0 auto;
+    background: #33ffcc;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px;
+}
+
+.klaviyo_modal .klaviyo_header_close {
+    top: 5px !important;
+    right: 13px !important;
+}
+
+#desktop_refer_k form .klaviyo_fieldset { padding: 0; }
+
+#text-friend img { vertical-align: middle; } 
+
+
+#text-friend h3 {
+    letter-spacing: normal;
+    font-size: 20pt;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 0;
+    line-height: normal;
+}
+
+#ref-exp {
+    line-height: 1;
+    margin: 20px 15px;
+    text-align: center;
+}
+
+#ref-deal {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 18pt !important;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: lowercase;
+}
+  
+  #ref-deal h1 { 
+    font-size: 16pt; }
+  
+.klaviyo_modal .klaviyo_fieldset {
+    border-top: none !important;
+    padding: 20px 0 0;
+    margin: 6px 0 0;
+}
+
+#k_id_email {
+max-width: 90%;
+    margin: 10px;
+    height: 55px;
+}
+
+body .klaviyo_modal .success_message {
+  padding: 0;
+}
+
+.lightgray { background-color: gray !important; }
+
+#nophone { 
+    text-align: center;
+    font-size: 12pt;
+    color: red;
+    font-weight: lighter;
+}
+
+#ref-deal {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 24pt;
+    font-weight: bolder;
+    padding: 10px;
+}
+  
+.klaviyo_modal .klaviyo_inner { 
+  max-height: none !important; } 
+</style>
+
+<script>
+      $(document).ready(function(){
+      if ($(".thank-you__additional-content").length) {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          setTimeout(function() {
+        	document.getElementById("k_id_modal").style.display = "inline-block"; 
+           }, 5000)
+        }
+
+      else {
+        setTimeout(function() {
+         document.getElementById("desktop_refer_k").style.display = "inline-block";
+        }, 5000)
+      }
+     }
+    });
+  
+    $(document).ready(function(){
+      if ( !navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ) return;
+      jQuery('#textfriend').attr('href', function() {
+        return jQuery(this).attr('href').replace(/sms:(\+?([0-9]*))?\?/, 'sms:$1&');
+      });
+    })
+
+    var text = 0 
+    $('#textfriend').click(function() {
+      text = 1 
+      $('#nophone').hide();
+      setTimeout(function(){
+	  $('#text-friend').addClass('lightgray');
+       document.getElementById("submit-span").style.backgroundColor = "#33ffcc";
+       document.getElementById("submit-refer").style.backgroundColor = "#33ffcc";
+      }, 1000); 
+
+    }); 
+
+    $('#k_id_modal .klaviyo_submit_button ').click(function(){
+      if (text < 1) { 
+        event.preventDefault();
+        $('#nophone').show();
+      }
+    });
+    $('.klaviyo_header_close').on('click', function() {
+      $(this).parent().parent().hide();
+    });
+
+
+</script>

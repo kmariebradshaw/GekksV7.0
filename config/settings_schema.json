@@ -1,0 +1,812 @@
+[
+  {
+    "name": "Welcome",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "MyGekks Theme"
+      },
+      {
+        "type": "paragraph",
+        "content": "[Support](mailto:daivd@thinkcreatix.com)"
+      }
+    ]
+  },
+  {
+    "name": "Homepage",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hero"
+      },
+      {
+        "type": "link_list",
+        "id": "main_menu_linklists",
+        "label": "Main Menu link list"
+      },
+      {
+        "type": "text",
+        "id": "hero_title",
+        "label": "Hero Title",
+        "default": "Go sockless with Confidence"
+      },
+      {
+        "type": "textarea",
+        "id": "hero_text",
+        "label": "Text below the main hero image",
+        "default": "Gekks are thin, breathable liners that grip to the inside of your shoes"
+      },
+      {
+        "type": "text",
+        "id": "hero_button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "hero_button_url",
+        "label": "Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Facebook Image"
+      },
+      {
+        "type": "image",
+        "id": "fb_image.png",
+        "label": "Default image for og:image meta tag"
+      },
+      {
+        "type": "header",
+        "content": "Video Section"
+      },
+      {
+        "type": "text",
+        "id": "video_title",
+        "label": "Video Title"
+      },
+      {
+        "type": "textarea",
+        "id": "video_text",
+        "label": "Text below the title"
+      },
+      {
+        "type": "text",
+        "id": "video_button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "text",
+        "id": "video_button_url",
+        "label": "Button Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_reviews",
+        "label": "Display press reviews instead of a content above?",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Quick Order"
+      },
+      {
+        "type": "image",
+        "id": "preview.png",
+        "label": "Default image for Guick Order"
+      },
+      {
+        "type": "header",
+        "content": "Selection Section"
+      },
+      {
+        "type": "image",
+        "id": "img-01.jpg",
+        "label": "Product image on the left"
+      },
+      {
+        "type": "image",
+        "id": "img-01-hover.jpg",
+        "label": "Hover Image"
+      },
+      {
+        "type": "product",
+        "id": "product_left",
+        "label": "Select product"
+      },
+      {
+        "type": "text",
+        "id": "product_left_text",
+        "label": "Product title on the left"
+      },
+      {
+        "type": "image",
+        "id": "img-02.jpg",
+        "label": "Product image in the middle"
+      },
+      {
+        "type": "image",
+        "id": "img-02-hover.jpg",
+        "label": "Hover Image"
+      },
+      {
+        "type": "product",
+        "id": "product_middle",
+        "label": "Select product"
+      },
+      {
+        "type": "text",
+        "id": "product_middle_text",
+        "label": "Product title in the middle"
+      },
+      {
+        "type": "image",
+        "id": "img-03.jpg",
+        "label": "Product image on the right"
+      },
+      {
+        "type": "image",
+        "id": "img-03-hover.jpg",
+        "label": "Hover Image"
+      },
+      {
+        "type": "product",
+        "id": "product_right",
+        "label": "Select product"
+      },
+      {
+        "type": "text",
+        "id": "product_right_text",
+        "label": "Product title on the right"
+      },
+      {
+        "type": "header",
+        "content": "Mobile landing page"
+      },
+      {
+        "type": "radio",
+        "id": "mobile_landing_page",
+        "label": "Enable\/disable mobile landing page.",
+        "options": [
+          {
+            "value": "true",
+            "label": "Enable"
+          },
+          {
+            "value": "false",
+            "label": "Disable"
+          }
+        ],
+        "default": "true"
+      }
+    ]
+  },
+  {
+    "name": "Videos",
+    "settings": [
+      {
+        "type": "image",
+        "id": "video-poster.jpg",
+        "label": "Poster for presentation video"
+      },
+      {
+        "type": "text",
+        "id": "homepage_video_url",
+        "label": "URL for presentation video"
+      },
+      {
+        "type": "checkbox",
+        "id": "homepage_video_embedded",
+        "label": "Embed this URL from Viemo?",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "video-installation-poster.jpg",
+        "label": "Poster for installation video"
+      },
+      {
+        "type": "text",
+        "id": "installation_video_url",
+        "label": "URL for installation video"
+      },
+      {
+        "type": "checkbox",
+        "id": "installation_video_embedded",
+        "label": "Embed this URL from Viemo?",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Features",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Left Column"
+      },
+      {
+        "type": "text",
+        "id": "col_1_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "col_1_text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "Middle Column"
+      },
+      {
+        "type": "text",
+        "id": "col_2_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "col_2_text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "Right Column"
+      },
+      {
+        "type": "text",
+        "id": "col_3_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "col_3_text",
+        "label": "Text"
+      }
+    ]
+  },
+  {
+    "name": "Reviews",
+    "settings": [
+      {
+        "type": "image",
+        "id": "review-1.jpg",
+        "label": "Image for 1st review"
+      },
+      {
+        "type": "textarea",
+        "id": "review-1-text",
+        "label": "Text for 1st review"
+      },
+      {
+        "type": "text",
+        "id": "review-1-author",
+        "label": "Author of the 1st review"
+      },
+      {
+        "type": "image",
+        "id": "review-2.jpg",
+        "label": "Image for 2nd review"
+      },
+      {
+        "type": "textarea",
+        "id": "review-2-text",
+        "label": "Text for 2nd review"
+      },
+      {
+        "type": "text",
+        "id": "review-2-author",
+        "label": "Author of the 2nd review"
+      },
+      {
+        "type": "image",
+        "id": "review-3.jpg",
+        "label": "Image for 3rd review"
+      },
+      {
+        "type": "textarea",
+        "id": "review-3-text",
+        "label": "Text for 3rd review"
+      },
+      {
+        "type": "text",
+        "id": "review-3-author",
+        "label": "Author of the 3rd review"
+      },
+      {
+        "type": "image",
+        "id": "review-4.jpg",
+        "label": "Image for 4th review"
+      },
+      {
+        "type": "textarea",
+        "id": "review-4-text",
+        "label": "Text for 4th review"
+      },
+      {
+        "type": "text",
+        "id": "review-4-author",
+        "label": "Author of the 4th review"
+      },
+      {
+        "type": "image",
+        "id": "review-5.jpg",
+        "label": "Image for 5th review"
+      },
+      {
+        "type": "textarea",
+        "id": "review-5-text",
+        "label": "Text for 5th review"
+      },
+      {
+        "type": "text",
+        "id": "review-5-author",
+        "label": "Author of the 5th review"
+      },
+      {
+        "type": "image",
+        "id": "review-6.jpg",
+        "label": "Image for 6th review"
+      },
+      {
+        "type": "textarea",
+        "id": "review-6-text",
+        "label": "Text for 6th review"
+      },
+      {
+        "type": "text",
+        "id": "review-6-author",
+        "label": "Author of the 6th review"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Page Quote"
+      },
+      {
+        "type": "image",
+        "id": "review-7.jpg",
+        "label": "Image"
+      },
+      {
+        "type": "textarea",
+        "id": "review-7-text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "review-7-author",
+        "label": "Author"
+      },
+      {
+        "type": "header",
+        "content": "Additional Options"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_review_button",
+        "label": "Display button under reviews?",
+        "default": true
+      },
+      {
+        "type": "page",
+        "id": "review_page",
+        "label": "Select page where this button redirects your visitors"
+      }
+    ]
+  },
+  {
+    "name": "Press",
+    "settings": [
+      {
+        "type": "image",
+        "id": "press-1.png",
+        "label": "Logo for 1st review"
+      },
+      {
+        "type": "textarea",
+        "id": "press-1-text",
+        "label": "Text for 1st review"
+      },
+      {
+        "type": "text",
+        "id": "press-1-author",
+        "label": "Brand for the 1st review"
+      },
+      {
+        "type": "checkbox",
+        "id": "press-1-checkbox",
+        "label": "Display quote on mobile page?",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "press-2.png",
+        "label": "Logo for 2nd review"
+      },
+      {
+        "type": "textarea",
+        "id": "press-2-text",
+        "label": "Text for 2nd review"
+      },
+      {
+        "type": "text",
+        "id": "press-2-author",
+        "label": "Brand for the 2nd review"
+      },
+      {
+        "type": "checkbox",
+        "id": "press-2-checkbox",
+        "label": "Display quote on mobile page?",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "press-3.png",
+        "label": "Logo for 3rd review"
+      },
+      {
+        "type": "textarea",
+        "id": "press-3-text",
+        "label": "Text for 3rd review"
+      },
+      {
+        "type": "text",
+        "id": "press-3-author",
+        "label": "Brand for the 3rd review"
+      },
+      {
+        "type": "checkbox",
+        "id": "press-3-checkbox",
+        "label": "Display quote on mobile page?",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "press-4.png",
+        "label": "Logo for 4th review"
+      },
+      {
+        "type": "textarea",
+        "id": "press-4-text",
+        "label": "Text for 4th review"
+      },
+      {
+        "type": "text",
+        "id": "press-4-author",
+        "label": "Brand for the 4th review"
+      },
+      {
+        "type": "checkbox",
+        "id": "press-4-checkbox",
+        "label": "Display quote on mobile page?",
+        "default": false
+      },
+      {
+        "type": "image",
+        "id": "press-5.png",
+        "label": "Logo for 5th review"
+      },
+      {
+        "type": "textarea",
+        "id": "press-5-text",
+        "label": "Text for 5th review"
+      },
+      {
+        "type": "text",
+        "id": "press-5-author",
+        "label": "Brand for the 5th review"
+      },
+      {
+        "type": "checkbox",
+        "id": "press-5-checkbox",
+        "label": "Display quote on mobile page?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Additional Options"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_press_button",
+        "label": "Display button under reviews?",
+        "default": true
+      },
+      {
+        "type": "page",
+        "id": "press_page",
+        "label": "Select page where this button redirects your visitors"
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Add To Cart Button"
+      },
+      {
+        "type": "text",
+        "id": "add_to_cart_text",
+        "label": "Button Text",
+        "default": "Add To Cart"
+      },
+      {
+        "type": "header",
+        "content": "Store"
+      },
+      {
+        "type": "text",
+        "id": "store_title",
+        "label": "Store Title"
+      },
+      {
+        "type": "header",
+        "content": "Collections"
+      },
+      {
+        "type": "collection",
+        "id": "men_collection",
+        "label": "Select collection for Men"
+      },
+      {
+        "type": "collection",
+        "id": "women_collection",
+        "label": "Select collection for Women"
+      },
+      {
+        "type": "header",
+        "content": "Product Review"
+      },
+      {
+        "type": "textarea",
+        "id": "product_review",
+        "label": "Product review text below images"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_on_store",
+        "label": "Display product review on Quick Order and Homepage?",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Reviews and quotes"
+      },
+      {
+        "type": "radio",
+        "id": "display_reviews_or_quotes",
+        "label": "Display reviews or quotes on Quick Order.",
+        "options": [
+          {
+            "value": "reviews",
+            "label": "Reviews"
+          },
+          {
+            "value": "quotes",
+            "label": "Quotes"
+          }
+        ],
+        "default": "reviews"
+      },
+      {
+        "type": "header",
+        "content": "Sharing Buttons"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_prod_on_facebook",
+        "label": "Facebook Share button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "like_prod_on_facebook",
+        "label": "Facebook Like button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_prod_on_twitter",
+        "label": "Tweet button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_prod_on_pinterest",
+        "label": "Pin button (Pinterest)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_prod_on_googleplus",
+        "label": "Google +1 button",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Store Locator",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Please enter the URL to a file with all of your locations in JSON format."
+      },
+      {
+        "type": "text",
+        "id": "store_locator_json",
+        "label": "Enter the URL"
+      }
+    ]
+  },
+  {
+    "name": "Quick order",
+    "settings": [
+      {
+        "type": "header",
+        "content": "First order"
+      },
+      {
+        "type": "radio",
+        "id": "quick_order",
+        "options": [
+          {
+            "value": "men",
+            "label": "First men"
+          },
+          {
+            "value": "women",
+            "label": "First women"
+          }
+        ],
+        "default": "men"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "MailChimp Newsletter"
+      },
+      {
+        "type": "checkbox",
+        "id": "allow_newsletter",
+        "label": "Add Mailchimp email form to footer?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "mailchimp_code",
+        "label": "Mailchimp form URL",
+        "info": "[Where to get Mailchimp URL](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_text",
+        "label": "Text below the newsletter form"
+      },
+      {
+        "type": "header",
+        "content": "Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "Footer link list"
+      },
+      {
+        "type": "header",
+        "content": "Social Media"
+      },
+      {
+        "type": "text",
+        "id": "facebook_link",
+        "label": "Facebook Link"
+      },
+      {
+        "type": "text",
+        "id": "twitter_link",
+        "label": "Twitter Link"
+      },
+      {
+        "type": "text",
+        "id": "pinterest_link",
+        "label": "Pinterest Link"
+      },
+      {
+        "type": "text",
+        "id": "instagram_link",
+        "label": "Instagram Link"
+      },
+      {
+        "type": "text",
+        "id": "vimeo_link",
+        "label": "Vimeo Link"
+      },
+      {
+        "type": "text",
+        "id": "google_link",
+        "label": "Google+ Link"
+      }
+    ]
+  },
+  {
+    "name": "Cart Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cart_before_taxes_text",
+        "label": "Subtotal note text",
+        "default": "before taxes and shipping costs"
+      },
+      {
+        "type": "select",
+        "id": "allow_note",
+        "label": "Allow customers to add a note to their order?",
+        "options": [
+          {
+            "value": "no",
+            "label": "No"
+          },
+          {
+            "value": "yes",
+            "label": "Yes"
+          }
+        ],
+        "default": "yes"
+      },
+      {
+        "type": "text",
+        "id": "note_label",
+        "label": "Note label",
+        "default": "Leave a note about your order"
+      }
+    ]
+  },
+  {
+    "name": "Currency Options",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_multiple_currencies",
+        "label": "Allow shopper to toggle currency?"
+      },
+      {
+        "type": "paragraph",
+        "content": "Although you will be able to display prices on your store front in different currencies, Shopify will still process orders in your shop's currency. IMPORTANT: Make sure to follow Step 1 of [this tutorial](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/how-to-show-multiple-currencies)."
+      },
+      {
+        "type": "select",
+        "id": "currency_format",
+        "label": "Money format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without Currency, ex: $10.00"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With Currency, ex: $10 CAD"
+          }
+        ],
+        "default": "money_format"
+      },
+      {
+        "type": "text",
+        "id": "supported_currencies",
+        "label": "Currencies you wish to support",
+        "default": "USD CAD"
+      },
+      {
+        "type": "paragraph",
+        "content": "Separate your currency codes with a space. Use the ISO 4217 3-letter currency code. Click [here](http:\/\/www.xe.com\/iso4217.php) for a complete list of currency codes. Example: CAD USD."
+      },
+      {
+        "type": "paragraph",
+        "content": "* For this functionality to work in your shop, you are required to edit your money formats as per [these instructions](http:\/\/wiki.shopify.com\/How_to_Show_Multiple_Currencies#Do_tell_where_the_money_is) (“Do tell where the money is”)."
+      }
+    ]
+  }
+]

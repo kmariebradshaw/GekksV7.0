@@ -1,0 +1,257 @@
+<style>
+.discount-box h4 { 
+    text-transform: uppercase !important;
+    font-weight: normal;
+    letter-spacing: normal;
+    padding-bottom: 0 !important;
+}
+
+.discount-box h5 { font-weight: 300; line-height: normal; }
+
+.discount-box h3 { 
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none !important;
+}
+
+.discount-box {
+    text-align: center;
+    margin: 25px auto;
+    border-left: 10px solid #33ffcc;
+    border-right: 10px solid #33ffcc;
+    padding: 20px;
+    max-width: 550px;
+    width: 90%;
+}
+
+.discount-box p { 
+    margin-top: -20px;
+    line-height: normal;
+    font-weight: lighter;
+}
+
+@media only screen and (min-width: 1200px) {
+  .num {
+    font-size: 145pt;
+    line-height: 140pt;
+  }
+  .discount-atf h1 { font-size: 70pt; }
+  .text { font-size: 24pt; } 
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1199px) {
+    .num {
+    font-size: 100pt;
+    line-height: 95pt;
+  }
+  .discount-atf h1 { font-size: 60pt; }
+  .text { font-size: 20pt; } 
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1079px) {
+    .discount-atf h1 { font-size: 40pt; }
+    .text { font-size: 18pt; } 
+    .num {
+      font-size: 80pt;
+      line-height: 75pt;
+    }
+    body .col-md-3 { 
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 589px) and (max-width: 799px) {
+    .discount-atf h1 {font-size: 33pt;}
+    .text { font-size: 14pt; } 
+    .num {
+      font-size: 60pt;
+      line-height: 55pt;
+    }
+    body .col-md-3 { 
+      display: inline-block;
+      margin: 5px;
+      padding: 10px;
+    }
+}
+@media only screen and (max-width: 588px) and (min-width: 481px) {
+    .discount-atf h1 { font-size: 25pt; }
+    .discount-box h4 { font-size: 16pt; }
+    .text { font-size: 12pt; } 
+    .num {
+      font-size: 50pt;
+      line-height: 45pt;
+    }
+    body .col-md-3 { 
+      display: inline-block;
+      margin: 5px;
+      padding: 0 10px;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 480px) {
+    .discount-atf h1 { font-size: 22pt; }
+    .discount-box h4 { font-size: 12pt; }
+    .text { font-size: 10pt; } 
+    .num {
+      font-size: 35pt;
+      line-height: 30pt;
+    }
+    body .col-md-3 { 
+      display: inline-block;
+      margin: 0 5px;
+      padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .discount-box h4 { font-size: 10pt;}
+    .discount-box p { font-size: 9pt; }
+    .discount-atf h1 { font-size: 16pt; }
+    .text { font-size: 8pt; } 
+    .num {
+      font-size: 30pt;
+      line-height: 25pt;
+    }
+    body .col-md-3 { 
+      display: inline-block;
+      margin: 0 5px;
+      padding: 0 10px;
+    }
+}
+
+.discount-code { display: inline-block; }
+
+.discount-atf {
+    background-image: url("{{'newyearnewgekks.jpg' | asset_url}}");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 0;
+    padding-top: 41%;
+    width: 100%;
+    text-align: center;
+}
+ .discount-atf h1 {
+    font-family: Magenta !important;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none !important;
+    color: white;
+    margin-top: -33%;
+}
+#ny-countdown { color: white; }
+
+
+.col-md-3 { 
+  display: inline-block;
+  margin: 20px;
+  padding: 10px;
+}
+
+
+.text { text-transform: uppercase; font-weight: lighter; }
+
+</style>    
+
+<main id="page">
+<div class="discount-atf">
+    <h1>we're counting down to new year's</h1>
+    <div id="ny-countdown">
+      <div class="col-md-3 col-xs-6">
+        <div class="clock">
+          <div class="well top-pane">
+            <div id="days-text" class="text">Days</div>
+          </div>
+          <div class="well bottom-pane">
+            <div id="days" class="num">00</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="clock">
+          <div class="well top-pane">
+            <div id="hours-text" class="text">Hours</div>
+          </div>
+          <div class="well bottom-pane">
+            <div id="hours" class="num">00</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="clock">
+          <div class="well top-pane">
+            <div id="mins-text" class="text">Minutes</div>
+          </div>
+          <div class="well bottom-pane">
+            <div id="mins" class="num">00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="discount-box">
+        <h4>$8 off Orders Over $40</h4>
+        <h5>Purchase a Women's Closet Pack <br>& receive an additional $5 Off!</h5>
+        <h3>code: CHEERS8</h3>
+    </div>
+    <div class="discount-box">
+        <h4>$15 off Orders Over $60</h4>
+        <h3>code: BUBBLY15</h3>
+    </div>
+      <div class="discount-box">
+        <h4>$25 off Orders Over $80<h4>
+        <h5>shop for the whole family!</h5>
+        <h3>code: CELEBRATE25</h3>
+    </div>
+    <div class="discount-cta">
+    <a href="/products/womens-closet-pack" class="d-button double"><h2>shop women</h2></a> 
+    <a href="/products/mens-closet-pack" class="d-button double"><h2>shop men</h2></a>
+    </div>
+</main>
+
+<script>
+  function timeLeft(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor( (t/1000) % 60 );
+  var minutes = Math.floor( (t/1000/60) % 60 );
+  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  var days = Math.floor( t/(1000*60*60*24) );
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+};
+
+$(document).ready(function() {
+  var today = new Date();
+  var deadline = 'January 1 ' + (today.getFullYear() + 1) + " 00:00:00";
+  if (today.getMonth() == 0 && today.getDate() == 1) {
+    deadline = 'January 1 ' + (today.getFullYear()) + " 00:00:00";
+  };
+  
+  var setClock = function(newyear){
+    var timeinterval = setInterval(function(){
+      var t = timeLeft(newyear);
+      $('#days').text(t.days);
+      $('#hours').text(t.hours);
+      $('#mins').text(('0' + t.minutes).slice(-2));
+      $('#secs').text(('0' + t.seconds).slice(-2));
+      if(t.total<=0){
+        clearInterval(timeinterval);
+        var now = new Date();
+        var yearStr = now.getFullYear().toString();
+        $('#ny-countdown').hide(); 
+        $('.discount-atf h1').text("Happy New Year's!!"); 
+      }
+    },1000);
+  };
+  
+  setClock(deadline);
+  
+});
+</script>

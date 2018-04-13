@@ -1,0 +1,370 @@
+<style>
+  .highlight { 
+    border: 2px solid #33ffcc; 
+  }
+
+  h3 { 
+
+    text-align: center;
+    font-size: 16pt;
+    letter-spacing: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+  
+  .st { text-align: center; 
+    font-size: 10pt;
+  	margin-top: -10px;
+    text-align: center;
+    font-size: 10pt;
+    line-height: 1;
+	    
+}
+  
+  .left { left: 1%; }
+  .scroll { 
+    position: absolute; 
+    margin-top: 55px; 
+  } 
+  .scroll img {     max-height: 20px; }
+  .right { right: 1%; } 
+  
+  .soldout { display: none; }
+  
+  #mult { 
+    color: crimson;
+  	margin-top: 0 !important;
+  }
+  
+  #mult a { color: crimson; text-decoration: underline; } 
+  
+  h1 { 
+    text-align: center;
+  	padding-top: 15vh;
+    text-transform: none !important;
+    font-weight: bold;
+  } 
+
+  .gen { 
+    display: inline-block;
+    border: 2px solid #d3d3d3;
+    width: 30%; 
+    line-height: 50pt;
+    font-size: 14pt;
+    text-transform: lowercase;
+    cursor: pointer;
+    box-shadow: 4px 5px 5px #d3d3d3;
+    background-color: white;
+  }
+  
+  .gray-r { background-color: #d3d3d3 !important; }
+  
+  
+ #sel-gen{
+    margin: 0 auto;
+    text-align: center;
+}
+  
+  .green-sel { 
+    background: #33ffcc;
+  }
+  
+  .shoe-count { 
+    display: inline-block;
+  	margin: 1%;
+  } 
+#women-col, #men-col {
+    margin-top: 1%;
+    margin-bottom: 5%;
+}  
+ #sub-result { 
+    font-size: 16pt;
+    text-transform: lowercase;
+    width: 30%;
+    text-align: center;
+    background: #33ffcc;
+    line-height: 50pt;
+    box-shadow: 4px 5px 5px #d3d3d3;
+    cursor: pointer;
+   display: inline-block;
+   margin-bottom: 5%;
+ }
+
+  #basics { 
+    height: 70vh;
+  }
+
+  .shoe-wrapper { 
+    width: 92%; 
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .shoe-wrapper::-webkit-scrollbar { 
+    display: none !important;
+  }
+
+
+  #fit-result {
+    margin-top: 5%;
+  }
+
+  .checkout p { text-align: left; }
+
+  .product-title {
+    padding-top: 5px;
+    text-align: left;
+  }
+
+  #page .page ul li:before, #product-info ul li:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .right img { 
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
+  }
+
+  @media only screen and (max-width: 580px) {
+    body .gen, body #sub-result { width: 45%; }
+
+    body .st {
+      font-size: 9pt;
+    }
+
+    body #basics { height: 60vh; } 
+
+    body h3 { font-size: 13pt; }
+    body .shoe-count { width: 33%; }
+
+    body .scroll { margin-top: 10%; }
+
+    body #sub-result {margin-bottom: 12vh;}
+
+
+  }
+
+  @media only screen and (max-width: 351px) { 
+    #basics h1 { font-size: 32px; } 
+  }
+</style>
+
+
+
+   <main id="page">	     
+	    <section class="content" style="padding: 0;">
+    	    <div class="wrap">
+        	    <div class="page">
+                 <div id="basics">
+                  <h1>select your Gekks</h1>
+                  <h3>Let's Start with Some Basics.</h3>
+                  
+
+                  <div id="sel-gen">
+                  <div class="gen" id="la">Women's</div>
+                  <div class="gen" id="me">Men's</div>
+                  </div>
+                  </div>
+
+              		<script>
+                      var women
+                      var men 
+                      
+                      $('#la').click(function() {
+                        $(this).addClass('green-sel');
+                        $(this).siblings().removeClass('green-sel');
+                        $('#men-col').hide()
+                        $('#women-col').show()
+                        women = true 
+                        men = false 
+                        $("html, body").animate({ scrollTop: $('#women-col').offset().top - ($('header').height() + 20 ) }, 1000);
+						sumbitCount = 0 
+                      });
+                      
+                      
+                      
+                      $('#me').click(function() {
+                        $(this).addClass('green-sel');
+						$(this).siblings().removeClass('green-sel');
+                        women = false 
+                        men = true 
+                        $('#women-col').hide()
+                        $('#men-col').show()
+                        $("html, body").animate({ scrollTop: $('#men-col').offset().top - ($('header').height() + 20)}, 1000);
+						submitCount = 0 
+                      });
+                      
+                      var flat= 0
+                      var sn = 0 
+                      var loaf = 0 
+                   
+                     
+                      
+                      $(document).ready(function(){
+                        $(".shoe-count").click(function() {	
+                        $('#sub-result').removeClass('gray-r').show()
+                          $(this).toggleClass('highlight');
+                          switch($(this).attr('class')) {
+                            case "shoe-count flats":
+                              flat = 0  
+                              break;
+                            case "shoe-count sn":
+                              sn = 0 
+                              break;
+                            case "shoe-count loaf":
+                              loaf = 0 
+                              break;
+                            case "shoe-count flats highlight":
+                              flat = 1
+                              break;
+                            case "shoe-count sn highlight":
+                              sn = 1 
+                              break;
+                            case "shoe-count loaf highlight":
+                              loaf = 1 
+                              break;
+                          }
+                        });
+                        
+                        $('#sub-result').click(function() {
+                          if ((flat + loaf + sn) == 0) {
+                            $('#fit-result').show(); 
+                            $('#response').append('<p class="st" id="mult">Please Select the Shoes you would like to wear your Gekks with.</p>')
+                          }
+                          else {
+                            var redirect = ""
+                            $('#sub-result').addClass('gray-r'); 
+                            if ( women ) {
+                              if ( flat + loaf + sn > 1 ) {
+                                redirect = "womens-closet-pack"
+                              }
+                              else if (flat == 1) {
+                                redirect = "flats-version"
+                              }
+                              else if (sn == 1) {
+                                redirect = "womens-sneaker-version"
+                              }
+                              else if (loaf == 1) {
+                                redirect = "womens-loafer-version"
+                              }
+                              window.location = "/collections/women/products/" + redirect + "?sh"
+                            }
+                            else if (men) {
+                              if ( flat + loaf + sn > 1 ) {
+                                redirect = "mens-closet-pack"
+                              }
+                              else if (sn == 1) {
+                                redirect = "sneaker-version"
+                              }
+                              else if (loaf == 1) {
+                                redirect = "loafer-version"
+                              }
+                              window.location = "/collections/men/products/" + redirect + "?sh"
+                            }
+                          }
+                        });
+                      });
+                       
+                    </script>
+              		                  
+                 {% assign products = collections.all.products %}
+                  <div id="women-col" style="display: none;">
+                   <div id="styles">
+                    <h3>Awesome! Now select the shoes you plan to wear your Gekks with</h3>
+                    <p class="st">(you can select as many as you'd like)</p>
+                    </div>
+                   <center>
+                    {% for product in products %}
+                    {% if product.title == "Select" %}
+                     <div class="shoe-wrapper">
+                       <div class="scroll left"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
+                      <div class="scroll right"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>
+                       {% for image in product.images offset: 100 limit: 15 %}
+                       <div class="shoe-count flats"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                       {% endfor %}
+                     </div>
+
+                     
+                   <div class="shoe-wrapper">
+				   <div class="scroll left"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
+                      <div class="scroll right"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>
+                    {% for image in product.images offset: 115 limit: 6 %}
+                    <div class="shoe-count loaf"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                    {% endfor %}
+                     </div>
+                   <div class="shoe-wrapper">
+                       <div class="scroll left"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
+                      <div class="scroll right"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>
+                    {% for image in product.images offset: 121 %}
+                    <div class="shoe-count sn"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                    {% endfor %}
+                     </div>
+                    {%endif %}
+                    {% endfor %}
+                    </center>
+                </div>
+                  <div id="men-col" style="display: none;">
+                    <div id="styles">
+                      <h3>Awesome! Now select the shoes you plan to wear your Gekks with</h3>
+                      <p class="st">(you can select as many as you'd like)</p>  
+                    </div>
+                    <center>
+                      {% for product in products %}
+                      {% if product.title == "Select" %}
+                      <div class="shoe-wrapper">
+                         <div class="scroll left"><img src="{{'arrow.png' | asset_url }}" alt="left"/></div>
+                      <div class="scroll right"><img src="{{'arrow.png' | asset_url }}" alt="right"/></div>
+                        {% for image in product.images offset: 87 limit: 8 %}
+                        <div class="shoe-count sn"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                        {% endfor %}
+                      </div>
+                      <div class="shoe-wrapper">
+                        {% for image in product.images offset: 95 limit:4 %}
+                        <div class="shoe-count loaf"><img src="{{ image | product_img_url: 'compact' }}" /></div>
+                        {% endfor %}
+                      </div>
+                      {%endif %}
+                      {% endfor %}
+                    </center>
+                  </div>
+                  
+                  <div style="text-align: center;">
+                    <div id="sub-result" style="display: none;">Done</div>
+                    <div id="fit-result" style="display: none;">
+                    	<h3 id="response"></h3> 
+                    </div>
+                  </div>
+    	    </div>
+          </div>
+	    </section>
+    </main>
+
+<script>
+  
+  $(document).ready(function() {  
+    if ( $(window).width() < 588) {  
+      $('#also-shop').insertAfter('#newsletter').show();
+    }
+  });
+ 
+  $(document).ready(function() {
+    $('.price').append("<p style='display:inline-block;font-size:10pt;'>USD</p>");
+  }); 
+  
+
+  $('.scroll').on("click", function() { 
+    var wrapper = $(this).parent(); 
+    if ($(this).hasClass('right')) { 
+      $(wrapper).animate( { scrollLeft: '+=200' });
+    }
+    else {
+      $(wrapper).animate({scrollLeft: '-=200'});  
+    }
+    }); 
+  
+
+</script>

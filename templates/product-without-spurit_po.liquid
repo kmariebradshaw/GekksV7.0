@@ -1,0 +1,82 @@
+    <main id="product" itemscope itemtype="http://schema.org/Product">    	     
+	    <meta itemprop="name" content="{{ product.title }}">
+      	<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+        <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}">
+	    <section id="quick-order" class="split content">
+    	    <div class="wrap">
+        	    <div class="clearfix">
+        	        <div class="half">
+            	        <div id="product-preview">
+                	        <img src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.title }}">
+            	        </div>
+            	        {% if product.images.size > 1 %}
+            	        <div class="thumbs{% if product.images.size > 3 %} more{% endif %}">
+            	            {% for image in product.images %}
+            	            <div{% if forloop.index0 == 0 %} class="active"{% endif %} data-replace="{{ image | product_img_url: 'large' }}"><img src="{{ image | product_img_url: 'compact' }}" alt="{{ image.alt | escape }}"></div>
+            	            {% endfor %}
+            	        </div>
+                        {% endif %}
+                        
+                        {% if settings.product_review %}
+            	        <div class="quote">
+                	        <blockquote>
+                	            <p>{{ settings.product_review }}</p>
+            	            </blockquote>
+            	            <div class="yotpo bottomLine"
+                            data-appkey="WXMmBfaEyHlXfk7qqLTVEuK7sWxT4fmebARlaNK2"
+                            data-domain="{{ shop.permanent_domain | escape }}"
+                            data-product-id="{{ product.id }}"
+                            data-product-models="{{ product.id }}"
+                            data-name="{{ product.title | escape }}"
+                            data-url="{{ page.url }}"
+                            data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                            data-description="{{ product.description | escape }}"
+                            data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                            </div>
+            	            <p><a href="#product-reviews" class="next">See More</a></p>
+            	        </div>
+            	        {% endif %}
+        	        </div>
+        	        <div class="half">
+            	        {% include 'mk-option-selection' form_id = product.id  %}
+            	        {% include 'product-add-to-cart' %}
+            	        {% include 'social-sharing' %}
+        	        </div>
+        	    </div>
+    	    </div>
+	    </section>
+	    
+	    {% if product.description != empty and product.title != empty %}
+	    <section id="product-info" class="content">
+	        <div class="wrap">
+	            <header>
+	                <h1>{{ product.title }}</h1>
+	            </header>
+	            <div class="clearfix">
+	                {{ product.description }}
+	            </div>
+	        </div>
+	    </section>
+	    {% else %}
+	    <div class="spacer"></div>
+	    {% endif %}
+	    
+	    <section id="product-reviews" class="content">
+	        <div class="wrap">
+	            <header>
+	                <h1>Reviews</h1>
+	            </header>
+	            <div class="reviews">
+        	        <!-- YOTPO SCRIPT ADDED BY GM ON 10/3-->
+                    <div class="yotpo yotpo-main-widget"
+                        data-product-id="{{ product.id }}"
+                        data-name="{{ product.title | escape }}"
+                        data-url="{{ page.url }}"
+                        data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+                        data-description="{{ product.description | escape }}">
+                    </div>
+        	    </div>
+	        </div>
+	    </section>
+	    
+    </main>

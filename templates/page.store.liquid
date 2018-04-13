@@ -1,0 +1,37 @@
+    <main id="page">	     
+	    <section class="content">
+    	    <div class="wrap">
+        	    <header>
+                    <h1>{{ page.title }}</h1>
+        	    </header>
+        	    <div class="page">
+                  <h1>Ready to Find your Perfect Fit?</h1>
+                  <h3>Select the Shoes you Plan to Wear your Gekks in</h3>
+                  
+                  <div onclick="women()">Women</div>
+                  <div onclick="men()">Men</div>
+                  
+              		<script>
+                      function women() {
+                        $('#men-col').hide()
+                        $('#women-col').show()
+                      }
+                      
+                      function men() { 
+                        $('#women-col').hide()
+                        $('#men-col').show()
+                      }
+                    </script>
+              		
+                  <div id="women" style="display: none;">
+                    <h1>Functionality test Women</h1>
+                  </div>
+                  
+                  <div id="men" style="display: none;">
+                    <h1>Functionality test Men</h1>
+                  </div>
+              
+                </div>
+    	    </div>
+	    </section>
+    </main>

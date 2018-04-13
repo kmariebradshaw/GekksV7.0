@@ -1,0 +1,51 @@
+ 
+<!-- spurit_po-added -->
+{% include 'spurit_po-collection-snippet' %}
+<!-- /spurit_po-added -->
+<main id="page" class="{{ collection.handle }}">	     
+  <section class="content">
+    <div class="wrap">
+
+      <div>
+        {% paginate collection.products by 12 %}
+        {% if collection.products.size > 0 %}
+        <div id="product-grid" class="clearfix">
+          {% for product in collection.products %}
+          {% include 'product-grid-item' %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      <center>
+        <h3 id="ror">read our reviews</h3>
+        {% if collection.title == "Women" %}
+          <div class="rorr"><img src="{{'coll-review.jpg' | asset_url}}" class="do"/></div>
+          <div class="rorr"><img src="{{'coll-reviews-m1.jpg' | asset_url}}" class="mo"/></div>
+          <div class="rorr"><img src="{{'coll-reviews2.jpg' | asset_url}}" class="mo"/></div>
+        {% else %}
+          <div class="rorr"><img src="{{'men-reviews-des.png' | asset_url}}" class="do"/></div>
+          <div class="rorr"><img src="{{'men-reviews-m1.png' | asset_url}}" class="mo"/></div>
+          <div class="rorr"><img src="{{'men-review-m2.png' | asset_url}}" class="mo"/></div>
+        {% endif %}
+        <a href="/pages/reviews"><h5>see more</h5></a>
+      </center>
+      {% if paginate.pages > 1 %}
+      {% include 'pagination' %}    
+      {% endif %}
+      {% endpaginate %}
+    </div>
+  </section>
+</main>
+
+    <script>
+    if ( $(window).width() > 588) {      
+      $(document).on('ready', function(){
+        $(".half-grid-item").css({'height':($(".half-grid-item .product-grid").height()  +'px')});
+        $(".whole-grid-item").css({'height':($(".whole-grid-item .product-grid").height()  +'px')});
+      });
+      $(window).on("resize", function () {
+        $(".half-grid-item").css({'height':($(".half-grid-item .product-grid").height()  +'px')});
+        $(".whole-grid-item").css({'height':($(".whole-grid-item .product-grid").height()  +'px')});
+      });
+    }
+  </script> 

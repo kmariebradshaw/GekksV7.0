@@ -1,0 +1,66 @@
+                        <div id="quick-order-wrapper">
+                            {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+                            {% if template contains 'index' or template contains 'store' %}
+                            <ul id="collection-selector">
+                                <li><span data-collection="{{ settings.men_collection }}" data-collection-id="{{ collections[settings.men_collection].id }}" {% if settings.quick_order == 'men' %}class="active"{% endif %}>{{ collections[settings.men_collection].title }}</span></li>
+                                <li><span data-collection="{{ settings.women_collection }}" data-collection-id="{{ collections[settings.women_collection].id }}" {% if settings.quick_order == 'women' %}class="active"{% endif %}>{{ collections[settings.women_collection].title }}</span></li>
+                            </ul>
+                            {% endif %}
+                            <form action="/cart/add" method="post" id="quick-order-form">
+                                <div id="select_products">
+                                    <div class="selector-wrapper">
+                                        <label for="product_selection">Style</label>
+                                        {% assign prod_num = 0 %}
+                                        
+                                        {% if settings.quick_order == 'men' %}
+                                            {% assign collection = settings.men_collection %}
+                                        {% elsif settings.quick_order == 'women' %}
+                                            {% assign collection = settings.women_collection %}
+                                        {% endif %}
+                                        <select id="product_selection">
+                                            {% for product in collections[collection].products %}
+                                                {% if prod_num == 0 %}{% assign first_id = product.id %}{% assign first_handle = product.handle %}{% endif %}   
+                                          	<option value="{{ product.id }}" data-product-handle="{{ product.handle }}"{% if prod_num == 0 %} selected{% endif %}>{{ product.title }}</option>
+                                                {% assign prod_num = prod_num | plus: 1 %}
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input-wrapper">
+                                    <label for="quantity">Quantity</label>
+                                    {% comment %}<input min="1" type="number" id="quantity" name="quantity" value="1" pattern="[0-9]*" inputmode="numeric" />{% endcomment %}
+                                    <select id="quantity" name="quantity" class="minimalselect">
+                                        {% for idx in (1..20) %}
+                                            {% if idx == 1 %} <option value="{{idx}}" selected>{{idx}}</option>
+                                            {% else %} <option value="{{idx}}">{{idx}}</option> {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div id="product-fields">
+                                    <span class="loading">Loading...</span>
+                                </div>
+                                <div class="shipping">
+                                    <p>We offer worldwide shipping on all orders.</p>
+                                    <p><a href="/pages/international-shipping">Read More</a></p>
+                                </div>
+                            </form>
+                            <script type="text/javascript">
+                            $(document).ready(function() {
+                                FrontLogic.getProductVariations('{{ first_id }}', '{{ first_handle }}');
+                            });
+                            </script>
+                        </div>
+
+
+<script>
+  $(window).load(function() {
+    var selected = $('#product_selection option:selected').text();
+    console.log(selected);
+    console.log('load');
+    if(selected == 'Select') {
+      console.log('found it');
+      $('#add-to-cart-7931129864').attr('disabled',true);
+    }
+  });
+</script>
+

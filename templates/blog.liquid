@@ -1,0 +1,54 @@
+<section class="page blog">
+  <aside class="align-right">
+    <a href="{{ blog.url }}.atom"><i class="fa fa-rss-square fa-lg"></i></a>
+  </aside>
+  <h2 class="theme">{{ blog.title }}</h2>
+    <aside class="meta center">
+    {% if current_tags %}
+      Viewing entries tagged "{{ current_tags.first }}"
+    {% endif %}
+    </aside>
+	<div class="blog-content">
+      {% if blog.articles.size > 0 %}
+		{% paginate blog.articles by 5 %}
+          {% for article in blog.articles %}
+            <article>
+                <h3><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h3>
+              
+              	<p class="meta-top">
+                    {% if article.author %}by {{ article.author }} <span class="separator">|</span> {% endif %}
+                    {{ article.published_at | date: "%B %d, %Y" }}
+                    {% if article.comments_enabled? %}
+                    <span class="separator">|</span> <a href="{{ article.url }}#comments" title="{{ article.title | escape }} Comments" class="comment_count">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }} </a>
+                    {% endif %}
+                </p>
+
+                {% if article.excerpt != blank %}
+                  {{ article.excerpt }}
+              		
+                  <p>
+                      <br/>
+                      <a href="{{ article.url }}">Read full post &rarr;</a>
+                  </p>
+                {% else %}
+                    {{ article.content }} 
+                {% endif %}
+    
+                <p class="meta">
+                    {% for tag in article.tags %}
+                    	{% if forloop.index0 == 0 %}
+                  		<span class="label">Tagged: </span>
+                    	{% endif %}
+                    	<a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                </p>
+            </article>
+            <div class="hr"></div>
+      		{% endfor %}
+          {% include 'pagination' %}
+		{% endpaginate %}
+      {% else %}
+      	<p class="center">There are no articles in this blog.</p>
+      {% endif %}
+	</div>
+</section>

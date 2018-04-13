@@ -1,0 +1,81 @@
+{%- comment %}
+  Hey there! This snippet is managed by Locksmith (uselocksmith.com). You can
+  fiddle with what's below, but your changes will be reset the next time that
+  Locksmith interacts with your shop.
+
+  Last updated: Sat, 03 Feb 2018 00:34:18 +0000
+  Integration version: v1.0
+{% endcomment -%}
+
+{%assign _1=true%}{%assign _9=false%}{%assign _b="Retailer"%}{%assign _5="metafields"%}{%assign _3="locksmith"%}{%assign _7="active"%}{%assign _d="tags"%}{%assign locksmith_active=_9%}{%if shop.metafields.locksmith.active%}{%if shop.metafields.locksmith.active_as_lock%}{%if template != 'customers/account' and template != 'customers/activate_account' and template != 'customers/addresses' and template != 'customers/login' and template != 'customers/order' and template != 'customers/register' and template != 'customers/reset_password'%}{%assign locksmith_active=_1%}{%endif%}{%elsif product%}{%if product.metafields.locksmith.active%}{%assign locksmith_active=_1%}{%else%}{%assign collection_saved=collection%}{%for collection in product.collections%}{%if collection[_5][_3][_7] and collection.metafields.locksmith.active_for_children%}{%if collection.handle == 'wholesale'%}{%assign locksmith_active=_1%}{%endif%}{%endif%}{%endfor%}{%assign collection=collection_saved%}{%endif%}{%elsif page and page.metafields.locksmith.active%}{%assign locksmith_active=_1%}{%elsif collection and collection.metafields.locksmith.active%}{%assign locksmith_active=_1%}{%elsif blog and blog.metafields.locksmith.active%}{%assign locksmith_active=_1%}{%endif%}{%endif%}{%if locksmith_active%}{%assign locksmith_access_granted=_9%}{%unless locksmith_access_granted%}{%if customer and customer[_d] contains _b%}{%assign locksmith_access_granted=_1%}{%endif%}{%endunless%}{%if locksmith_access_granted%}{%if collection and collection.id == 26111020%}{%assign locksmith_access_granted=_9%}{%unless locksmith_access_granted%}{%if customer%}{%assign locksmith_access_granted=_1%}{%endif%}{%endunless%}{%unless locksmith_access_granted%}{%if customer[_d] contains _b%}{%assign locksmith_access_granted=_1%}{%endif%}{%endunless%}{%endif%}{%endif%}{%if locksmith_access_granted and product%}{%assign collection_saved=collection%}{%for collection in product.collections%}{%if collection[_5][_3][_7] and collection.metafields.locksmith.active_for_children%}{%if collection and collection.id == 26111020%}{%assign locksmith_access_granted=_9%}{%unless locksmith_access_granted%}{%if customer%}{%assign locksmith_access_granted=_1%}{%endif%}{%endunless%}{%unless locksmith_access_granted%}{%if customer[_d] contains _b%}{%assign locksmith_access_granted=_1%}{%endif%}{%endunless%}{%endif%}{%endif%}{%endfor%}{%assign collection=collection_saved%}{%endif%}{%if locksmith_access_granted%}{{content_for_layout}}{%else%}{%if customer%}<p><strong>This content is protected, but it doesn't look like you have access.</strong> If you feel this is a mistake, please contact the store owner.</p>{%else%}{%if shop.customer_accounts_enabled%}<script src="//cdn.shopify.com/s/assets/themes_support/shopify_common-040322ee69221c50a47032355f2f7e6cbae505567e2157d53dfb0a2e7701839c.js" type="text/javascript" data-via-locksmith="true"></script><script src="//cdn.shopify.com/s/assets/themes_support/customer_area-4beccea87758d91106a581ba89341d9b51842f6da79209258c8297239e950343.js" type="text/javascript" data-via-locksmith="true"></script>{%endif%}<p><strong>This content is protected</strong> - please log in with your customer account to continue.</p>{%if shop.customer_accounts_enabled%}<main id="page" class="customer">	     
+	    <section class="content">{%if customer%}<p class="center">Redirecting...</p>
+            <script type="text/javascript">
+            window.location = '/account/'; 
+            </script>{%else%}<div class="wrap login">
+        	    <header>
+        	        <h1>Customer Login</h1>
+        	        <p>Don't have an account? <a href="/account/register">Sign up here</a>.</p>
+        	    </header>
+        	    <div class="page">{%form 'customer_login'%}{{form.errors|default_errors}}
+        	            <p>
+            	            <label for="customer_email">Email Address</label>
+                            <input type="email" value="" name="customer[email]" placeholder="Enter your email">
+        	            </p>{%if form.password_needed%}<p>
+                            <label for="customer_password">Password</label>
+                            <input type="password" value="" name="customer[password]" size="16" placeholder="Enter your password">
+                        </p>
+                        <p class="forgot-password">
+                            <a href="#recover" onclick="showRecoverPasswordForm()">Forgot your password?</a>
+                        </p>{%endif%}<input type="submit" value="Sign In">
+                        <div class="foot">
+                            Return to our store by clicking <a href="{{shop.url}}">here</a>.
+                        </div>
+        	        <input type="hidden" id="login_checkout_url" name="checkout_url" value="" />{%endform%}{%if shop.checkout.guest_login%}<div id="guest">
+                        <h2>Guest Login</h2>
+                        <p>Continue checkout as a guest.</p>{%form 'guest_login'%}<input type="submit" value="Continue as Guest">
+                        <input type="hidden" id="login_checkout_url" name="checkout_url" value="" />{%endform%}</div>{%endif%}</div>
+    	    </div>
+    	    
+    	    <div class="wrap recover-password">
+        	    <header>
+        	        <h1>Reset Password</h1>
+        	        <p>We will send you an email to reset your password.</p>
+        	    </header>
+        	    <div class="page">{%form 'recover_customer_password'%}{{form.errors|default_errors}}
+        	            <p>
+            	            <label for="email">Email</label>
+                            <input type="email" value="" size="30" name="email" placeholder="Enter your email">
+        	            </p>
+                        <input type="submit" value="Submit">
+                        <div class="foot">
+                            Go back to login form by clicking <a href="javascript:void(0)" onclick="hideRecoverPasswordForm()">here</a>.
+                        </div>
+        	        <input type="hidden" id="login_checkout_url" name="checkout_url" value="" />{%endform%}</div>
+    	    </div>
+    	    
+    	    <script type="text/javascript">
+              if (window.location.hash == '#recover') { 
+                  showRecoverPasswordForm();
+              } else {
+                  hideRecoverPasswordForm();
+              }
+              function showRecoverPasswordForm() {
+                  $('.recover-password').show();
+                  $('.login').hide();
+                  window.location.hash = '#recover';
+                  return false;
+              }
+              function hideRecoverPasswordForm() {
+                  $('.recover-password').hide();
+                  $('.login').show();
+                  window.location.hash = '';
+                  return false;
+              }
+            </script>{%endif%}</section>
+    </main>
+        <script type="text/javascript">
+          
+          
+          window.document.title = 'Account';
+          document.getElementById('login_checkout_url').value = window.location.pathname;
+        </script>{%endif%}{%endif%}{%endif%}{%else%}{{content_for_layout}}{%endif%}

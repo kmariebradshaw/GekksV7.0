@@ -1,0 +1,24 @@
+    <main id="page" class="customer">	     
+	    <section class="content">
+    	    <div class="wrap login">
+        	    <header>
+        	        <h1>Activate Account</h1>
+        	        <p>Create your password to activate your account.</p>
+        	    </header>
+        	    <div class="page">
+        	        {% form 'activate_customer_password' %}
+        	            {{ form.errors | default_errors }}
+        	            <p>
+            	            <label for="password">Password</label>
+                            <input type="password" value="" name="customer[password]" size="16" placeholder="Enter your password">
+        	            </p>
+                        <p>
+                            <label for="password_confirmation">Confirm</label>
+                            <input type="password" value="" name="customer[password_confirmation]" size="16" placeholder="Confirm your password">
+                        </p>
+                        <input type="submit" value="Activate Account">
+        	        {% endform %}
+        	    </div>
+    	    </div>	    
+	    </section>
+    </main>

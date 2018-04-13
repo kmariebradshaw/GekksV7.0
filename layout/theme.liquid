@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head> 
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+                                         h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+                                         (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+                                        })(window,document.documentElement,'async-hide','dataLayer',4000,
+                                            {'GTM-5NSXTXW':true});</script>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    {% assign maxmeta = 155 %}
+    {% if template contains 'product' %}
+    {% if template == 'collection' %}
+    <meta name="description" content="{{ collection.description | strip_html | strip_newlines | truncate: maxmeta | escape }}">
+    {% else %}
+    <meta name="description" content="{{ product.description | strip_html | strip_newlines | truncate: maxmeta | escape }}">
+    {% endif %}
+    {% elsif page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+   
+ 
+    {% else %}
+    <meta name="description" content="{{ shop.description }}">
+    {% endif %}
+    <meta name="keywords" content="">
+    <meta name="google-site-verification" content="oWg2J4dY3iWAFEik74Rdzx-fCF_-Yde7dCNroVYIIGU">
+    <title>{% if template == 'index' %}Gekks™ | The Innovative No Show Sock for Flats, Loafers, & Sneakers {% elsif template == '404' %}Page Not Found | {{ shop.name }}{% else %}{{ page_title }}{% endif %}</title>
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="icon" type="image/png" href="{{ 'Gekks-Favicon.png' | asset_url }}">
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    <script src="{{ 'custom.jquery.js' | asset_url }}" defer></script>
+    <script src="{{  'main.js' | asset_url }}" defer></script>
+    <script src="{{  'option_selection.js' | shopify_asset_url }}" defer></script>
+    <script src="{{ 'ajax-cart.js'  | asset_url }}" defer></script>
+    <script src="{{ 'jquery.minimalect.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'modernizr.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'handlebars.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
+    <script src="{{'klaviyo.js' | asset_url}}"></script>
+    <script src="{{ 'jquery.easing.1.3.min.js' | asset_url }}" defer></script>
+     <script src="https://scripts.sirv.com/sirv.js"></script>
+
+    {% include 'ajax-cart-template' %}
+
+
+
+    <script async>
+      jQuery(function($) {
+        ajaxCart.init({
+          formSelector: 'form[action="/cart/add"]',
+          cartContainer: '#CartContainer',
+          addToCartSelector: '[type="submit"]',
+          cartCountSelector: '.cart span',
+          cartCostSelector: '#CartCost',
+          moneyFormat: {{ shop.money_format | json }}
+        });
+        });
+
+        jQuery(document.body).on('afterCartLoad.ajaxCart', function(evt, cart) {
+          timber.RightDrawer.open();
+        });
+    </script>
+    <div id="CartContainer" class="hidden">
+      <div style="position: fixed; top:0; right: 0; border: 1px solid lightgray; border-radius: 50%;">X</div>
+    </div>
+    {% include 'referafriend' %}
+    {% unless template contains 'series' %}
+    {% include 'klaviyo-pop' %}
+    {% endunless %}
+    <script src="{{  'api.jquery.js' | shopify_asset_url }}" async></script>
+
+    {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+    <script type="text/javascript">
+      var global_money_format = '{{ shop.money_format }}';
+    </script>
+    {% include 'head-fb-open-graph' %}
+    {{ content_for_header }}
+    <script type="text/javascript">
+      (function () {
+        var head = document.getElementsByTagName("head").item(0);
+        var script = document.createElement("script");
+
+        var src = (document.location.protocol == 'https:' 
+                   ? 'https://www.formilla.com/scripts/feedback.js' 
+                   : 'http://www.formilla.com/scripts/feedback.js');
+
+        script.setAttribute("type", "text/javascript"); 
+        script.setAttribute("src", src); script.setAttribute("async", true);        
+
+        var complete = false;
+
+        script.onload = script.onreadystatechange = function () {
+          if (!complete && (!this.readyState 
+                            || this.readyState == 'loaded' 
+                            || this.readyState == 'complete')) {
+            complete = true;
+            Formilla.guid = 'cs97ceb6-a080-4d6d-8d7c-b66c6b46ecb5';
+            Formilla.loadWidgets();                
+          }
+        };
+        head.appendChild(script);
+      })();
+    </script>    
+    <!-- orankl js -->
+    {% if template contains 'product' or template contains 'reviews' %} 
+    <script type="text/javascript">
+      (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="https://www.orankl.com/javascript?store_key=dc8e48a7-b20c-4472-b296-32446a08b070";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+    </script> 
+    {% endif %}
+    <!-- end orankl js -->
+    {% comment %}Klaivyo{% endcomment %}
+    <script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  _learnq.push(['account', 'pk_c257ee3a5e3b40251891c2148e1e6c4824']);
+
+  (function () {
+  var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+  b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
+  var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+  })();
+  </script>
+<!-- Start of mygekks Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="mygekks.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+/*]]>*/</script>
+<!-- End of mygekks Zendesk Widget script -->
+<script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  </head>
+  <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
+    <header>
+      <div class="wrap cbb-ignored-image" style="text-align: center;">
+      <span class="banner">
+        <a href="/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
+           <h4 style="letter-spacing: normal;">$5 off & Free Shipping on Women's Closet Packs</h4></a>
+                <h4 id="activate-countdown" style="display: none;">10% off for the next 10 minutes! <div id="activate-timer">Click to Activate</div></h4>
+          <h4 id="countdown" style="display:none;">hurry! flash sale ends in <div id="divCounter" style="display:inline-block"></div> <b style="font-weight:bold">use code: GKK10</b></h4>
+         </span>
+
+       
+        <a href="/?sh=d">
+          {% if template == 'index' %}
+            <img src="{{'blogo-q.png' | asset_url}}" alt="Gekks" class="blogo" id="blogo" style="display: none;"/>
+            <img src="{{'blogo-q-white.png' | asset_url}}" alt="Gekks" class="blogo" id="blogo-w" />
+          {% else %}
+            <img src="{{'blogo-q.png' | asset_url}}" alt="Gekks" class="blogo" id="blogo"/>
+          {% endif %}
+        </a>
+        
+        <span class="nav-display desktop"><span>Show Menu</span></span>
+        <div class="{% if settings.mobile_landing_page == 'true' %}desktop{% endif %}" id="top-nav">
+          <nav>
+            <ul class="desktop-nav">
+              {% for link in linklists.main-menu-uu.links %}
+              {% if link.title == "women" %}
+              <li class="collection"><a href="{{ link.url }}" onClick="ga('send', 'event', 'Nav', 'Click', 'Women');">{{ link.title | escape }}</a></li>
+              {% elsif link.title == "men" %}
+              <li class="collection-m"><a href="{{ link.url }}" onClick="ga('send', 'event', 'Nav', 'Click', 'Men');">{{ link.title | escape }}</a></li>
+              {% else %}
+              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endif%}
+              {% endfor %}  
+              <li id="nav-hiw"><a href="#">how it works</a></li>
+            </ul>
+            <ul class="mobile-nav1" style="display: none;">
+              {% for link in linklists.mobile-nav-1.links limit:9 %}
+                {% assign child_list_handle = link.title | handleize %}
+                  {% if linklists[child_list_handle].links != blank %}
+                    <li><a class="collection-prod" href="{{ link.url }}">{{ link.title | escape }} <span>></span></a>
+                      <ul class="childlink">
+                      {% for childlink in linklists[child_list_handle].links %}
+                        <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                      {% endfor %}
+                      </ul>
+                    </li>
+              {% elsif link.title == "Installation" %}
+               <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% else %}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endif %}
+              {% endfor %}
+{% comment %}              {% if shop.customer_accounts_enabled %}
+                {% if customer %}
+                  <li class="mobile"><a href="/account">Your Account</a></li>
+                  <li class="mobile">{{ 'Logout' | customer_logout_link }}</li>
+                {% else %}
+                  <li class="mobile">{{ 'Login' | customer_login_link }}</li>
+                  <li class="mobile">{{ 'Register' | customer_register_link }}</li>
+                {% endif %}
+              {% endif %}{% endcomment %}
+              {% for link in linklists.mobile-nav-1.links offset:9 limit:1 %}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endfor %}
+         
+                <div id="nav-social">
+          <a href="https://www.facebook.com/GekksLowCutLiners"><img src="{{'fb.png' | asset_url}}" alt="Facebook"/></a>
+          <a href="https://www.pinterest.com/gekksliners/gekks-low-cut-liners/"><img src="{{'ig.png' | asset_url}}" alt="Instagram"/></a> 
+          <a href="https://www.instagram.com/gekks_go_sockless/"><img src="{{'pinterest.png' | asset_url}}" alt="Pinterest"/></a> 
+        </div>
+  
+            </ul>
+          </nav>
+          <div>
+            <div class="search">
+              <span class="search-toggle" role="link">Search</span>
+              <form action="/search" method="get">
+                <input type="submit" value="Search" style="background-color: transparent !important;">
+                <input type="hidden" value="product" name="type">
+                <input type="text" placeholder="search products..." value="{% if search.performed %}{{ search.terms | escape | downcase }}{% endif %}" name="q" id="search-product"> 
+                <span class="close">Close</span>
+              </form>
+            </div>
+            <div class="user-info">
+              {% if shop.customer_accounts_enabled %}
+              <div class="sign-in">
+                <ul>
+                  {% if customer %}
+                  <li><a href="/account/">Your Account</a></li>
+                  <li><a href="/account/addresses/">Addresses</a></li>
+                  <li>{{ 'Logout' | customer_logout_link }}</li>
+                  {% else %}
+                  <li>{{ 'Login' | customer_login_link }}</li>
+                  <li>{{ 'Register' | customer_register_link }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              {% endif %}
+              <a href="/cart/" class="cart"><span>{{ cart.item_count }}</span> <image class="cart-icon" src="{{'Gekks-Icons-Bag.png' | asset_url}}" style="margin-bottom: -11px;"/></a>
+            </div>
+          </div>
+          <ul class="icon-nav collection"> <li><a href="/products/womens-closet-pack"> <img src="{{'Gekks-Icons-closet-pack_1.png' | asset_url}}" class="select-icons-cp"/> <h4>Women's Closet Pack</h4> </a> </li><li><a href="/products/flats-version"> <img src="{{'Gekks-Icons-flat.png' | asset_url}}" class="select-icons"/> <h4>Ballet Flats</h4> </a> </li><li><a href="/products/heels"> <img src="{{'Gekks-Icons-heel.png' | asset_url}}" class="select-icons"/> <h4>Heels & Wedges</h4> </a> </li><li><a href="/products/womens-loafer-version"> <img src="{{'Gekks-Icons-loafer.png' | asset_url}}" class="select-icons"/> <h4>Loafers & Slip-Ons</h4> </a> </li><li><a href="/products/womens-sneaker-version"> <img src="{{'Gekks-Icons-sneaker.png' | asset_url}}" class="select-icons"/> <h4>Sneakers & Lace-Ups</h4> </a> </li></ul> <ul class="icon-nav-m collection-m"> <li> <a href="/products/mens-closet-pack"> <img src="{{'Gekks-Icons-closet-pack_5.png' | asset_url}}" class="select-icons-cp-m"/> <h4>Men's Closet Pack</h4> </a> </li><li> <a href="/products/sneaker-version"> <img src="{{'Gekks-Icons-sneaker2.png' | asset_url}}" class="select-icons"/> <h4>Sneakers & Lace-Ups</h4> </a> </li><li> <a href="/products/loafer-version"> <img src="{{'Gekks-Icons-loafer2.png' | asset_url}}" class="select-icons"/> <h4>Loafers & Slip-Ons</h4> </a> </li></ul> </div>
+      </div>
+    </header>
+
+    {% if shop.metafields.locksmith.active %}{% include 'locksmith' %}{% else %}{{ content_for_layout }}{% endif %}
+    <footer>
+      <div class="wrap">
+        <div class="clearfix">
+          <div class="half">
+            <img src="{{'blogo-white.png' | asset_url}}" alt="GEEKS" id="flogo" />
+            <nav>
+              <ul>
+                {% for link in linklists.footer-1.links %}<li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>{% endfor %}
+              </ul>
+            </nav>
+          </div>
+          <div class="half">
+            <div id="referafriend" onclick="ga('send', 'event', 'Refer', 'Footer', 'Click');">refer a friend!</div>
+            <div id="psocial">
+              <h3 id="fsocial">follow us on social!</h3>
+              <ul class="social">
+                {% if settings.facebook_link != '' %}<li class="soc-fb"><a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" target="_blank">Facebook</a></li>{% endif %}
+                {% if settings.pinterest_link != '' %}<li class="soc-pi"><a href="{{ settings.pinterest_link }}" title="{{ shop.name }} on Pinterest" target="_blank">Pinterest</a></li>{% endif %}
+                {% if settings.instagram_link != '' %}<li class="soc-ig"><a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" target="_blank">Instagram</a></li>{% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p>© {{ shop.name }} {{ 'now' | date: '%Y' }}</p>
+      </div>
+    </footer>
+    <!-- Google Code for Remarketing Tag -->
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 973442114;
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/973442114/?value=0&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>    
+    <!-- END Google Code for Remarketing Tag --> 
+    {% if template contains 'reviews' %}{{ 'reviews.css' | asset_url | stylesheet_tag }}{% endif %}
+    <script>jQuery(function(){jQuery(".swatch :radio").change(function(){var t=jQuery(this).closest(".swatch").attr("data-option-index"),e=jQuery(this).val();jQuery(this).closest("form").find(".single-option-selector").eq(t).val(e).trigger("change")})});</script>
+    {% include 'remove-sold-out' %}
+    {% include 'linked-options' %}
+    {% if template == 'product' %}<script src="//www.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=my-gekks.myshopify.com" async></script>{% endif %}
+    <script>$(window).width()>800&&($(".collection").hover(function(){$(".icon-nav").addClass('ib')},function(){$(".icon-nav").removeClass('ib')}),$(".collection-m").hover(function(){$(".icon-nav-m").addClass('ib')},function(){$(".icon-nav-m").removeClass('ib')})); </script>
+    <script>var offset=$(".user-info").offset(),height=$(".user-info").height(),width=$(".user-info").width(),top=offset.top+height+50+"px",right=offset.left+width-170+"px";$(window).width()>1366&&$("#CartContainer").css({position:"fixed",left:right,top:top});</script>
+    <script>$("#referafriend").click(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?document.getElementById("k_id_modal").style.display="inline-block":document.getElementById("desktop_refer_k").style.display="inline-block"});</script>
+
+  <script src="//cdn.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=my-gekks.myshopify.com"></script>
+</body>
+</html>

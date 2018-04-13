@@ -1,0 +1,33 @@
+<section class="collection-list">
+    <h2 class="theme coll-heading">Collections</h2>
+	<ul class="product-grid just">
+		{% for collection in collections %}{% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
+			<li>
+              {% if collection.image %}
+                  {% capture imgsrc %}{{ collection.image.src | collection_img_url: 'large' }}{% endcapture %}
+              {% else %}
+                  {% capture imgsrc %}{{ collection.products.first.featured_image | product_img_url: 'large' }}{% endcapture %}
+              {% endif %}
+              <a class="product-link" href="/collections/{{ collection.handle }}">
+                <div class="img-outer"{% if settings.collection_style == 'full' %} style="background-image:url({{ imgsrc }});"{% endif %}> 
+                    <div class="table">
+                      <div class="table-cell">
+                        <div class="max-width">
+                          <img src="{{ imgsrc }}" class="orig" alt="{{ collection.title | escape }}" onload="imgLoaded(this)"/>
+                        </div>
+                      </div>
+                    </div>  
+                </div>
+                <div class="product-information">
+                    <span class="title">{{ collection.title | escape }}</span>
+                    <span class="price">
+                      <nobr>
+                          {{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'item', 'items' }}
+                      </nobr>
+                    </span>
+                </div>
+              </a>
+          	</li>
+		{% endunless %}{% endfor %}
+	</ul>
+</section>

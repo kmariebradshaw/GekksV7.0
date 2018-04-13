@@ -1,0 +1,36 @@
+{% unless product.title == "Select" or product.title == "Extra Gripper Sets"%}
+{% if  product.title == "Men's Closet Pack" %}
+<div class="whole-grid-item">
+  {% else %}
+  <div class="half-grid-item">
+    {% endif %}
+    <a href="{{ product.url | within: collection }}">
+      {% if product.title == "Men's Closet Pack"%} 
+      {% for image in product.images offset:12 limit: 1%}
+      <img src="{{ image | product_img_url: '1566x520' }}" alt="{{ product.featured_image.alt | escape }}" class="product-grid" id="m-coll-p">
+      {% endfor %} 
+      {% else %}
+      {% for image in product.images offset:12 limit: 1%}
+      <img src="{{ image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" class="product-grid">
+      {% endfor %}
+      {% endif %}
+      {% if product.title == "Women's Closet Pack" %}
+      <h2>Women's<br>Closet Pack</h2>
+      <h5>$5 off & free shipping</h5>
+      {% elsif product.title == "Men's Closet Pack" %}
+      <div id="ab-men-c">
+        <h2>Men's<br>Closet Pack</h2>
+        <h5 style="font-size: 26px;font-weight: 300;line-height: 1.5;">$4 off</h5>
+      </div>
+      {% elsif product.title =="Ballet Flats" %}
+      <h2>ballet<br>flats</h2>
+      {% elsif product.title =="Loafers & Slip-Ons" %}
+      <h2>loafers &<br> slip-ons</h2>
+      {% elsif product.title =="Sneakers & Lace-Ups" %}
+      <h2>sneakers &<br> lace-ups</h2>
+      {% else %}
+      <h2 style="color: black;">{{ product.title }}</h2>
+      {% endif %}
+    </a>
+  </div>
+  {% endunless %}

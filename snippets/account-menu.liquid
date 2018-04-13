@@ -1,0 +1,11 @@
+<aside>
+    <h4>Your Account</h4>
+    <ul>
+        <li><a href="/account/">Your Orders</a></li>
+        <li><a href="/account/addresses/">View Addresses</a></li>
+        {% if shop.email %}
+        <li><a href="mailto:{{shop.email}}" target="_blank">Contact Shop</a></li>
+        <li>{{ "Logout" | customer_logout_link }}</li>
+        {% endif %}
+    </ul>
+</aside>

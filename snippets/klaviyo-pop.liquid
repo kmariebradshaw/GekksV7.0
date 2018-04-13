@@ -1,0 +1,108 @@
+      {% comment %}Welcome Pop-Up{% endcomment %}
+
+  <div class="klaviyo_modal" id="newsletter_popup2" style="display:none;">
+   <div class="klaviyo_inner klinner">
+   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
+   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
+      <input type="hidden" name="g" value="Ai9wnf">
+      <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Show Giveaways" class="pop-image hide_on_submit" style="min-height: 275px !important;"/>
+   <div class="khalf hide_on_submit">
+      <div class="klaviyo_fieldset">
+        <p class="klaviyo_header hide_on_submit">first order<br>discount!</p> 
+        <p class="klaviyo_subheader hide_on_submit">Enter your email to instantly unlock a new customer coupon.</p>
+      </div>
+      <div class="klaviyo_fieldset hide_on_submit">
+      <div class="klaviyo_field_group">
+        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email"></div>
+      </div> 
+      <div class="klaviyo_fine_print"></div> 
+      <div class="klaviyo_form_actions hide_on_submit">
+          <button type="submit" class="klaviyo_submit_button">
+          <span>let's go!</span>
+          </button> 
+      </div> 
+      <div class="kbelow">
+      <p>We give away <em>FREE</em> shoes<br> every week so be sure to<br> follow us on social for your<br> chance to win!</p>
+      </div>
+      <div class="klaviyo_below_submit" ></div>
+      </div>
+   </form>
+  <div class="success_message" ></div> 
+  <div class="error_message" ></div>
+
+   </div>
+</div>
+ 
+<script>
+$(document).ready(function(){ 
+ setTimeout(function() {
+  if ($('.klaviyo_modal:visible').length == 0) {
+     KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
+    delay_seconds: 0,
+    success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $70 USD</div><div class='klaviyo_header'>GEKKS50</div></div>",
+     success: function ($form) {
+      ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
+      $form.find('.hide_on_submit').hide();
+    },
+  }); 
+  };
+  }, 5000);
+}); 
+
+</script>
+
+{% comment %} Exit Intent {% endcomment %}
+<div class="klaviyo_modal" id="exit_offer" style="display:none;">
+   <div class="klaviyo_inner exitpop">
+   <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
+   <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
+      <input type="hidden" name="g" value="PUyKK8"> 
+   <div class="hide_on_submit">
+      <div class="klaviyo_fieldset">
+        <p class="klaviyo_header hide_on_submit extra-title">wait!</p> 
+        <p class="klaviyo_subheader hide_on_submit">Get 10% off your first $30 order.<br> You'll also receive <b>exclusive discounts</b> directly to your email!</p>
+      </div>
+      <div class="klaviyo_fieldset hide_on_submit">
+      <div class="klaviyo_field_group">
+        <input type="email" id="newsletter_popup_$email" placeholder="Email" name="email"></div>
+      </div> 
+      <div class="klaviyo_fine_print"></div>
+      <div class="klaviyo_form_actions hide_on_submit">
+          <button type="submit" class="klaviyo_submit_button">
+          <span>Get my discount!</span>
+          </button>
+      </div>
+      <div class="klaviyo_below_submit" ></div>
+      </div>
+   </form>
+  <div class="success_message" ></div>
+  <div class="error_message" ></div>
+
+   </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  var executed = false 
+  if (!sessionStorage.exitAttempted) {
+   $(document).on('mouseleave', leaveFromTop);
+      function leaveFromTop(e){
+        if ($('.klaviyo_modal:visible').length == 0 && (e.clientY < 0 ) && (!executed)){
+            KlaviyoSubscribe.attachToModalForm('#exit_offer', {
+              success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below to receive 10% off your first order over $30 USD</div><div class='klaviyo_header'>GEKKS10</div></div>",
+              ignore_cookie: true, 
+              delay_seconds: 0.1,
+              success: function ($form) {
+              $form.find('.hide_on_submit').hide();
+              ga('send', 'event', 'Acquisition', 'Exit Offer', 'Website');
+              },
+            }); 
+            executed = true 
+            sessionStorage.exitAttempted = 1          
+      };
+    };
+  };
+});
+</script>
+
+
