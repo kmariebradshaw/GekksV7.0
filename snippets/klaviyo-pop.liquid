@@ -5,7 +5,8 @@
    <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
       <input type="hidden" name="g" value="Ai9wnf">
-      <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Show Giveaways" class="pop-image hide_on_submit" style="min-height: 275px !important;"/>
+      <input type="hidden" name="$fields" value="phone_number"/>
+      <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Show Giveaways" class="pop-image hide_on_submit" id="welcome-photo-pop"/>
    <div class="khalf hide_on_submit">
       <div class="klaviyo_fieldset">
         <p class="klaviyo_header hide_on_submit">first order<br>discount!</p> 
@@ -13,7 +14,9 @@
       </div>
       <div class="klaviyo_fieldset hide_on_submit">
       <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email"></div>
+        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email">
+        <input type="tel" value="" name="phone_number" id="phone_number_formfield" placeholder="Phone Number">
+      </div>
       </div> 
       <div class="klaviyo_fine_print"></div> 
       <div class="klaviyo_form_actions hide_on_submit">
@@ -29,7 +32,6 @@
    </form>
   <div class="success_message" ></div> 
   <div class="error_message" ></div>
-
    </div>
 </div>
  
@@ -39,6 +41,7 @@ $(document).ready(function(){
   if ($('.klaviyo_modal:visible').length == 0) {
      KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
     delay_seconds: 0,
+    // extra_fields: ["$phone_number"],
     success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $70 USD</div><div class='klaviyo_header'>GEKKS50</div></div>",
      success: function ($form) {
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
