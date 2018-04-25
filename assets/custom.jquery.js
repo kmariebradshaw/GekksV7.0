@@ -68,12 +68,15 @@ function countdownActive(){
 function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');
+console.log($coupon); 
 
 if($coupon){
   createCookie('discountCode', $coupon, { expires: 2 });
 }
 
 $discountCode = readCookie('discountCode');
+console.log($discountCode)
+
 
 if($discountCode){
   if ($discountInput.length > 0) { 
@@ -191,6 +194,5 @@ $('.collection-prod').click(function() {
   event.preventDefault();
   $(this).siblings('.childlink').slideToggle();
   $(this).css(':after', 'transform:rotate(90deg)')
-  console.log($('.collection-prod span').text())
   $(this).children('span').text($(this).children('span').text() == '>' ? 'v' : '>')
 });
