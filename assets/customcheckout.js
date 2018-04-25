@@ -6,7 +6,9 @@ function orderContains() {
         $('[data-shipping-method="shopify-Expedited%20Shipping%20(Guaranteed%20Delivery%20in%203%20Business%20Days)-14.90').parent().hide();
     }
 }
-
+ß
 $(document).ready(function() {
     orderContains(); 
+    checkForDiscount(); 
 }); 
+ 
