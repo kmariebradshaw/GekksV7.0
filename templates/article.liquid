@@ -7,7 +7,7 @@
       	<p class="meta-top">
             {% if article.author %}by {{ article.author }} <span class="separator">|</span> {% endif %}
             {{ article.published_at | date: "%B %d, %Y" }}
-            {% if article.comments_enabled? %}
+            {% if article.comments_enabled? %} 
             <span class="separator">|</span> <a href="{{ article.url }}#comments" title="{{ article.title | escape }} Comments" class="comment_count">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }} </a>
             {% endif %}
         </p>

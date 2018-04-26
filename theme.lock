@@ -198,7 +198,7 @@ assets/cookies.js:
 assets/custom.jquery.js:
   development: 2018-04-25T13:52:11-05:00   0ca67ac8534c63b2ec78b4ac83f3306f
 assets/custom.scss.liquid:
-  development: 2018-04-26T12:25:41-05:00   07ade247b4079c57729f4902a5dc3f6a
+  development: 2018-04-26T13:35:29-05:00   5030d1b91c41cde01cd5d634facad533
 assets/customcheckout.js:
   development: 2018-04-25T10:44:32-05:00   f99fdc16ba519408044a9e5a9e5a5ede
 assets/cybermonday.gif:
@@ -404,7 +404,7 @@ layout/checkout.liquid:
 layout/theme.flow.liquid:
   development: 2018-04-13T14:43:08-05:00   21bbc25666e348e49a7dfb37d12e0963
 layout/theme.liquid:
-  development: 2018-04-25T13:51:03-05:00   a859fc04f1ddf35fcce157b104f7c01c
+  development: 2018-04-26T13:15:23-05:00   3e13cecca4d71c5a3f5908554cb5a422
 layout/theme.series.liquid:
   development: 2018-04-13T14:43:08-05:00   dbf9aa41f3eceea9f12b260e026d58e8
 locales/en.default.json:
@@ -490,7 +490,7 @@ snippets/swatch.liquid:
 templates/404.liquid:
   development: 2018-04-13T14:43:10-05:00   c59b95fb97b35950ffccb18cb113803f
 templates/article.liquid:
-  development: 2018-04-13T14:43:10-05:00   006818e8e9d650c51c0b2eeae055423d
+  development: 2018-04-26T13:15:37-05:00   ce4a4d0579b83c0dba64aa4c31204110
 templates/blog.liquid:
   development: 2018-04-13T14:43:10-05:00   9800da60c82491003e6d29bedd6f997b
 templates/cart.liquid:
