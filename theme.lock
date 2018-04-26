@@ -198,7 +198,7 @@ assets/cookies.js:
 assets/custom.jquery.js:
   development: 2018-04-25T13:52:11-05:00   0ca67ac8534c63b2ec78b4ac83f3306f
 assets/custom.scss.liquid:
-  development: 2018-04-13T14:42:34-05:00   c188ccab7e1f285fafef5c6769abfc36
+  development: 2018-04-26T12:25:41-05:00   07ade247b4079c57729f4902a5dc3f6a
 assets/customcheckout.js:
   development: 2018-04-25T10:44:32-05:00   f99fdc16ba519408044a9e5a9e5a5ede
 assets/cybermonday.gif:
@@ -262,7 +262,7 @@ assets/jquery.minimalect.min.js:
 assets/kempt.jpg:
   development: 2018-04-13T14:42:41-05:00   7951b85df661e999adaa73ab4e56adc3
 assets/klaviyo.js:
-  development: 2018-04-13T14:42:41-05:00   8c6ab634d2b5e5b3e3492f9e4999b0c6
+  development: 2018-04-26T12:08:26-05:00   567ba03f0a5ad73d366fa96511ddb41d
 assets/l-noshow.jpg:
   development: 2018-04-13T14:42:41-05:00   0616cf46a2195c83ae3d0958c929ff6c
 assets/m-how-it-works.jpg:
@@ -436,7 +436,7 @@ snippets/head-fb-open-graph.liquid:
 snippets/head-script-imgload.liquid:
   development: 2018-04-13T14:43:09-05:00   c471f3ccd648edb2dafba1471cca3644
 snippets/klaviyo-pop.liquid:
-  development: 2018-04-13T14:43:09-05:00   ed8835cfede0e2169b30eb32dc1f6042
+  development: 2018-04-26T13:12:07-05:00   1a6f20613700e56eda28681842529145
 snippets/linked-options.liquid:
   development: 2018-04-13T14:43:09-05:00   de52ba5421f3d8b58e9f600808467d65
 snippets/locator.liquid:
@@ -528,7 +528,7 @@ templates/page.faq.liquid:
 templates/page.gekks-in-action.liquid:
   development: 2018-04-13T14:43:10-05:00   d29a51ed35fc43ddc0906a94aa86e1f7
 templates/page.gift-gekks.liquid:
-  development: 2018-04-13T14:43:10-05:00   1673f037d0d3876f43e80282a582498d
+  development: 2018-04-18T11:55:43-05:00   a5240473ff96c375e03acce46ee24e7f
 templates/page.how_it_works.liquid:
   development: 2018-04-13T14:43:10-05:00   81bcedacd304188b10fe1cd2920bfd7f
 templates/page.latest_news.liquid:

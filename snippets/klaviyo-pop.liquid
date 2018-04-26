@@ -5,15 +5,19 @@
    <a href="#" class="klaviyo_close_modal klaviyo_header_close kclose">×</a>
    <form action="//manage.kmail-lists.com/subscriptions/subscribe" method="POST" novalidate="novalidate" class="klaviyo_subscription_form">
       <input type="hidden" name="g" value="Ai9wnf">
-      <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Show Giveaways" class="pop-image hide_on_submit" style="min-height: 275px !important;"/>
+      <input type="hidden" name="$fields" value="phone_number"/>
+      <img src="{{'pop-up.jpg' | asset_url}}" alt="Weekly Show Giveaways" class="pop-image hide_on_submit" id="welcome-photo-pop"/>
    <div class="khalf hide_on_submit">
       <div class="klaviyo_fieldset">
         <p class="klaviyo_header hide_on_submit">first order<br>discount!</p> 
-        <p class="klaviyo_subheader hide_on_submit">Enter your email to instantly unlock a new customer coupon.</p>
+        <p class="klaviyo_subheader hide_on_submit">Enter your information to instantly unlock a new customer coupon.</p>
       </div>
       <div class="klaviyo_fieldset hide_on_submit">
       <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email"></div>
+        <input type="email" id="newsletter_popup_$email" class="newsletter_email" placeholder="email" name="email">
+        <h5 style="text-align: center;line-height:1;margin: 5px;">OR</h5>
+        <input type="tel" value="" name="phone_number" id="phone_number_formfield" placeholder="Phone Number" style="margin: 0;">
+      </div>
       </div> 
       <div class="klaviyo_fine_print"></div> 
       <div class="klaviyo_form_actions hide_on_submit">
@@ -29,7 +33,6 @@
    </form>
   <div class="success_message" ></div> 
   <div class="error_message" ></div>
-
    </div>
 </div>
  
@@ -48,6 +51,21 @@ $(document).ready(function(){
   };
   }, 5000);
 }); 
+
+$('#newsletter_popup2 .klaviyo_field_group input').click(function(){
+  var $this = $(this); 
+  var $email_gen = Math.random() + "d"+ Date.now().toString() + "@" + "myggekks.com"
+  $this.removeClass('grayed-out').removeClass('placeholder_hidden').siblings().not('h5').addClass('grayed-out'); 
+    if ($this.attr('id') == "phone_number_formfield") {
+      $("input.newsletter_email").val($email_gen).addClass('placeholder_hidden');
+      var $test = $("input.newsletter_email").val(); 
+      console.log($test)
+    }
+    else if ($this.attr('id') == "newsletter_popup_$email") {
+      $this.val("")
+    }
+})
+
 
 </script>
 

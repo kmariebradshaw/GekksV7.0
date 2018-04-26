@@ -3420,7 +3420,7 @@ body .klaviyo_modal .klinner .khalf .klaviyo_form_actions {
 body .klaviyo_modal .klinner .klaviyo_submit_button span { font-size: 7pt; }
 
 
-.klinner input[type=email] {
+.klinner input[type=email], .klinner input[type=tel] {
   font-size: 8pt !important;
   }
 
@@ -3466,12 +3466,19 @@ em { font-weight: bold; }
 
   .klaviyo_fieldset { padding: 10px 0 0; }
 
-  input[type=email] {
+  input[type=email], input[type=tel] {
+
     border: 1px solid #33ffcc !important;
     border-radius: 10px !important;
     height: 35px !important;
     line-height: normal !important;
     color: black !important;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    text-transform: lowercase;
+    font-size: 12pt;
+
   }
   .klaviyo_submit_button {
     height: auto;
@@ -3543,7 +3550,7 @@ body .klaviyo_modal .exitpop {
     font-size: 12pt;
     font-weight: lighter;
   }
-  input[type=email] {
+  input[type=email], input[type=tel] {
     border: 1px solid #33ffcc !important;
   }
   .extra-title  {
@@ -3597,7 +3604,7 @@ form {
     line-height: 40px; 
   }
 
-  input[type=email]{ 
+  input[type=email], input[type=tel]{ 
     border: 2px solid black !important; 
     height: 50px !important; 
     background: white !important;
@@ -3637,7 +3644,7 @@ form {
 
 
 
-body .klaviyo_modal form input[type=email] { line-height: normal !important; }
+body .klaviyo_modal form input[type=email], .klaviyo_modal form input[type=tel] { line-height: normal !important; }
 
 #returns-exchanges, #privacy-policy {
     padding: 20px 1%;
@@ -4547,3 +4554,20 @@ background-image: none !important;
     font-weight: bolder;
 }
     
+@media only screen and (min-width: 589px) {
+  #welcome-photo-pop { min-height: 450px; }
+
+}
+@media only screen and (min-width: 401px) and (max-width: 588px) {
+  #welcome-photo-pop { min-height: 400px; }
+}
+
+@media only screen and (max-width: 400px) {
+  #welcome-photo-pop { min-height: 350px; }
+}
+
+.grayed-out { opacity: 0.3; }
+
+.placeholder_hidden {
+  font-size: 0px !important; 
+}
