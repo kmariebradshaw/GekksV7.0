@@ -10,12 +10,13 @@
    <div class="khalf hide_on_submit">
       <div class="klaviyo_fieldset">
         <p class="klaviyo_header hide_on_submit">first order<br>discount!</p> 
-        <p class="klaviyo_subheader hide_on_submit">Enter your email to instantly unlock a new customer coupon.</p>
+        <p class="klaviyo_subheader hide_on_submit">Enter your information to instantly unlock a new customer coupon.</p>
       </div>
       <div class="klaviyo_fieldset hide_on_submit">
       <div class="klaviyo_field_group">
-        <input type="email" id="newsletter_popup_$email" placeholder="email" name="email">
-        <input type="tel" value="" name="phone_number" id="phone_number_formfield" placeholder="Phone Number">
+        <input type="email" id="newsletter_popup_$email" class="newsletter_email" placeholder="email" name="email">
+        <h5 style="text-align: center;line-height:1;margin: 5px;">OR</h5>
+        <input type="tel" value="" name="phone_number" id="phone_number_formfield" placeholder="Phone Number" style="margin: 0;">
       </div>
       </div> 
       <div class="klaviyo_fine_print"></div> 
@@ -41,7 +42,6 @@ $(document).ready(function(){
   if ($('.klaviyo_modal:visible').length == 0) {
      KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
     delay_seconds: 0,
-    // extra_fields: ["$phone_number"],
     success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $70 USD</div><div class='klaviyo_header'>GEKKS50</div></div>",
      success: function ($form) {
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
@@ -51,6 +51,21 @@ $(document).ready(function(){
   };
   }, 5000);
 }); 
+
+$('#newsletter_popup2 .klaviyo_field_group input').click(function(){
+  var $this = $(this); 
+  var $email_gen = Math.random() + "d"+ Date.now().toString() + "@" + "myggekks.com"
+  $this.removeClass('grayed-out').removeClass('placeholder_hidden').siblings().not('h5').addClass('grayed-out'); 
+    if ($this.attr('id') == "phone_number_formfield") {
+      $("input.newsletter_email").val($email_gen).addClass('placeholder_hidden');
+      var $test = $("input.newsletter_email").val(); 
+      console.log($test)
+    }
+    else if ($this.attr('id') == "newsletter_popup_$email") {
+      $this.val("")
+    }
+})
+
 
 </script>
 

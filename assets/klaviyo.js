@@ -188,8 +188,7 @@ var KlaviyoSubscribe = KlaviyoSubscribe || {};
                                 try {
                                     if (!KlaviyoSubscribe.isFormValid(a)) return !1
                                 } catch (l) {
-                                        // console.log(a.parent().children().attr('class')),
-                                        // console.log('verify')
+            
                                     return KlaviyoSubscribe.log(l),
                                         a.parent().children('.error_message').show().html(l), a.trigger("klaviyo.subscribe.error"), !1
             
