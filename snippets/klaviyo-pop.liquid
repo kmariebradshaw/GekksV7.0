@@ -48,8 +48,7 @@ $(document).ready(function(){
       $form.find('.hide_on_submit').hide();
       var userEmail = $('')
       var userAttributes = {
-        email: $("input.newsletter_email").val(),
-        phoneNumber: $("phone_number_formfield").val(),
+        phoneNumber: $("#phone_number_formfield").val(),
       };
       outbound.identify('4512341', userAttributes);
     },

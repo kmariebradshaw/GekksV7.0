@@ -436,7 +436,7 @@ snippets/head-fb-open-graph.liquid:
 snippets/head-script-imgload.liquid:
   development: 2018-04-13T14:43:09-05:00   c471f3ccd648edb2dafba1471cca3644
 snippets/klaviyo-pop.liquid:
-  development: 2018-04-30T17:10:10-05:00   8e15296774dfe3dc2b3b1f21f289d4e8
+  development: 2018-04-30T17:16:40-05:00   f0bf8cfad047462c26db9730879bd6b1
 snippets/linked-options.liquid:
   development: 2018-04-13T14:43:09-05:00   de52ba5421f3d8b58e9f600808467d65
 snippets/locator.liquid:
