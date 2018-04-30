@@ -198,7 +198,7 @@ assets/cookies.js:
 assets/custom.jquery.js:
   development: 2018-04-25T13:52:11-05:00   0ca67ac8534c63b2ec78b4ac83f3306f
 assets/custom.scss.liquid:
-  development: 2018-04-26T13:35:29-05:00   5030d1b91c41cde01cd5d634facad533
+  development: 2018-04-26T15:10:09-05:00   891d89956056e293a5fcc7894d8ff7f5
 assets/customcheckout.js:
   development: 2018-04-25T10:44:32-05:00   f99fdc16ba519408044a9e5a9e5a5ede
 assets/cybermonday.gif:
@@ -436,7 +436,7 @@ snippets/head-fb-open-graph.liquid:
 snippets/head-script-imgload.liquid:
   development: 2018-04-13T14:43:09-05:00   c471f3ccd648edb2dafba1471cca3644
 snippets/klaviyo-pop.liquid:
-  development: 2018-04-26T13:12:07-05:00   1a6f20613700e56eda28681842529145
+  development: 2018-04-26T14:50:04-05:00   6458413b69dbd21bad62466156ee9587
 snippets/linked-options.liquid:
   development: 2018-04-13T14:43:09-05:00   de52ba5421f3d8b58e9f600808467d65
 snippets/locator.liquid:
