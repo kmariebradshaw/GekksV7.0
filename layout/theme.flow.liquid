@@ -19,6 +19,11 @@
     <script type="text/javascript">
       var global_money_format = '{{ shop.money_format }}';
     </script>
+    {% comment %}outbound{% endcomment %}
+<script type="text/javascript">
+window.outbound=window.outbound||[];window.outbound.methods=["identify","track","registerApnsToken","registerGcmToken","disableApnsToken","disableGcmToken"];window.outbound.factory=function(t){return function(){var o=Array.prototype.slice.call(arguments);o.unshift(t);window.outbound.push(o);return window.outbound}};for(var i=0;i<window.outbound.methods.length;i++){var key=window.outbound.methods[i];window.outbound[key]=window.outbound.factory(key)}if(!document.getElementById("outbound-js")){var script=document.createElement("script");script.type="text/javascript";script.id="outbound-js";script.async=true;script.src="https://cdn.outbound.io/PUBLIC_KEY.js";var first=document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script,first)}
+</script>
+{% comment %} end outbound{% endcomment %}
     {{ content_for_header }}
     <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
      <div id="fb-root"></div>
