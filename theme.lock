@@ -404,7 +404,7 @@ layout/checkout.liquid:
 layout/theme.flow.liquid:
   development: 2018-04-13T14:43:08-05:00   21bbc25666e348e49a7dfb37d12e0963
 layout/theme.liquid:
-  development: 2018-04-30T17:12:05-05:00   17ab51d851a66652c3b358818173802d
+  development: 2018-05-02T15:17:20-05:00   db582039db41a596777b663d0b8aa60f
 layout/theme.series.liquid:
   development: 2018-04-13T14:43:08-05:00   dbf9aa41f3eceea9f12b260e026d58e8
 locales/en.default.json:
