@@ -34,10 +34,13 @@
   <div class="success_message" ></div> 
   <div class="error_message" ></div>
    </div>
-</div>
+</div> 
  
 <script>
 $(document).ready(function(){ 
+  if (outbound.identify()) {
+    console.log('you been here')
+  }
  setTimeout(function() {
   if ($('.klaviyo_modal:visible').length == 0) {
      KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
@@ -46,11 +49,13 @@ $(document).ready(function(){
      success: function ($form) {
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
-      var userEmail = $('')
+      
+      if ($("#phone_number_formfield").val()) {
       var userAttributes = {
         phoneNumber: $("#phone_number_formfield").val(),
       };
-      outbound.identify('4512341', userAttributes);
+      outbound.identify(Date.now().toString(), userAttributes);
+      };
     },
   }); 
   };
