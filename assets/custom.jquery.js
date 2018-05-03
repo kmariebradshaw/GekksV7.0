@@ -68,21 +68,19 @@ function countdownActive(){
 function checkForDiscount() {
 $discountInput = $("input.js-form-discount");
 $coupon = getParameterByName('coupon');
-console.log($coupon); 
 
 if($coupon){
   createCookie('discountCode', $coupon, { expires: 2 });
 }
 
 $discountCode = readCookie('discountCode');
-console.log($discountCode)
 
 
 if($discountCode){
   if ($discountInput.length > 0) { 
     $discountInput.val( $discountCode );
   }
-}
+} 
 }; 
 
 
