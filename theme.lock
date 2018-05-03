@@ -144,7 +144,7 @@ assets/about-us-mobile.jpg:
 assets/about-us-mobile2.jpg:
   development: 2018-04-13T14:42:26-05:00   fc23a574f1d17dee017accd5a7bdd8f0
 assets/ajax-cart.js.liquid:
-  development: 2018-04-13T14:42:26-05:00   5b2a60fae56127b115a73a289d94f685
+  development: 2018-05-03T13:54:30-05:00   116f7eef245cfb9ea0356f3cb9340759
 assets/amazon.jpg:
   development: 2018-04-13T14:42:26-05:00   a606f8816c6b34295dbb758091cebf86
 assets/amazon.png:
@@ -418,7 +418,7 @@ snippets/account-menu.liquid:
 snippets/ajax-cart-template.liquid:
   development: 2018-04-13T14:43:08-05:00   a4146e95e1ca210caebf6030b589e0cf
 snippets/ajaxify-cart.liquid:
-  development: 2018-04-13T14:43:08-05:00   17d217c23592c548500323bdcf6b04bc
+  development: 2018-05-03T13:53:51-05:00   b49779685e87bff2edb0d2ea8c1f1907
 snippets/blog-comment.liquid:
   development: 2018-04-13T14:43:08-05:00   7a99e4b0f8f5bd2d141813e923aeafdf
 snippets/cart-shipping-calculator.liquid:
@@ -552,7 +552,7 @@ templates/page.talkable.liquid:
 templates/product-without-spurit_po.liquid:
   development: 2018-04-13T14:43:11-05:00   58c4bfbc699fff7fdec33515485af68e
 templates/product.liquid:
-  development: 2018-05-02T15:26:08-05:00   be776806196ecfe50a6e340c2720d166
+  development: 2018-05-03T13:51:16-05:00   1590337a5c9115c828f5a4363ed19127
 templates/search.editorder.liquid:
   development: 2018-04-13T14:43:11-05:00   e2292039a60fd8392b9bbaafc08ee2d7
 templates/search.liquid:

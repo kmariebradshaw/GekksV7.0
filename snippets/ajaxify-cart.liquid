@@ -11,7 +11,7 @@
  */
 Shopify.AjaxifyCart = (function($) {
   
-  // Some configuration options.
+  // Some configuration options. 
   // I have separated what you will never need to change from what
   // you might change.
   
@@ -79,6 +79,8 @@ Shopify.AjaxifyCart = (function($) {
         _setText($addToCartBtn, _config.addingToCartBtnLabel);
         $addToCartBtn.addClass('disabled').prop('disabled', true);
         // Add to cart.
+
+
         $.ajax({
           url: _config.shopifyAjaxAddURL,
           dataType: 'json',
@@ -182,7 +184,7 @@ Shopify.AjaxifyCart.init();
   padding: 0px !important;
 }
 .ajaxified-cart-feedback.success { 
-  color: black;
+  color: red;
 }
   
 .ajaxified-cart-feedback a:hover {
