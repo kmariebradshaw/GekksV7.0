@@ -200,7 +200,7 @@ assets/custom.jquery.js:
 assets/custom.scss.liquid:
   development: 2018-04-26T15:10:09-05:00   891d89956056e293a5fcc7894d8ff7f5
 assets/customcheckout.js:
-  development: 2018-04-25T10:44:32-05:00   f99fdc16ba519408044a9e5a9e5a5ede
+  development: 2018-05-02T16:24:29-05:00   52f6ebf07b4c1cb40d63ad6b1510177f
 assets/cybermonday.gif:
   development: 2018-04-13T14:42:34-05:00   b9cf129121d8835cefddef5d0ec4ff31
 assets/email-contact-hi.jpg:
@@ -400,11 +400,11 @@ config/settings_data.json:
 config/settings_schema.json:
   development: 2018-04-13T14:43:11-05:00   af54bea98f726a7373142cde20f0e6f6
 layout/checkout.liquid:
-  development: 2018-04-13T14:43:08-05:00   c59601e1b3d6bc2ca0f4cad6363084f2
+  development: 2018-05-02T16:28:25-05:00   71f2d0809b29151d437d8ac6cc054f38
 layout/theme.flow.liquid:
   development: 2018-04-13T14:43:08-05:00   21bbc25666e348e49a7dfb37d12e0963
 layout/theme.liquid:
-  development: 2018-05-02T15:17:20-05:00   db582039db41a596777b663d0b8aa60f
+  development: 2018-05-02T15:24:41-05:00   2a98b352c1c6f97acb1ade5d3667ffb4
 layout/theme.series.liquid:
   development: 2018-04-13T14:43:08-05:00   dbf9aa41f3eceea9f12b260e026d58e8
 locales/en.default.json:
@@ -552,7 +552,7 @@ templates/page.talkable.liquid:
 templates/product-without-spurit_po.liquid:
   development: 2018-04-13T14:43:11-05:00   58c4bfbc699fff7fdec33515485af68e
 templates/product.liquid:
-  development: 2018-04-13T14:43:11-05:00   0862f12a1fb90a1abd24a6a170db4e93
+  development: 2018-05-02T15:26:08-05:00   be776806196ecfe50a6e340c2720d166
 templates/search.editorder.liquid:
   development: 2018-04-13T14:43:11-05:00   e2292039a60fd8392b9bbaafc08ee2d7
 templates/search.liquid:

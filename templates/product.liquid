@@ -5,7 +5,12 @@
     display: none !important;
   }
 </style>
-
+<script>
+eventProperties = {
+  productViewed: '{{product.title}}'
+};
+outbound.track('productView', eventProperties);
+</script>
 <main id="product" itemscope itemtype="http://schema.org/Product">
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
