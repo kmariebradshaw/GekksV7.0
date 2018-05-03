@@ -38,9 +38,7 @@
  
 <script>
 $(document).ready(function(){ 
-  if (outbound.identify()) {
-    console.log('you been here')
-  }
+  var outboundId = readCookie('_ob_pub-f67b07728b81077a03e0efa47ee44c17');
  setTimeout(function() {
   if ($('.klaviyo_modal:visible').length == 0) {
      KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
@@ -54,7 +52,14 @@ $(document).ready(function(){
       var userAttributes = {
         phoneNumber: $("#phone_number_formfield").val(),
       };
-      outbound.identify(Date.now().toString(), userAttributes);
+
+      if (outboundId) {
+        outbound.identify(outboundId, userAttributes)
+      }
+      else {
+        outbound.identify(Date.now().toString(), userAttributes);
+      }
+      
       };
     },
   }); 
@@ -69,7 +74,6 @@ $('#newsletter_popup2 .klaviyo_field_group input').click(function(){
     if ($this.attr('id') == "phone_number_formfield") {
       $("input.newsletter_email").val($email_gen).addClass('placeholder_hidden');
       var $test = $("input.newsletter_email").val(); 
-      console.log($test)
     }
     else if ($this.attr('id') == "newsletter_popup_$email") {
       $this.val("")
