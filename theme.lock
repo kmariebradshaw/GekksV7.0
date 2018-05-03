@@ -144,7 +144,7 @@ assets/about-us-mobile.jpg:
 assets/about-us-mobile2.jpg:
   development: 2018-04-13T14:42:26-05:00   fc23a574f1d17dee017accd5a7bdd8f0
 assets/ajax-cart.js.liquid:
-  development: 2018-04-13T14:42:26-05:00   5b2a60fae56127b115a73a289d94f685
+  development: 2018-05-03T13:54:30-05:00   116f7eef245cfb9ea0356f3cb9340759
 assets/amazon.jpg:
   development: 2018-04-13T14:42:26-05:00   a606f8816c6b34295dbb758091cebf86
 assets/amazon.png:
@@ -196,11 +196,11 @@ assets/conversesneaker.png:
 assets/cookies.js:
   development: 2018-04-13T14:42:33-05:00   3db96a91a489a2bba00a13042895f8c0
 assets/custom.jquery.js:
-  development: 2018-04-25T13:52:11-05:00   0ca67ac8534c63b2ec78b4ac83f3306f
+  development: 2018-05-03T13:57:46-05:00   8a8855a6af93d40363d7c03b1b213ee2
 assets/custom.scss.liquid:
   development: 2018-04-26T15:10:09-05:00   891d89956056e293a5fcc7894d8ff7f5
 assets/customcheckout.js:
-  development: 2018-04-25T10:44:32-05:00   f99fdc16ba519408044a9e5a9e5a5ede
+  development: 2018-05-02T16:24:29-05:00   52f6ebf07b4c1cb40d63ad6b1510177f
 assets/cybermonday.gif:
   development: 2018-04-13T14:42:34-05:00   b9cf129121d8835cefddef5d0ec4ff31
 assets/email-contact-hi.jpg:
@@ -400,11 +400,11 @@ config/settings_data.json:
 config/settings_schema.json:
   development: 2018-04-13T14:43:11-05:00   af54bea98f726a7373142cde20f0e6f6
 layout/checkout.liquid:
-  development: 2018-04-13T14:43:08-05:00   c59601e1b3d6bc2ca0f4cad6363084f2
+  development: 2018-05-02T16:28:25-05:00   71f2d0809b29151d437d8ac6cc054f38
 layout/theme.flow.liquid:
   development: 2018-04-13T14:43:08-05:00   21bbc25666e348e49a7dfb37d12e0963
 layout/theme.liquid:
-  development: 2018-04-26T13:15:23-05:00   3e13cecca4d71c5a3f5908554cb5a422
+  development: 2018-05-02T15:24:41-05:00   2a98b352c1c6f97acb1ade5d3667ffb4
 layout/theme.series.liquid:
   development: 2018-04-13T14:43:08-05:00   dbf9aa41f3eceea9f12b260e026d58e8
 locales/en.default.json:
@@ -418,7 +418,7 @@ snippets/account-menu.liquid:
 snippets/ajax-cart-template.liquid:
   development: 2018-04-13T14:43:08-05:00   a4146e95e1ca210caebf6030b589e0cf
 snippets/ajaxify-cart.liquid:
-  development: 2018-04-13T14:43:08-05:00   17d217c23592c548500323bdcf6b04bc
+  development: 2018-05-03T13:53:51-05:00   b49779685e87bff2edb0d2ea8c1f1907
 snippets/blog-comment.liquid:
   development: 2018-04-13T14:43:08-05:00   7a99e4b0f8f5bd2d141813e923aeafdf
 snippets/cart-shipping-calculator.liquid:
@@ -436,7 +436,7 @@ snippets/head-fb-open-graph.liquid:
 snippets/head-script-imgload.liquid:
   development: 2018-04-13T14:43:09-05:00   c471f3ccd648edb2dafba1471cca3644
 snippets/klaviyo-pop.liquid:
-  development: 2018-04-26T14:50:04-05:00   6458413b69dbd21bad62466156ee9587
+  development: 2018-05-03T14:52:43-05:00   54c7fd3341b5d55e08d3a038561f42c5
 snippets/linked-options.liquid:
   development: 2018-04-13T14:43:09-05:00   de52ba5421f3d8b58e9f600808467d65
 snippets/locator.liquid:
@@ -552,7 +552,7 @@ templates/page.talkable.liquid:
 templates/product-without-spurit_po.liquid:
   development: 2018-04-13T14:43:11-05:00   58c4bfbc699fff7fdec33515485af68e
 templates/product.liquid:
-  development: 2018-04-13T14:43:11-05:00   0862f12a1fb90a1abd24a6a170db4e93
+  development: 2018-05-03T13:51:16-05:00   1590337a5c9115c828f5a4363ed19127
 templates/search.editorder.liquid:
   development: 2018-04-13T14:43:11-05:00   e2292039a60fd8392b9bbaafc08ee2d7
 templates/search.liquid:

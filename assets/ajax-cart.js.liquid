@@ -19,6 +19,8 @@ item={key:cartItem.key,line:index+1,url:cartItem.url,img:prodImg,name:cartItem.p
 $cartContainer.append(template(data));cartCallback(cart);};var _showFeedback=function(success,html,$formContainer){$('.ajaxified-cart-feedback').remove();
 
 checkForDiscount();
+outbound.track('addToCart');
+
 
 var feedback='<p class="ajaxified-cart-feedback '+success+'">'+html+'</p>';$('.is-added').after(feedback);$('.ajaxified-cart-feedback').slideDown();};cartCallback=function(cart){$body.removeClass('drawer--is-loading');$body.trigger('afterCartLoad.ajaxCart',cart);$('#CartContainer').slideDown().delay(7000).slideUp();_showFeedback('success',' Added to cart! <a href="/cart">View Cart</a>.',$formContainer);if(window.Shopify&&Shopify.StorefrontExpressButtons){Shopify.StorefrontExpressButtons.initialize();}};adjustCart=function(){$body.on('click','.ajaxcart__qty-adjust',function(){if(isUpdating){return;}
 var $el=$(this),line=$el.data('line'),$qtySelector=$el.siblings('.ajaxcart__qty-num'),qty=parseInt($qtySelector.val().replace(/\D/g,''));var qty=validateQty(qty);if($el.hasClass('ajaxcart__qty--plus')){qty+=1;}else{qty-=1;if(qty<=0)qty=0;}
