@@ -526,7 +526,7 @@ templates/page.discounts.liquid:
 templates/page.faq.liquid:
   development: 2018-04-13T14:43:10-05:00   c923ada5b7f993e8846e8dd2f55faba1
 templates/page.gekks-in-action.liquid:
-  development: 2018-04-13T14:43:10-05:00   d29a51ed35fc43ddc0906a94aa86e1f7
+  development: 2018-05-09T14:28:56-05:00   c769188b8fd5203b50b2370b70b7a0cb
 templates/page.gift-gekks.liquid:
   development: 2018-04-18T11:55:43-05:00   a5240473ff96c375e03acce46ee24e7f
 templates/page.how_it_works.liquid:

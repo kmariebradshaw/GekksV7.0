@@ -39,7 +39,7 @@ section div h3 {
 .fbutton, .fin {
     display: inline-block;
     background: #33ffcc;
-    color: white;
+    color: white !important;
     width: 75%;
     padding: 15px 0px;
     font-size: 14pt;
@@ -393,7 +393,7 @@ body { margin-top: -22px; }
         float: right;
     }
     .mo-plus { display: none; }
-    .flip-container { display: inline-block; }
+    .flip-container { margin: 0 auto; }
     body section ul .flip-b { width: 300px !important; }
     .flip-container, .front, .back-card {
         width: 310px;
@@ -517,10 +517,10 @@ body section .flip-b {
         <div>
           <section class="continue" id="step-one">
             <div>  
-              <h1 id="intro-title">Why <div class="green"> Gekks?</div></h1>
-                <h1>wish you could #gosockless without your feet smelling like rotten eggs? or your no-show socks sliding down all day?</h1>
+              <h1 id="intro-title" style="text-transform: none !important;">why <div class="green"> Gekks?</div></h1>
+                <h1>want the look of going sockless but hate the sockless stench? we've got you covered.</h1>
                 <div style="height: 2vh;"></div>
-                <h3>yeah, we did too, so we invented Gekks. the ultimate no-show sock.</h3>
+                <h3>get Gekks, the ultimate no-show sock. <br>convenient, comfortable, and <br> completely no-show.</h3>
                 <div style="height: 10vh"></div> 
                 <div class="fbutton">show me more</div><img class="mo-plus" src="{{'Gekks-Icons.png' | asset_url}}" /> </div>
           </section>
@@ -567,18 +567,6 @@ body section .flip-b {
                       </div>never search for socks again</li></div>
                     </div>
                 </div>
-                <div class="flip-container">
-                  <div class="flipper">
-                    <div class="front">
-                    <li class="sbutton heel flip-b" onClick="ga('send', 'event', 'Mini-Education', 'Problem', 'Blister');"><img src="{{'Icon-blister.svg' | asset_url}}" />
-                        <div>heel blisters</div>your heels look like you got attacked
-                        <br>by a 3-inch tall bear.</li>
-                        </div>
-                    <div class="back-card">
-                      <li class="sbutton flip-b">
-                      <div>sock comfort in the front</div>heel blister protection in the back</li></div>
-                    </div>
-                    </div>
                     </ul>
                     <div class="errors-s" style="height: 5vh; margin-top: 20px;"></div>
                     <div class="fbutton spec-prob-fb" onClick="ga('send', 'event', 'Mini-Education', 'Progress', 'Problems');">got it!</div>
@@ -596,7 +584,7 @@ body section .flip-b {
                  <li>sock comfort in the front, heel blister protection in the back</li>
                </ul>
                <div style="height: 3vh;"></div>
-               <a href="/products/womens-closet-pack" class="spec-prob-fb fin" onClick="ga('send', 'event', 'Mini-Education', 'Progress', 'Fin');">show me the Gekks!</a>
+               <a href="/products/mens-closet-pack" class="spec-prob-fb fin" onClick="ga('send', 'event', 'Mini-Education', 'Progress', 'Fin');">show me the Gekks!</a>
                </div>
              </section>
         </div>
