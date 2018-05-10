@@ -203,6 +203,8 @@ assets/customcheckout.js:
   development: 2018-05-02T16:24:29-05:00   52f6ebf07b4c1cb40d63ad6b1510177f
 assets/cybermonday.gif:
   development: 2018-04-13T14:42:34-05:00   b9cf129121d8835cefddef5d0ec4ff31
+assets/drag-to.png:
+  development: 2018-05-10T16:01:11-05:00   4d04b4e117adb9e054daa20f907380ab
 assets/email-contact-hi.jpg:
   development: 2018-04-13T14:42:35-05:00   8baa27c3c274f91d00db374315fbde72
 assets/email-heel.jpg:
@@ -514,7 +516,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2018-04-13T14:43:10-05:00   b01bce4d6b8a5b4620b34ef67c99071c
 templates/index.liquid:
-  development: 2018-04-13T14:43:10-05:00   98bd5db47706b7d40e30b731e1e022f1
+  development: 2018-05-10T16:07:38-05:00   130dd1e69d0fac94148846632edba653
 templates/page.about_us.liquid:
   development: 2018-04-13T14:43:10-05:00   2772621f14cdb5ae8830b719ba70af9d
 templates/page.contact.liquid:
