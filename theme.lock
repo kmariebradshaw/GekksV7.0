@@ -522,7 +522,7 @@ templates/page.about_us.liquid:
 templates/page.contact.liquid:
   development: 2018-04-13T14:43:10-05:00   e0ff65b553fbcf3e4dbd4c9170e3d6f3
 templates/page.customize.liquid:
-  development: 2018-04-13T14:43:10-05:00   38f7d2f7095f779a98d8b5852a473a28
+  development: 2018-05-10T16:43:23-05:00   09a762f0fcf16ce43870ce768fcf3035
 templates/page.discounts.liquid:
   development: 2018-04-13T14:43:10-05:00   755660f701a5d8306ad74097b1bff7f1
 templates/page.faq.liquid:
