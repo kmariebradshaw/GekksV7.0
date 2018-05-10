@@ -58,6 +58,7 @@ $(document).ready(function(){
       }
       else {
         outbound.identify(Date.now().toString(), userAttributes);
+        outbound.track('completeRegistration');
       }
       
       };
