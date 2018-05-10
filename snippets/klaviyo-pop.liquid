@@ -43,7 +43,7 @@ $(document).ready(function(){
   if ($('.klaviyo_modal:visible').length == 0) {
      KlaviyoSubscribe.attachToModalForm('#newsletter_popup2', {
     delay_seconds: 0,
-    success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $70 USD</div><div class='klaviyo_header'>GEKKS50</div></div>",
+    success_message: "<div class='success_feedback'><div class='klaviyo_header'><em>Thank you!</em></div><div class='klaviyo_subheader'>Use the discount code below<br> to receive 15% off orders over $60 USD</div><div class='klaviyo_header'>WELCOME15</div></div>",
      success: function ($form) {
       ga('send', 'event', 'Acquisition', 'Pop Up', 'Website');
       $form.find('.hide_on_submit').hide();
