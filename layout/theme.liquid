@@ -164,7 +164,7 @@ window.outbound=window.outbound||[];window.outbound.methods=["identify","track",
                       {% endfor %}
                       </ul>
                     </li>
-              {% elsif link.title == "Installation" %}
+              {% elsif link.title == "Log In" %}
                <li style="margin-top: 30px;"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
               {% else %}
                 <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>

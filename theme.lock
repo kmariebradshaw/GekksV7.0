@@ -198,11 +198,13 @@ assets/cookies.js:
 assets/custom.jquery.js:
   development: 2018-05-03T13:57:46-05:00   8a8855a6af93d40363d7c03b1b213ee2
 assets/custom.scss.liquid:
-  development: 2018-04-26T15:10:09-05:00   891d89956056e293a5fcc7894d8ff7f5
+  development: 2018-05-10T16:29:09-05:00   c878c856be312d0b275d6e93541eec1e
 assets/customcheckout.js:
   development: 2018-05-02T16:24:29-05:00   52f6ebf07b4c1cb40d63ad6b1510177f
 assets/cybermonday.gif:
   development: 2018-04-13T14:42:34-05:00   b9cf129121d8835cefddef5d0ec4ff31
+assets/drag-to.png:
+  development: 2018-05-10T16:01:11-05:00   4d04b4e117adb9e054daa20f907380ab
 assets/email-contact-hi.jpg:
   development: 2018-04-13T14:42:35-05:00   8baa27c3c274f91d00db374315fbde72
 assets/email-heel.jpg:
@@ -366,7 +368,7 @@ assets/store-locator.js.liquid:
 assets/stores.json:
   development: 2018-04-13T14:43:04-05:00   525338250fe1b229a331b39b70bb74a7
 assets/style.css.liquid:
-  development: 2018-04-13T14:43:04-05:00   cc10bb9ba03ad37054612dfcc531a42f
+  development: 2018-05-10T16:11:22-05:00   4b08dfd5fcf04ddf0ae3e62d6267542c
 assets/suburban.jpg:
   development: 2018-04-13T14:43:04-05:00   f469ce98fc6e28395dd7eb716d154541
 assets/supercompressor.jpg:
@@ -404,7 +406,7 @@ layout/checkout.liquid:
 layout/theme.flow.liquid:
   development: 2018-04-13T14:43:08-05:00   21bbc25666e348e49a7dfb37d12e0963
 layout/theme.liquid:
-  development: 2018-05-02T15:24:41-05:00   2a98b352c1c6f97acb1ade5d3667ffb4
+  development: 2018-05-10T16:52:33-05:00   29b8c5a86a4fb4c58af165029478a26a
 layout/theme.series.liquid:
   development: 2018-04-13T14:43:08-05:00   dbf9aa41f3eceea9f12b260e026d58e8
 locales/en.default.json:
@@ -514,13 +516,13 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2018-04-13T14:43:10-05:00   b01bce4d6b8a5b4620b34ef67c99071c
 templates/index.liquid:
-  development: 2018-04-13T14:43:10-05:00   98bd5db47706b7d40e30b731e1e022f1
+  development: 2018-05-10T16:14:32-05:00   61a598c58bf6c4e156dc2e2598fe004e
 templates/page.about_us.liquid:
   development: 2018-04-13T14:43:10-05:00   2772621f14cdb5ae8830b719ba70af9d
 templates/page.contact.liquid:
   development: 2018-04-13T14:43:10-05:00   e0ff65b553fbcf3e4dbd4c9170e3d6f3
 templates/page.customize.liquid:
-  development: 2018-04-13T14:43:10-05:00   38f7d2f7095f779a98d8b5852a473a28
+  development: 2018-05-10T16:46:08-05:00   3ca4601d9067cda4585512308e01c4e0
 templates/page.discounts.liquid:
   development: 2018-04-13T14:43:10-05:00   755660f701a5d8306ad74097b1bff7f1
 templates/page.faq.liquid:
@@ -530,7 +532,7 @@ templates/page.gekks-in-action.liquid:
 templates/page.gift-gekks.liquid:
   development: 2018-04-18T11:55:43-05:00   a5240473ff96c375e03acce46ee24e7f
 templates/page.how_it_works.liquid:
-  development: 2018-04-13T14:43:10-05:00   81bcedacd304188b10fe1cd2920bfd7f
+  development: 2018-05-10T16:49:24-05:00   0fc900599230983ef91f6f9532123a57
 templates/page.latest_news.liquid:
   development: 2018-04-13T14:43:10-05:00   8ec7f833936d393ccf629b66bc4ca1c5
 templates/page.learn-more.liquid:
