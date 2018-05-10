@@ -3,6 +3,8 @@
   src: url("{{'Holiday-Regular.woff' | asset_url}}")
 }
 
+html { padding-bottom: 0 !important; }
+
 /* 
    Swatches Styles
 */
@@ -2544,24 +2546,30 @@ main.contact-us .half + .half {
     }
     .cust-more {
         font-size: 12pt !important;
-        width: 80% !important;
+        width: 100% !important;
         text-align: center;
         margin: 0 auto;
     }
     #cust-goal {
         font-size: 20pt !important;
-        width: 80% !important;
+        width: 100% !important;
         text-align: center;
         margin: 0 auto;
     }
     body .half .contact-form {
         margin-top: 50px;
     }
+    .contact-form { 
+      padding: 30px !important;
+        p label{ font-size: 12pt; }
+
+    }
+    .contact-us section .page { padding: 10px; }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 680px) {
     body .half #cust-goal {
-        font-size: 18pt !important;
+        font-size: 16pt !important;
     }
 }
 
@@ -2570,7 +2578,7 @@ main.contact-us .half + .half {
         font-size: 10pt !important;
     }
     body .half #cust-goal {
-        font-size: 16pt !important;
+        font-size: 12pt !important;
     }
 }
 @media only screen and (min-width: 800px) {
