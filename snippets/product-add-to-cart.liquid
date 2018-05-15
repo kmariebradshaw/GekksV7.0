@@ -144,24 +144,9 @@
                                 {% endfor %}             
                               {% endif %}
                               {% when "Women's Closet Pack" %}
-                                {% for image in select.images offset: 132 limit: 3 %}
+                                {% for image in select.images offset: 132 limit: 9 %}
                                   <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
                                 {% endfor %}  
-                                 {% for image in select.images offset: 174 limit: 1 %}
-                                 	<div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-								{% endfor %}
-                                   {% for image in select.images offset: 135 limit: 3 %}
-                                  <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-                                {% endfor %}  
-                                 {% for image in select.images offset: 175 limit: 1 %}
-                                 	<div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-								{% endfor %}
-                                     {% for image in select.images offset: 138 limit: 3 %}
-                                  <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-                                {% endfor %}  
-                                 {% for image in select.images offset: 176 limit: 1 %}
-                                 	<div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
-								{% endfor %}
                                 {% when "Men's Closet Pack" %}
                                 {% for image in select.images offset: 141 limit: 8 %}
                                   <div class="shoe-count"><img src="{{ image | product_img_url: 'compact' }}" /></div>
