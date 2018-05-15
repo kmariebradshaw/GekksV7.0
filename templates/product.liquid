@@ -10,6 +10,12 @@ eventProperties = {
   productViewed: "{{product.title}}"
 };
 outbound.track('productView', eventProperties);
+
+$(document).ready(function() {
+  if ( {{current_id }} ==  8081586504 ) {
+    $('.fake-buttons').css('width', '40%'); 
+  }
+})
 </script>
 <main id="product" itemscope itemtype="http://schema.org/Product">
   <meta itemprop="name" content="{{ product.title }}">
@@ -183,7 +189,6 @@ outbound.track('productView', eventProperties);
                   </a>
                 </div><br>
                 {% endif %}
-
                 {% elsif product.title == "Men's Closet Pack" %}
                 {% if product.id !=  current_id %}
                 <div class="fake-buttons closet-pack-men">
@@ -209,8 +214,13 @@ outbound.track('productView', eventProperties);
                     {% for image in product.images offset:10 limit: 1%}
                     <img src="{{ image | product_img_url: 'compact' }}" class="select-icons" />
                     {% endfor%}
-                    {% if product.title == "Loafers & Slip-Ons" %}
+                    {% if product.title == "Loafers & Slip-Ons" %}                        
                       <h4>Loafers & <br>Slip-Ons</h4>
+                      
+                    {% elsif product.title == "Heels & Wedges" %}
+                      <h4>Heels & <br> Wedges</h4>
+                    {% elsif product.title == "Sneakers & Lace-Ups" %}
+                      <h4>Sneakers &<br> Lace-Ups</h4>
                     {% else %}
                       <h4>{{ product.title }}</h4>
                       {% endif %}
