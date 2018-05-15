@@ -7,6 +7,13 @@
                                          (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
                                         })(window,document.documentElement,'async-hide','dataLayer',4000,
                                             {'GTM-5NSXTXW':true});</script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PWJVTQQ');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta name="robots" content="index, follow, archive">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -119,11 +126,15 @@ window.outbound=window.outbound||[];window.outbound.methods=["identify","track",
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
   <body class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '/', '-' | split: '.' }} {% if template == 'index' or page.handle == 'store' %}zoom-aware{% endif %}">
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWJVTQQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <header>
       <div class="wrap cbb-ignored-image" style="text-align: center;">
       <span class="banner">
         <a href="/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
-           <h4 style="letter-spacing: normal;">$5 off & Free Shipping on Women's Closet Packs</h4></a>
+           <h4 style="letter-spacing: normal;">$5 off & Free Shipping on Women's Closet Packs</h4></a> 
                 <h4 id="activate-countdown" style="display: none;">10% off for the next 10 minutes! <div id="activate-timer">Click to Activate</div></h4>
           <h4 id="countdown" style="display:none;">hurry! flash sale ends in <div id="divCounter" style="display:inline-block"></div> <b style="font-weight:bold">use code: GKK10</b></h4>
          </span>
