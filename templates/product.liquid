@@ -12,10 +12,12 @@ eventProperties = {
 outbound.track('productView', eventProperties);
 
 $(document).ready(function() {
+  if ($window.width() < 589) {
   if ( {{current_id }} ==  8081586504 ) {
     $('.fake-buttons').css('width', '40%'); 
   }
-})
+  }
+}); 
 </script>
 <main id="product" itemscope itemtype="http://schema.org/Product">
   <meta itemprop="name" content="{{ product.title }}">
