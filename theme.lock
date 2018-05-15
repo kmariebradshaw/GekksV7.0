@@ -406,9 +406,9 @@ config/settings_schema.json:
 layout/checkout.liquid:
   development: 2018-05-02T16:28:25-05:00   71f2d0809b29151d437d8ac6cc054f38
 layout/theme.flow.liquid:
-  development: 2018-04-13T14:43:08-05:00   21bbc25666e348e49a7dfb37d12e0963
+  development: 2018-05-15T13:17:21-05:00   b603a59445c4f2c017ce516c7bde05de
 layout/theme.liquid:
-  development: 2018-05-10T16:52:33-05:00   29b8c5a86a4fb4c58af165029478a26a
+  development: 2018-05-15T13:17:36-05:00   74fd7e45d6ceec349217006be37e7fa6
 layout/theme.series.liquid:
   development: 2018-04-13T14:43:08-05:00   dbf9aa41f3eceea9f12b260e026d58e8
 locales/en.default.json:
@@ -440,7 +440,7 @@ snippets/head-fb-open-graph.liquid:
 snippets/head-script-imgload.liquid:
   development: 2018-04-13T14:43:09-05:00   c471f3ccd648edb2dafba1471cca3644
 snippets/klaviyo-pop.liquid:
-  development: 2018-05-03T14:52:43-05:00   54c7fd3341b5d55e08d3a038561f42c5
+  development: 2018-05-11T13:58:25-05:00   3114d64b424de66eaeb17073103a0511
 snippets/linked-options.liquid:
   development: 2018-04-13T14:43:09-05:00   de52ba5421f3d8b58e9f600808467d65
 snippets/locator.liquid:
@@ -524,7 +524,7 @@ templates/page.about_us.liquid:
 templates/page.contact.liquid:
   development: 2018-04-13T14:43:10-05:00   e0ff65b553fbcf3e4dbd4c9170e3d6f3
 templates/page.customize.liquid:
-  development: 2018-05-10T16:46:08-05:00   3ca4601d9067cda4585512308e01c4e0
+  development: 2018-05-15T13:17:55-05:00   1141f569a344790f2792de694fff257d
 templates/page.discounts.liquid:
   development: 2018-04-13T14:43:10-05:00   755660f701a5d8306ad74097b1bff7f1
 templates/page.faq.liquid:

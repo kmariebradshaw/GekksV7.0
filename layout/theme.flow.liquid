@@ -19,11 +19,13 @@
     <script type="text/javascript">
       var global_money_format = '{{ shop.money_format }}';
     </script>
-{% comment %}outbound{% endcomment %}
-<script type="text/javascript">
-window.outbound=window.outbound||[];window.outbound.methods=["identify","track","registerApnsToken","registerGcmToken","disableApnsToken","disableGcmToken"];window.outbound.factory=function(t){return function(){var o=Array.prototype.slice.call(arguments);o.unshift(t);window.outbound.push(o);return window.outbound}};for(var i=0;i<window.outbound.methods.length;i++){var key=window.outbound.methods[i];window.outbound[key]=window.outbound.factory(key)}if(!document.getElementById("outbound-js")){var script=document.createElement("script");script.type="text/javascript";script.id="outbound-js";script.async=true;script.src="https://cdn.outbound.io/pub-f67b07728b81077a03e0efa47ee44c17.js";var first=document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script,first)}
-</script>
-{% comment %} end outbound{% endcomment %}
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWJVTQQ');</script>
+<!-- End Google Tag Manager -->
     {{ content_for_header }}
     <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10035757'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
      <div id="fb-root"></div>
@@ -36,6 +38,10 @@ window.outbound=window.outbound||[];window.outbound.methods=["identify","track",
 }(document, 'script', 'facebook-jssdk'));</script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWJVTQQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <header class="do-plus">
       <div class="wrap cbb-ignored-image" style="text-align: center;">
        <a href="/products/womens-closet-pack" onClick="ga('send', 'event', 'Banner', 'Click', 'Upgrade to Closet Pack');">
