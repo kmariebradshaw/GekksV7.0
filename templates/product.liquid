@@ -10,6 +10,14 @@ eventProperties = {
   productViewed: "{{product.title}}"
 };
 outbound.track('productView', eventProperties);
+
+$(document).ready(function() {
+  if ($window.width() < 589) {
+  if ( {{current_id }} ==  8081586504 ) {
+    $('.fake-buttons').css('width', '40%'); 
+  }
+  }
+}); 
 </script>
 <main id="product" itemscope itemtype="http://schema.org/Product">
   <meta itemprop="name" content="{{ product.title }}">
@@ -120,7 +128,7 @@ outbound.track('productView', eventProperties);
             {% if product.title == "Gift Cards" %}
             <div style="width: 100%; height: 20px;"></div>
             {% else %}
-            <div id="thumb-container">
+            <div id="thumb-container" style="-webkit-overflow-scrolling: touch;">
               <img src="{{'arrow.png' | asset_url }}" id="left" class="scroll left" style="float: left; max-width: 20px; z-index: 999;"/>
               <div id="thumbs" style="overflow: auto; white-space: nowrap;">
                 {% if product.title == "Ballet Flats" %} 
@@ -183,7 +191,6 @@ outbound.track('productView', eventProperties);
                   </a>
                 </div><br>
                 {% endif %}
-
                 {% elsif product.title == "Men's Closet Pack" %}
                 {% if product.id !=  current_id %}
                 <div class="fake-buttons closet-pack-men">
@@ -209,8 +216,13 @@ outbound.track('productView', eventProperties);
                     {% for image in product.images offset:10 limit: 1%}
                     <img src="{{ image | product_img_url: 'compact' }}" class="select-icons" />
                     {% endfor%}
-                    {% if product.title == "Loafers & Slip-Ons" %}
+                    {% if product.title == "Loafers & Slip-Ons" %}                        
                       <h4>Loafers & <br>Slip-Ons</h4>
+                      
+                    {% elsif product.title == "Heels & Wedges" %}
+                      <h4>Heels & <br> Wedges</h4>
+                    {% elsif product.title == "Sneakers & Lace-Ups" %}
+                      <h4>Sneakers &<br> Lace-Ups</h4>
                     {% else %}
                       <h4>{{ product.title }}</h4>
                       {% endif %}

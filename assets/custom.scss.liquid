@@ -2044,13 +2044,6 @@ body .button-xxs:hover {
     #quick-order .price {
         padding: 0px;
     }
-  body #quick-order .price {
-    border-bottom: none;
-    text-align: right;
-    margin-top: -63px;
-    font-size: 13pt;
-    letter-spacing: normal;
-}
   .header { 
       font-size: 20px !important;
     margin-top: 20px !important;
@@ -2098,6 +2091,16 @@ body #quick-order form label { font-size: 8.5pt !important;}
 
 .product-image-img {
     max-width: 100%;
+}
+
+@media only screen and (max-width: 580px) {
+    body #quick-order .price {
+    border-bottom: none;
+    text-align: right;
+    margin-top: -63px;
+    font-size: 13pt;
+    letter-spacing: normal;
+  }
 }
 
 @media only screen and (min-width: 875px) and (max-width: 1004px) {
@@ -3242,6 +3245,7 @@ body .cl-desc {
     width: 90%;
     overflow: auto;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
     display: inline-block;
   }
 .shoe-count {

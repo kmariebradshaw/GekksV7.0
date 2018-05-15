@@ -42,7 +42,7 @@ header #activate-countdown, header #countdown { display: none !important; }
           <div class="switch-button" id="switch-to-sneaker">sneakers</div>
         </div>
           <div class="shoe-switch">see in shoe</div><br>
-          <img src="{{'drag-to.png' | asset_url }}" alt="Drag to Rotate" style="max-width:150px; margin: -20px auto;" />
+          <img src="{{'drag-to.png' | asset_url }}" alt="Drag to Rotate" style="max-width:150px; margin: -20px auto;" class="drag-to" />
           <iframe class="Sirv" id="spin-frame" src="https://sibepher.sirv.com/Geek%20Flats%20NEW/Geek%20Flats%20NEW.spin" width="100%" frameborder="0"></iframe>
       </section> 
       <div class="fw" id="featured-in-i">
@@ -154,6 +154,8 @@ header #activate-countdown, header #countdown { display: none !important; }
 <script>
     $('.switch-button').click(function(){
       var display = ""
+              $('.drag-to').attr('src', '{{"drag-to.png" | asset_url}}')
+
       switch ($(this).attr("id")) {
         case "switch-to-flat": 
           display = 'https://sibepher.sirv.com/Geek%20Flats%20NEW/Geek%20Flats%20NEW.spin'
@@ -173,6 +175,12 @@ header #activate-countdown, header #countdown { display: none !important; }
     }); 
 
     $('.shoe-switch').click(function() {
+      if ($('.Sirv').attr('src').indexOf('Shoe') >= 0) {
+        $('.drag-to').attr('src', '{{"drag-to.png" | asset_url}}')
+      }
+      else {
+        $('.drag-to').attr('src', '{{"horiz-drag.png" | asset_url}}')
+      }
       var display = ""
       if ($('.Sirv').attr('src').indexOf('Sneaker') >= 0) {
         if ($('.Sirv').attr('src').indexOf('Shoe') >= 0)  {
