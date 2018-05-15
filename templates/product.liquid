@@ -120,7 +120,7 @@ outbound.track('productView', eventProperties);
             {% if product.title == "Gift Cards" %}
             <div style="width: 100%; height: 20px;"></div>
             {% else %}
-            <div id="thumb-container">
+            <div id="thumb-container" style="-webkit-overflow-scrolling: touch;">
               <img src="{{'arrow.png' | asset_url }}" id="left" class="scroll left" style="float: left; max-width: 20px; z-index: 999;"/>
               <div id="thumbs" style="overflow: auto; white-space: nowrap;">
                 {% if product.title == "Ballet Flats" %} 
