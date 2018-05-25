@@ -143,6 +143,8 @@ assets/Montserrat-SemiBold.otf:
   development: 2018-04-13T14:42:21-05:00   93f1c8c07b68e5bae1d9b8398a485715
 assets/Montserrat-Thin.otf:
   development: 2018-04-13T14:42:22-05:00   85332c68522ec1841e4022cdb4337368
+assets/OriginalGifMens.gif:
+  development: 2018-05-25T14:39:44-05:00   14894f53160c909b3e3977929d67284f
 assets/Timelinefinal1.gif:
   development: 2018-04-13T14:42:24-05:00   1ffed983628fb9bf288a57adfd43f43a
 assets/VOGUE-quote.jpg:
@@ -544,7 +546,7 @@ templates/page.discounts.liquid:
 templates/page.faq.liquid:
   development: 2018-04-13T14:43:10-05:00   c923ada5b7f993e8846e8dd2f55faba1
 templates/page.gekks-in-action.liquid:
-  development: 2018-05-09T14:28:56-05:00   c769188b8fd5203b50b2370b70b7a0cb
+  development: 2018-05-25T14:39:57-05:00   03a2072e25fe4b2fc4a8b9033ef400a0
 templates/page.gift-gekks.liquid:
   development: 2018-04-18T11:55:43-05:00   a5240473ff96c375e03acce46ee24e7f
 templates/page.how_it_works.liquid:
